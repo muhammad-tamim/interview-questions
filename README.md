@@ -16,33 +16,35 @@
   - [2.11. Why do we use a separated style sheet in HTML?](#211-why-do-we-use-a-separated-style-sheet-in-html)
   - [2.12. What is semantic HTML?](#212-what-is-semantic-html)
   - [2.13. What is SVG in HTML?](#213-what-is-svg-in-html)
-  - [2.14. What is the difference between the ‘id' and ‘class' attributes of HTML elements?](#214-what-is-the-difference-between-the-id-and-class-attributes-of-html-elements)
-  - [2.15. What is the difference between HTML and HTML5?](#215-what-is-the-difference-between-html-and-html5)
-  - [2.16. What is the difference between an absolute and relative URL?](#216-what-is-the-difference-between-an-absolute-and-relative-url)
-  - [2.17. What are the different types of form input fields in HTML?](#217-what-are-the-different-types-of-form-input-fields-in-html)
-  - [2.18. What is the difference between “display: none” and “visibility: hidden”](#218-what-is-the-difference-between-display-none-and-visibility-hidden)
-  - [2.19. What is the difference between link tag `<link>` and anchor tag `<a>`?](#219-what-is-the-difference-between-link-tag-link-and-anchor-tag-a)
-  - [2.20. When to use scripts in the head and when to use scripts in the body?](#220-when-to-use-scripts-in-the-head-and-when-to-use-scripts-in-the-body)
-  - [2.21. When to use scripts in the head and when to use scripts in the body?](#221-when-to-use-scripts-in-the-head-and-when-to-use-scripts-in-the-body)
-  - [2.22. What are inline and block elements in HTML5?](#222-what-are-inline-and-block-elements-in-html5)
-  - [2.23. What is the difference between `<figure>` tag and `<img>` tag?](#223-what-is-the-difference-between-figure-tag-and-img-tag)
-  - [2.24. What is the difference between SVG and Canvas HTML5 elements?](#224-what-is-the-difference-between-svg-and-canvas-html5-elements)
-  - [2.25. How can we include audio or video in a webpage?](#225-how-can-we-include-audio-or-video-in-a-webpage)
-  - [2.26. What are Web Workers?](#226-what-are-web-workers)
-  - [2.27. What are the different approaches to making an image responsive?](#227-what-are-the-different-approaches-to-making-an-image-responsive)
-  - [2.28. What is the Geolocation API in HTML5?](#228-what-is-the-geolocation-api-in-html5)
-  - [2.29. what is action and method attribute in form](#229-what-is-action-and-method-attribute-in-form)
-  - [2.30. What is the purpose of the `<meta>` tag?](#230-what-is-the-purpose-of-the-meta-tag)
-  - [2.31. How do you create an email link in HTML?](#231-how-do-you-create-an-email-link-in-html)
-  - [2.32. How do you create a checkbox in HTML?](#232-how-do-you-create-a-checkbox-in-html)
-  - [2.33. How do you create a dropdown list in HTML?](#233-how-do-you-create-a-dropdown-list-in-html)
-  - [2.34. How do you create a multi-line text input in an HTML form?](#234-how-do-you-create-a-multi-line-text-input-in-an-html-form)
-  - [2.35. How do you create a hidden input field in an HTML form?](#235-how-do-you-create-a-hidden-input-field-in-an-html-form)
-  - [2.36. What is the purpose of the `<address>` tag in HTML?](#236-what-is-the-purpose-of-the-address-tag-in-html)
-  - [2.37. What is the purpose of the `<canvas>` element in HTML5?](#237-what-is-the-purpose-of-the-canvas-element-in-html5)
-  - [2.38. How can you include SVG graphics directly in an HTML document?](#238-how-can-you-include-svg-graphics-directly-in-an-html-document)
-  - [2.39. What are data attributes in HTML, and how are they used?](#239-what-are-data-attributes-in-html-and-how-are-they-used)
-  - [2.40. What is the purpose of the rel attribute in a  tag?](#240-what-is-the-purpose-of-the-rel-attribute-in-a--tag)
+  - [2.14. How can you include SVG graphics directly in an HTML document?](#214-how-can-you-include-svg-graphics-directly-in-an-html-document)
+  - [2.15. What is the purpose of the `<canvas>` element in HTML5?](#215-what-is-the-purpose-of-the-canvas-element-in-html5)
+  - [2.16. What is the difference between SVG and Canvas HTML5 elements?](#216-what-is-the-difference-between-svg-and-canvas-html5-elements)
+  - [2.17. What is the difference between the ‘id' and ‘class' attributes of HTML elements?](#217-what-is-the-difference-between-the-id-and-class-attributes-of-html-elements)
+  - [2.18. What is the difference between HTML and HTML5?](#218-what-is-the-difference-between-html-and-html5)
+  - [2.19. What is the difference between an absolute and relative URL?](#219-what-is-the-difference-between-an-absolute-and-relative-url)
+  - [2.20. What are the different types of form input fields in HTML?](#220-what-are-the-different-types-of-form-input-fields-in-html)
+  - [2.21. What is the difference between “display: none” and “visibility: hidden”](#221-what-is-the-difference-between-display-none-and-visibility-hidden)
+  - [2.22. What is the difference between link tag `<link>` and anchor tag `<a>`?](#222-what-is-the-difference-between-link-tag-link-and-anchor-tag-a)
+  - [2.23. When to use scripts in the head and when to use scripts in the body?](#223-when-to-use-scripts-in-the-head-and-when-to-use-scripts-in-the-body)
+  - [2.24. What are inline and block elements in HTML5?](#224-what-are-inline-and-block-elements-in-html5)
+  - [2.25. What is the difference between `<figure>` tag and `<img>` tag?](#225-what-is-the-difference-between-figure-tag-and-img-tag)
+  - [2.26. How can we include audio or video in a webpage?](#226-how-can-we-include-audio-or-video-in-a-webpage)
+  - [2.27. What are Web Workers?](#227-what-are-web-workers)
+  - [2.28. What are the different approaches to making an image responsive?](#228-what-are-the-different-approaches-to-making-an-image-responsive)
+  - [2.29. What is the Geolocation API in HTML5?](#229-what-is-the-geolocation-api-in-html5)
+  - [2.30. what is action and method attribute in form](#230-what-is-action-and-method-attribute-in-form)
+  - [2.31. What is the purpose of the `<meta>` tag?](#231-what-is-the-purpose-of-the-meta-tag)
+  - [2.32. How do you create an email link in HTML?](#232-how-do-you-create-an-email-link-in-html)
+  - [2.33. How do you create a checkbox in HTML?](#233-how-do-you-create-a-checkbox-in-html)
+  - [2.34. How do you create a dropdown list in HTML?](#234-how-do-you-create-a-dropdown-list-in-html)
+  - [2.35. How do you create a multi-line text input in an HTML form?](#235-how-do-you-create-a-multi-line-text-input-in-an-html-form)
+  - [2.36. How do you create a hidden input field in an HTML form?](#236-how-do-you-create-a-hidden-input-field-in-an-html-form)
+  - [2.37. What is the purpose of the `<address>` tag in HTML?](#237-what-is-the-purpose-of-the-address-tag-in-html)
+  - [2.38. What are data attributes in HTML, and how are they used?](#238-what-are-data-attributes-in-html-and-how-are-they-used)
+  - [2.39. What is the purpose of the rel attribute in a `<link>` tag?](#239-what-is-the-purpose-of-the-rel-attribute-in-a-link-tag)
+  - [2.40. Describe HTML layout structure.](#240-describe-html-layout-structure)
+  - [2.41. Is the `<datalist>` tag and `<select>` tag same?](#241-is-the-datalist-tag-and-select-tag-same)
+  - [2.42. What is the difference between `<meter` tag and `<progress>` tag?](#242-what-is-the-difference-between-meter-tag-and-progress-tag)
 - [3. CSS](#3-css)
 - [4. JavaScript](#4-javascript)
 - [5. React.js](#5-reactjs)
@@ -227,223 +229,16 @@ It is an XML-based format used to display 2D graphics, shapes, and text directly
 
 Unlike normal images (.jpg, .png), SVG does not lose quality when zoomed or resized because it is based on mathematical vectors, not pixels.
 
-## 2.14. What is the difference between the ‘id' and ‘class' attributes of HTML elements?
-
-The ‘id' attribute defines a unique identifier for an HTML element, while the ‘class' attribute defines a class for a group of elements. An ‘id' can only be used once on a page, while a ‘class' can be used multiple times.
-
-## 2.15. What is the difference between HTML and HTML5?
-HTML5 is the latest version of HTML and includes new features: 
-- Semantic Elements
-- Built-in Multimedia Support `<audio> and <video>`
-- Canvas and SVG Support
-- Form Enhancements with Built-in validation without JavaScript.
-    - HTML: Limited input types (text, password, checkbox, etc.).
-    - email, date, url, range, number, color, etc. 
-- Geolocation API
-- Support local and session storage
-
-## 2.16. What is the difference between an absolute and relative URL?
-- Absolute: 
-  - A link
-  - Always points to the same location, no matter where it is used. 
-  - `<a href="https://www.example.com/images/photo.jpg">Photo</a>`
-    
-- Relative
-  - local storage path
-  - it Depends on the location of the current page.
-  - `<a href="images/photo.jpg">Photo</a>` or `./images` or `../images`
-
-## 2.17. What are the different types of form input fields in HTML?
-
-- text inputs: 
-  - text
-  - password
-  - email
-  - url
-  - search
-- Number Inputs: 
-  - number
-  - range
-- Choice Inputs: 
-  - radio 
-  - checkbox
-  - select
-- Buttons: 
-  - submit
-  - button
-  - reset
-
-## 2.18. What is the difference between “display: none” and “visibility: hidden” 
-
-Elements with “display: none” are not visible and do not take up any space on the page, while elements with “visibility: hidden” are not visible but still take up space.
-
-## 2.19. What is the difference between link tag `<link>` and anchor tag `<a>`?
-
-- link: Used for external resources (like CSS, icons, fonts,  or prefetch files) to the HTML document.
-- `<a>`: used for clickable links that navigate to another page, section, or resource.
-
-## 2.20. When to use scripts in the head and when to use scripts in the body?
-
-- Use scripts in `<head>`: when the script must run before the page content loads (e.g., critical libraries), usually with defer or async.
-- Use scripts at the end of `<body>`: when the script interacts with DOM elements, ensuring the HTML is fully loaded first.
-
-## 2.21. When to use scripts in the head and when to use scripts in the body?
-- Head
-  - For scripts that must run before page content loads, e.g., critical libraries or configuration scripts.
-- body 
-  - Most common for regular scripts that interact with DOM elements. It Ensures the elements exist before JavaScript manipulates them.
-
-**Modern Alternatives: defer and async**
-- defer → Script executes after HTML is fully parsed, keeps order if multiple scripts.
-```<script src="script.js" defer></script>```
-- async → Script executes as soon as it loads, may run before HTML parsing is finished.
-```<script src="script.js" async></script>```
-
-## 2.22. What are inline and block elements in HTML5?
-
-- Do not start on a new line, take only the width of their content.
-```<span>, <a>, <img>, <input>```
-- Block elements → Start on a new line, take full width available.
-```<div>, <p>, <h1>–<h6>, <section>, <ul>, <ol>, <li>```
-
-##  2.23. What is the difference between `<figure>` tag and `<img>` tag?
-- `<img>` tag: used to embed just image
-- `<figure>` tag: A semantic tag used to embed image with it's content
-
-## 2.24. What is the difference between SVG and Canvas HTML5 elements?
-- SVG is vector based and can't get  blurry when zoom. Mostly used for icons, logos, charts, diagrams.
-- Canvas is pixel based and can't get  blurry when zoom. Mostly used for games, image editing, real-time graphics, animations.
-
-##  2.25. How can we include audio or video in a webpage?
-```html 
-<audio controls>
-  <source src="audio.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<video width="320" height="240" controls>
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-```
-
-## 2.26. What are Web Workers?
-Web Workers allow you to run JavaScript in the background, separate from the main thread, so your webpage remains responsive while performing heavy tasks.
-
-```js
-// main.js
-let worker = new Worker("worker.js");
-worker.postMessage("Hello Worker");
-worker.onmessage = function(e) {
-  console.log("Message from worker: " + e.data);
-}
-```
-```js
-// worker.js
-onmessage = function(e) {
-  let result = e.data + " - processed";
-  postMessage(result);
-}
-```
-
-## 2.27. What are the different approaches to making an image responsive?
-- Using the `<picture>` element (for different screen sizes)
-```html 
-<picture>
-  <source media="(max-width: 600px)" srcset="small.jpg">
-  <source media="(max-width: 1200px)" srcset="medium.jpg">
-  <img src="large.jpg" alt="Responsive Image">
-</picture>
-```
-- Using CSS width: 100% and height: auto
-
-## 2.28. What is the Geolocation API in HTML5?
-The Geolocation API allows a webpage to get the geographical location (latitude and longitude) of the user’s device.
+## 2.14. How can you include SVG graphics directly in an HTML document?
 
 ```html
-<button onclick="getLocation()">Show My Location</button>
-<p id="demo"></p>
-
-<script>
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    document.getElementById("demo").innerHTML = "Geolocation is not supported.";
-  }
-}
-
-function showPosition(position) {
-  document.getElementById("demo").innerHTML =
-  "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
 ```
+![svg-circle](./assets/images/html/svg-circle.png)
 
-## 2.29. what is action and method attribute in form
-
-- action → Specifies the URL or path where the form data will be sent when submitted.
-```html
-<form action="submit.php">
-```
-- method → Specifies the HTTP method used to send the form data. Two main types:
-  - method → Specifies the HTTP method used to send the form data. Two main types:
-  - POST → Sends data in the request body (more secure).
-
-## 2.30. What is the purpose of the `<meta>` tag?
-
-The `<meta>` tag provides metadata about the HTML document, such as character set, author, description, and keywords. It's placed within the `<head>` section.
-
-## 2.31. How do you create an email link in HTML?
-
-To create a link that opens the user's default email client with a new message, use the mailto: scheme:
-```<a href="mailto:example@example.com">Send Email</a>```
-
-## 2.32. How do you create a checkbox in HTML?
-
-```html
-<input type="checkbox" id="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br>
-<input type="checkbox" id="vehicle2" value="Car">
-<label for="vehicle2"> I have a car</label><br>
-<input type="checkbox" id="vehicle3" value="Boat">
-<label for="vehicle3"> I have a boat</label><br>
-```
-
-## 2.33. How do you create a dropdown list in HTML?
-
-```html
-<label for="fruits">Choose a fruit:</label>
-<select id="fruits" name="fruits">
-  <option value="apple">Apple</option>
-  <option value="banana">Banana</option>
-  <option value="cherry">Cherry</option>
-</select>
-```
-
-## 2.34. How do you create a multi-line text input in an HTML form?
-```<textarea name="message" rows="4" cols="50"></textarea>```
-
-##  2.35. How do you create a hidden input field in an HTML form?
-Use `<input type="hidden">` to create a hidden input field that stores data without displaying it to the user:
-```<input type="hidden" name="userID" value="12345">```
-
-## 2.36. What is the purpose of the `<address>` tag in HTML?
-The `<address>` tag is used to define contact information for the author or owner of a document or article.
-
-```html
-<address>
-  Written by John Doe.<br>
-  Visit us at:<br>
-  Example.com<br>
-  Box 564, Disneyland<br>
-  USA
-</address> 
-```
-
-## 2.37. What is the purpose of the `<canvas>` element in HTML5?
+## 2.15. What is the purpose of the `<canvas>` element in HTML5?
 The `<canvas>` element provides a drawable region in the document that can be used to render graphics, such as charts, games, or other visual images, on the fly via scripting (usually JavaScript).
 
 ```<canvas id="myCanvas" width="200" height="100"></canvas>```
@@ -469,16 +264,231 @@ ctx.stroke();
 ```
 ![canvas](./assets/images/html/canvas.png)
 
-## 2.38. How can you include SVG graphics directly in an HTML document?
+
+## 2.16. What is the difference between SVG and Canvas HTML5 elements?
+- SVG is vector based and can't get  blurry when zoom. Mostly used for icons, logos, charts, diagrams.
+- Canvas is pixel based and can't get  blurry when zoom. Mostly used for games, image editing, real-time graphics, animations.
+
+- SVG can be modified using CSS and scripts.	
+- Canvas can only be modified using scripts.
+
+## 2.17. What is the difference between the ‘id' and ‘class' attributes of HTML elements?
+
+The ‘id' attribute defines a unique identifier for an HTML element, while the ‘class' attribute defines a class for a group of elements. An ‘id' can only be used once on a page, while a ‘class' can be used multiple times.
+
+## 2.18. What is the difference between HTML and HTML5?
+HTML5 is the latest version of HTML and includes new features: 
+- Semantic Elements
+- Built-in Multimedia Support `<audio> and <video>`
+- Canvas and SVG Support
+- Form Enhancements with Built-in validation without JavaScript.
+    - HTML: Limited input types (text, password, checkbox, etc.).
+    - HTML5: email, date, url, range, number, color, etc. 
+- Geolocation API
+- Support local and session storage
+
+## 2.19. What is the difference between an absolute and relative URL?
+- Absolute: 
+  - A link
+  - Always points to the same location, no matter where it is used. 
+  - `<a href="https://www.example.com/images/photo.jpg">Photo</a>`
+    
+- Relative
+  - local storage path
+  - it Depends on the location of the current page.
+  - `<a href="images/photo.jpg">Photo</a>` or `./images` or `../images`
+
+## 2.20. What are the different types of form input fields in HTML?
+
+- text inputs: 
+  - text
+  - password
+  - email
+  - url
+  - search
+- Number Inputs: 
+  - number
+  - range
+- Choice Inputs: 
+  - radio 
+  - checkbox
+  - select
+- Buttons: 
+  - submit
+  - button
+  - reset
+
+## 2.21. What is the difference between “display: none” and “visibility: hidden” 
+
+Elements with “display: none” are not visible and do not take up any space on the page, while elements with “visibility: hidden” are not visible but still take up space.
+
+## 2.22. What is the difference between link tag `<link>` and anchor tag `<a>`?
+
+- link: Used for external resources (like CSS, icons, fonts,  or prefetch files) to the HTML document.
+- `<a>`: used for clickable links that navigate to another page, section, or resource.
+
+## 2.23. When to use scripts in the head and when to use scripts in the body?
+- Head
+  - For scripts that must run before page content loads, e.g., critical libraries or configuration scripts.
+- body 
+  - Most common for regular scripts that interact with DOM elements. It Ensures the elements exist before JavaScript manipulates them.
+
+**Modern Alternatives: defer and async**
+- defer → Script executes after HTML is fully parsed, keeps order if multiple scripts.
+```<script src="script.js" defer></script>```
+- async → Script executes as soon as it loads, may run before HTML parsing is finished.
+```<script src="script.js" async></script>```
+
+## 2.24. What are inline and block elements in HTML5?
+
+- Inline elements-Do not start on a new line, take only the width of their content.
+```<span>, <a>, <img>, <input>```
+- Block elements → Start on a new line, take full width available.
+```<div>, <p>, <h1>–<h6>, <section>, <ul>, <ol>, <li>```
+
+##  2.25. What is the difference between `<figure>` tag and `<img>` tag?
+- `<img>` tag: used to embed just image
+- `<figure>` tag: A semantic tag used to embed image with it's content
 
 ```html
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-</svg>
+<figure>
+  <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">
+  <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+</figure>
 ```
-![svg-circle](./assets/images/html/svg-circle.png)
 
-## 2.39. What are data attributes in HTML, and how are they used?
+##  2.26. How can we include audio or video in a webpage?
+```html 
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<video width="320" height="240" controls>
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
+
+## 2.27. What are Web Workers?
+Web Workers allow you to run JavaScript in the background, separate from the main thread, so your webpage remains responsive while performing heavy tasks.
+
+```js
+// main.js
+let worker = new Worker("worker.js");
+worker.postMessage("Hello Worker");
+worker.onmessage = function(e) {
+  console.log("Message from worker: " + e.data);
+}
+```
+```js
+// worker.js
+onmessage = function(e) {
+  let result = e.data + " - processed";
+  postMessage(result);
+}
+```
+
+## 2.28. What are the different approaches to making an image responsive?
+- Using the `<picture>` element (for different screen sizes)
+```html 
+<picture>
+  <source media="(max-width: 600px)" srcset="small.jpg">
+  <source media="(max-width: 1200px)" srcset="medium.jpg">
+  <img src="large.jpg" alt="Responsive Image">
+</picture>
+```
+- Using CSS width: 100% and height: auto
+
+## 2.29. What is the Geolocation API in HTML5?
+The Geolocation API allows a webpage to get the geographical location (latitude and longitude) of the user’s device.
+
+```html
+<button onclick="getLocation()">Show My Location</button>
+<p id="demo"></p>
+
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.getElementById("demo").innerHTML = "Geolocation is not supported.";
+  }
+}
+
+function showPosition(position) {
+  document.getElementById("demo").innerHTML =
+  "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+```
+
+## 2.30. what is action and method attribute in form
+
+- action → Specifies the URL or path where the form data will be sent when submitted.
+```html
+<form action="submit.php">
+```
+- method → Specifies how the form data will be sent to the server. It has two values:
+  - GET → Data is sent in the URL (query string). Best for search forms.
+  - POST → Data is sent in the request body. Best for sensitive or large data.
+## 2.31. What is the purpose of the `<meta>` tag?
+
+The `<meta>` tag provides metadata about the HTML document, such as character set, author, description, and keywords. It's placed within the `<head>` section.
+
+## 2.32. How do you create an email link in HTML?
+
+To create a link that opens the user's default email client with a new message, use the mailto: scheme:
+```<a href="mailto:example@example.com">Send Email</a>```
+
+## 2.33. How do you create a checkbox in HTML?
+
+```html
+<input type="checkbox" id="vehicle1" value="Bike">
+<label for="vehicle1"> I have a bike</label><br>
+<input type="checkbox" id="vehicle2" value="Car">
+<label for="vehicle2"> I have a car</label><br>
+<input type="checkbox" id="vehicle3" value="Boat">
+<label for="vehicle3"> I have a boat</label><br>
+```
+![checkbox](./assets/images/html/checkbox.png)
+
+## 2.34. How do you create a dropdown list in HTML?
+
+```html
+<label for="fruits">Choose a fruit:</label>
+<select id="fruits" name="fruits">
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="cherry">Cherry</option>
+</select>
+```
+![dropdown](./assets/images/html/dropdown.png)
+
+## 2.35. How do you create a multi-line text input in an HTML form?
+```<textarea name="message" rows="4" cols="50"></textarea>```
+
+##  2.36. How do you create a hidden input field in an HTML form?
+Use `<input type="hidden">` to create a hidden input field that stores data without displaying it to the user:
+```<input type="hidden" name="userID" value="12345">```
+
+## 2.37. What is the purpose of the `<address>` tag in HTML?
+The `<address>` tag is used to define contact information for the author or owner of a document or article.
+
+```html
+<address>
+  Written by John Doe.<br>
+  Visit us at:<br>
+  Example.com<br>
+  Box 564, Disneyland<br>
+  USA
+</address> 
+```
+
+
+## 2.38. What are data attributes in HTML, and how are they used?
 Data attributes in HTML are custom attributes that start with data- and allow you to store extra information on HTML elements. They are often used to embed custom data that can be accessed via JavaScript.
 
 ```html 
@@ -491,10 +501,47 @@ console.log(div.dataset.userId); // Outputs: 12345
 console.log(div.dataset.role);   // Outputs: admin
 ```
 
-## 2.40. What is the purpose of the rel attribute in a <link> tag?
+## 2.39. What is the purpose of the rel attribute in a `<link>` tag?
 
 The rel attribute specifies the relationship between the current document and the linked resource. For example, rel="stylesheet" indicates that the linked file is a CSS stylesheet.
 ```<link rel="stylesheet" href="styles.css">```
+
+## 2.40. Describe HTML layout structure.
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+    		<title>Page Title</title>
+   	 </head>
+<body>	
+
+</body>
+</html>
+```  
+**Explanation:**  
+- The ```<!DOCTYPE html>``` declaration defines that this document is an HTML5 document    
+- The ```<html>``` element is the root element of an HTML page.
+  - Root Element = The root element is the topmost element in a document that contains all the other elements. The ```<html>``` element is the root element because it wraps all the content of the page, including the ```<head>``` and ```<body>``` sections
+- The ```<head>``` element in HTML is a container for metadata and links to external resources related to the webpage.  
+  - Meta information = Meta information is data about the HTML page that isn’t directly visible to users but helps browsers and search engines understand the page better.  
+- The ```<title>``` element specifies a title for the HTML page which is shown the browser’s page’s tab.  
+- The ```<body>``` element defines the document’s body and is a container for all the visible contents.
+
+## 2.41. Is the `<datalist>` tag and `<select>` tag same?
+No. The `<datalist>` tag and `<select>` tag are different. In the case of `<select>` tag a user will have to choose from a list of options, whereas `<datalist>` when used along with the `<input>` tag provides a suggestion that the user selects one of the options given or can enter some entirely different value.
+
+![data-list](./assets/images/html/datalist.png)
+
+## 2.42. What is the difference between `<meter` tag and `<progress>` tag?
+
+- `<meter>` → Shows a measurement within a known range (like temperature, disk usage, rating).
+  
+```Disk usage: <meter value="6" min="0" max="10">6 out of 10</meter>```
+
+- `<progress>` → Shows the progress of a task (like file upload or download).
+  
+```File upload: <progress value="70" max="100">70%</progress>```
+
 
 
 # 3. CSS
