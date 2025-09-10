@@ -46,22 +46,22 @@
   - [2.41. Is the `<datalist>` tag and `<select>` tag same?](#241-is-the-datalist-tag-and-select-tag-same)
   - [2.42. What is the difference between `<meter` tag and `<progress>` tag?](#242-what-is-the-difference-between-meter-tag-and-progress-tag)
 - [3. CSS](#3-css)
-  - [3.1. What is CSS, and why is it used?](#31-what-is-css-and-why-is-it-used)
-  - [3.2. What are the different ways to apply CSS to a webpage?](#32-what-are-the-different-ways-to-apply-css-to-a-webpage)
-  - [3.3. What are CSS Selectors?](#33-what-are-css-selectors)
-  - [3.4. What are the differences between class and id selectors in CSS?](#34-what-are-the-differences-between-class-and-id-selectors-in-css)
-  - [3.5. What is CSS box model?](#35-what-is-css-box-model)
-  - [3.6. What is the difference between margin and padding?](#36-what-is-the-difference-between-margin-and-padding)
-  - [3.7. What is the difference between display: none and visibility: hidden?](#37-what-is-the-difference-between-display-none-and-visibility-hidden)
-  - [3.8. What is Flexbox, what is grid, what is the difference between them?](#38-what-is-flexbox-what-is-grid-what-is-the-difference-between-them)
-  - [3.9. What are media queries in CSS?](#39-what-are-media-queries-in-css)
-  - [3.10. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?](#310-what-is-the-difference-between-static-relative-absolute-sticky-and-fixed-positioning-in-css)
-  - [3.11. When to use relative and absolute?](#311-when-to-use-relative-and-absolute)
-  - [3.12. What is the z-index in CSS?](#312-what-is-the-z-index-in-css)
-  - [3.13. How is CSS different from CSS3?](#313-how-is-css-different-from-css3)
-  - [3.14. what is tailwind css and bootstrap?](#314-what-is-tailwind-css-and-bootstrap)
-  - [3.15. what is the syntax for css?](#315-what-is-the-syntax-for-css)
-  - [3.16. What are the different ways to apply CSS to a webpage?](#316-what-are-the-different-ways-to-apply-css-to-a-webpage)
+  - [3.1. What is cascading in CSS?](#31-what-is-cascading-in-css)
+  - [3.2. What is CSS, and why is it used?](#32-what-is-css-and-why-is-it-used)
+  - [3.3. What are the different ways to apply CSS to a webpage?](#33-what-are-the-different-ways-to-apply-css-to-a-webpage)
+  - [3.4. What are CSS Selectors?](#34-what-are-css-selectors)
+  - [3.5. What are the differences between class and id selectors in CSS?](#35-what-are-the-differences-between-class-and-id-selectors-in-css)
+  - [3.6. What is CSS box model?](#36-what-is-css-box-model)
+  - [3.7. What is the difference between margin and padding?](#37-what-is-the-difference-between-margin-and-padding)
+  - [3.8. What is the difference between display: none and visibility: hidden?](#38-what-is-the-difference-between-display-none-and-visibility-hidden)
+  - [3.9. What is Flexbox, what is grid, what is the difference between them?](#39-what-is-flexbox-what-is-grid-what-is-the-difference-between-them)
+  - [3.10. What are media queries in CSS?](#310-what-are-media-queries-in-css)
+  - [3.11. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?](#311-what-is-the-difference-between-static-relative-absolute-sticky-and-fixed-positioning-in-css)
+  - [3.12. When to use relative and absolute?](#312-when-to-use-relative-and-absolute)
+  - [3.13. What is the z-index in CSS?](#313-what-is-the-z-index-in-css)
+  - [3.14. How is CSS different from CSS3?](#314-how-is-css-different-from-css3)
+  - [3.15. what is tailwind css and bootstrap?](#315-what-is-tailwind-css-and-bootstrap)
+  - [3.16. what is the syntax for css?](#316-what-is-the-syntax-for-css)
   - [3.17. what is cascading order and specificity?](#317-what-is-cascading-order-and-specificity)
   - [3.18. What is !important?](#318-what-is-important)
   - [3.19. When is it better to use logical properties vs physical properties?](#319-when-is-it-better-to-use-logical-properties-vs-physical-properties)
@@ -78,6 +78,12 @@
   - [3.30. How can we make our website responsive using CSS?](#330-how-can-we-make-our-website-responsive-using-css)
   - [3.31. What is @import in CSS?](#331-what-is-import-in-css)
   - [3.32. How @import makes extra HTTP requests?](#332-how-import-makes-extra-http-requests)
+  - [3.33. Tell us about the general CSS nomenclature.](#333-tell-us-about-the-general-css-nomenclature)
+  - [3.34. what is Sass and SCSS](#334-what-is-sass-and-scss)
+  - [3.35. Difference Between Sass and SCSS](#335-difference-between-sass-and-scss)
+  - [3.36. what is scripting language and why sass is called a scripting language](#336-what-is-scripting-language-and-why-sass-is-called-a-scripting-language)
+  - [3.37. what is preprocessor and why sass call css preprocessor](#337-what-is-preprocessor-and-why-sass-call-css-preprocessor)
+  - [3.38. How does Calc work?](#338-how-does-calc-work)
 - [4. JavaScript](#4-javascript)
 - [5. React.js](#5-reactjs)
 - [6. Node.js](#6-nodejs)
@@ -579,11 +585,20 @@ No. The `<datalist>` tag and `<select>` tag are different. In the case of `<sele
 
 # 3. CSS
 
-## 3.1. What is CSS, and why is it used?
+##  3.1. What is cascading in CSS?
+
+Cascading in CSS refers to the order in which styles are applied to HTML elements when multiple rules could apply. The browser decides which style “wins” based on a set of rules called cascade rules.
+
+The browser determines which CSS rule to apply using three main factors:
+- Importance based on cascading order (Inline styles, internal styles, external styles, and !important.)
+- specificity
+- Source Order (When cascading order and specificity are equal, the later rule in the stylesheet wins.)
+
+## 3.2. What is CSS, and why is it used?
 
 CSS stands for Cascading Style Sheets. It’s used to control the presentation and layout of HTML elements.
 
-## 3.2. What are the different ways to apply CSS to a webpage?
+## 3.3. What are the different ways to apply CSS to a webpage?
 
  There are three ways of inserting a style sheet:
 
@@ -619,7 +634,7 @@ h1{
 }
 ```
  
-## 3.3. What are CSS Selectors?
+## 3.4. What are CSS Selectors?
 
 A CSS selector selects the HMTL elements you want to style. We can divide CSS selectors into five categories:
 - Simple Selectors (element, id, class, universal, groping selector)
@@ -628,13 +643,13 @@ A CSS selector selects the HMTL elements you want to style. We can divide CSS se
 - Pseudo-elements Selectors (::before, ::after, ::first-letter, ::first-line etc)
 - Attribute selectors ([type=”text”], [target=”_blank”], [class^=”btn-”] etc)
 
-## 3.4. What are the differences between class and id selectors in CSS?
+## 3.5. What are the differences between class and id selectors in CSS?
 
 - Class selector (.classname): Used for multiple elements.
 
 - ID selector (#idname): Used for unique elements, applied to only one element.
 
-## 3.5. What is CSS box model?
+## 3.6. What is CSS box model?
 
 In CSS, the term box model is used when taking about design and layout. The CSS box model is essentially a box that warps around every HTML element. It consists of: content, padding, borders, and margins. The image below illustrates the box model:
 
@@ -687,7 +702,7 @@ When we apply box-sizing: border-box;, the total width and height include conten
 
 ![](./assets/images/html/box-model-example-2.png)
 
-## 3.6. What is the difference between margin and padding?
+## 3.7. What is the difference between margin and padding?
 
 - margin is the space of outside an element
 - Padding is the space inside an element and its border (if any)
@@ -698,18 +713,18 @@ When we apply box-sizing: border-box;, the total width and height include conten
 - Vertical margins can collapse when two margins meet.
 - Vertical padding never collapses.
 
-## 3.7. What is the difference between display: none and visibility: hidden?
+## 3.8. What is the difference between display: none and visibility: hidden?
 
 - Elements with “display: none” are not visible and do not take up any space on the page, means the element are completely remove in the layout
 - while elements with “visibility: hidden” are not visible but still take up space, means the element are still in the layout but invisible.
 
-## 3.8. What is Flexbox, what is grid, what is the difference between them? 
+## 3.9. What is Flexbox, what is grid, what is the difference between them? 
 
 - Flexbox (Flexible Box Layout) is a one-dimensional layout system in CSS. It helps arrange items in a row or a column
 
 - CSS Grid is a two-dimensional layout system that allows us to work with both rows and columns at the same time.
 
-## 3.9. What are media queries in CSS?
+## 3.10. What are media queries in CSS?
 
 Media queries are used to make websites responsive by applying CSS rules based on media types and media features.
 
@@ -726,7 +741,7 @@ Media queries are used to make websites responsive by applying CSS rules based o
   - resolution → Useful for detecting high-DPI (Retina) displays.
   - aspect-ratio → Based on width:height ratio.
 
-## 3.10. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?
+## 3.11. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?
 
 - static(default):
 All elements are static by default. They follow the normal document flow. Thats means top, left, right, bottom have no effect.
@@ -829,7 +844,7 @@ The position: fixed property allows an element to “fixed” to the viewport, n
 ```
 
 
-## 3.11. When to use relative and absolute?
+## 3.12. When to use relative and absolute?
 
 when you need to move freely a child element based on a parent element. 
 
@@ -846,7 +861,7 @@ when you need to move freely a child element based on a parent element.
 
 ```
 
-## 3.12. What is the z-index in CSS?
+## 3.13. What is the z-index in CSS?
 
 z-index controls the stacking order of elements based on their value:
 
@@ -881,7 +896,7 @@ z-index controls the stacking order of elements based on their value:
 
 ![](./assets/images/html/z-index.png)
 
-## 3.13. How is CSS different from CSS3?
+## 3.14. How is CSS different from CSS3?
 
 <table>
   <tr>
@@ -902,7 +917,7 @@ z-index controls the stacking order of elements based on their value:
   </tr>
 </table>
 
-## 3.14. what is tailwind css and bootstrap?
+## 3.15. what is tailwind css and bootstrap?
 - Tailwind CSS is a utility-first CSS framework. means instead of writing custom CSS, you apply pre-defined utility classes directly in HTML.
 
 ```html
@@ -926,11 +941,11 @@ Note: If you use Tailwind CSS with DaisyUI, you get the ready-made component pow
 </button>
 ```
 
-## 3.15. what is the syntax for css?
+## 3.16. what is the syntax for css?
 
 ![](./assets/images/html/css-syntax.png)
 
-## 3.16. What are the different ways to apply CSS to a webpage?
+
 
 There are three ways of inserting a style sheet:
 
@@ -1287,6 +1302,177 @@ Total 3 requests (1 + 1 + 1), loaded sequentially.
 
 Process:
 - Browser requests all 3 files at once, in parallel
+
+## 3.33. Tell us about the general CSS nomenclature.
+
+CSS nomenclature refers to the conventions and naming patterns used for CSS selectors, classes, and IDs to make styles readable, maintainable, and scalable.
+
+
+## 3.34. what is Sass and SCSS 
+
+- Sass (Syntactically Awesome Stylesheets) is a preprocessor scripting language that extends CSS with features like variables, conditions, functions, loops, nesting, mixins and modular imports, making stylesheets more maintainable, reusable, and scalable.
+
+- SCSS is a syntax of Sass that is fully compatible with CSS, using {} and ; like regular CSS, while retaining all Sass features.
+
+**SCSS features:** 
+- variables: 
+-  
+```css
+$primary-color: #3498db;
+$font-stack: Arial, sans-serif;
+
+body {
+  color: $primary-color;
+  font-family: $font-stack;
+}
+``` 
+- conditions
+
+```css
+$theme: dark;
+
+body {
+  @if $theme == light {
+    background-color: #ffffff;
+    color: #000000;
+  } @else if $theme == dark {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+  } @else {
+    background-color: #f0f0f0;
+    color: #333333;
+  }
+}
+```
+
+- functions
+
+```css
+@function divide($a, $b) {
+  @return $a / $b * 100%;
+}
+
+.box {
+  width: divide(1, 3); // 33.333%
+}
+```
+- loops
+
+```css
+@for $i from 1 through 3 {
+  .col-#{$i} {
+    width: 100% / 3 * $i;
+  }
+}
+```
+
+- nesting:
+
+```css
+nav ul li a {
+  color: #3498db; 
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #2a81c4; 
+}
+```
+
+with scss
+
+```css
+nav {
+  ul {
+    li {
+      a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+```
+- Mixins
+
+```css
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  @include flex-center;
+  height: 100vh;
+}
+```
+
+- modular imports
+
+```css
+// _variables.scss
+$primary-color: #3498db;
+
+// _mixins.scss
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// main.scss
+@import 'variables';
+@import 'mixins';
+
+.container {
+  @include flex-center;
+  color: $primary-color;
+}
+```
+
+**Popular CSS Preprocessors**
+- Sass/SCSS
+- less
+- Stylus
+
+## 3.35. Difference Between Sass and SCSS
+
+| Sass                                                       | SCSS                                                                     |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------ |
+| no {} or ;                                                 | CSS-like syntax with {} and ;                                            |
+| Not fully CSS-compatible                                   | Not fully CSS-compatible                                                 |
+| .sass                                                      | .scss                                                                    |
+| Cleaner for small projects or those who prefer indentation | More popular for larger projects because it’s easier to migrate from CSS |
+
+##  3.36. what is scripting language and why sass is called a scripting language 
+
+- interpreted language are interpreted pieces of code designed to run in the browser without compiling the entire program  
+  
+Note: Interpreting: Is a process where the JS engine executes the bytecode step-by-step using an interpreter. 
+
+- Sass adds programming-like features to CSS, such as Variables, Functions, Loops (@for, @each), Conditionals (@if, @else). These features let you write dynamic, reusable, and logical CSS, which is why Sass is considered a scripting language.
+
+## 3.37. what is preprocessor and why sass call css preprocessor
+
+- A preprocessor is a tool that takes one type of code, processes it, and outputs another type.
+
+- Sass is called a preprocessor because Sass itself is the preprocessor, and it comes with a compiler that converts .sass or .scss files into standard .css.
+
+
+##  3.38. How does Calc work?
+
+The calc() function in CSS allows you to perform calculations by (+ , -, / *) to determine property values dynamically. You can mix different units like px, %, em, rem, vh, vw, etc.
+
+```css
+.container {
+  width: calc(100% - 50px); /* container width is full width minus 50px */
+}
+```
 
 
 
