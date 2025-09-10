@@ -46,6 +46,38 @@
   - [2.41. Is the `<datalist>` tag and `<select>` tag same?](#241-is-the-datalist-tag-and-select-tag-same)
   - [2.42. What is the difference between `<meter` tag and `<progress>` tag?](#242-what-is-the-difference-between-meter-tag-and-progress-tag)
 - [3. CSS](#3-css)
+  - [3.1. What is CSS, and why is it used?](#31-what-is-css-and-why-is-it-used)
+  - [3.2. What are the different ways to apply CSS to a webpage?](#32-what-are-the-different-ways-to-apply-css-to-a-webpage)
+  - [3.3. What are CSS Selectors?](#33-what-are-css-selectors)
+  - [3.4. What are the differences between class and id selectors in CSS?](#34-what-are-the-differences-between-class-and-id-selectors-in-css)
+  - [3.5. What is CSS box model?](#35-what-is-css-box-model)
+  - [3.6. What is the difference between margin and padding?](#36-what-is-the-difference-between-margin-and-padding)
+  - [3.7. What is the difference between display: none and visibility: hidden?](#37-what-is-the-difference-between-display-none-and-visibility-hidden)
+  - [3.8. What is Flexbox, what is grid, what is the difference between them?](#38-what-is-flexbox-what-is-grid-what-is-the-difference-between-them)
+  - [3.9. What are media queries in CSS?](#39-what-are-media-queries-in-css)
+  - [3.10. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?](#310-what-is-the-difference-between-static-relative-absolute-sticky-and-fixed-positioning-in-css)
+  - [3.11. When to use relative and absolute?](#311-when-to-use-relative-and-absolute)
+  - [3.12. What is the z-index in CSS?](#312-what-is-the-z-index-in-css)
+  - [3.13. How is CSS different from CSS3?](#313-how-is-css-different-from-css3)
+  - [3.14. what is tailwind css and bootstrap?](#314-what-is-tailwind-css-and-bootstrap)
+  - [3.15. what is the syntax for css?](#315-what-is-the-syntax-for-css)
+  - [3.16. What are the different ways to apply CSS to a webpage?](#316-what-are-the-different-ways-to-apply-css-to-a-webpage)
+  - [3.17. what is cascading order and specificity?](#317-what-is-cascading-order-and-specificity)
+  - [3.18. What is !important?](#318-what-is-important)
+  - [3.19. When is it better to use logical properties vs physical properties?](#319-when-is-it-better-to-use-logical-properties-vs-physical-properties)
+  - [3.20. What are CSS custom properties (variables)?](#320-what-are-css-custom-properties-variables)
+  - [3.21. What’s the difference between a CSS reset and a normalizer](#321-whats-the-difference-between-a-css-reset-and-a-normalizer)
+  - [3.22. how many css color available?](#322-how-many-css-color-available)
+  - [3.23. What is the difference between CSS border and outline?](#323-what-is-the-difference-between-css-border-and-outline)
+  - [3.24. What are the different CSS link states?](#324-what-are-the-different-css-link-states)
+  - [3.25. What is CSS overflow?](#325-what-is-css-overflow)
+  - [3.26. What does the CSS float property do?](#326-what-does-the-css-float-property-do)
+  - [3.27. What are different display properties](#327-what-are-different-display-properties)
+  - [3.28. How can we center an element in CSS?](#328-how-can-we-center-an-element-in-css)
+  - [3.29. How can we add gradients in CSS?](#329-how-can-we-add-gradients-in-css)
+  - [3.30. How can we make our website responsive using CSS?](#330-how-can-we-make-our-website-responsive-using-css)
+  - [3.31. What is @import in CSS?](#331-what-is-import-in-css)
+  - [3.32. How @import makes extra HTTP requests?](#332-how-import-makes-extra-http-requests)
 - [4. JavaScript](#4-javascript)
 - [5. React.js](#5-reactjs)
 - [6. Node.js](#6-nodejs)
@@ -320,7 +352,8 @@ HTML5 is the latest version of HTML and includes new features:
 
 ## 2.21. What is the difference between “display: none” and “visibility: hidden” 
 
-Elements with “display: none” are not visible and do not take up any space on the page, while elements with “visibility: hidden” are not visible but still take up space.
+- Elements with “display: none” are not visible and do not take up any space on the page, means the element are completely remove in the layout
+- while elements with “visibility: hidden” are not visible but still take up space, means the element are still in the layout but invisible.
 
 ## 2.22. What is the difference between link tag `<link>` and anchor tag `<a>`?
 
@@ -545,6 +578,718 @@ No. The `<datalist>` tag and `<select>` tag are different. In the case of `<sele
 
 
 # 3. CSS
+
+## 3.1. What is CSS, and why is it used?
+
+CSS stands for Cascading Style Sheets. It’s used to control the presentation and layout of HTML elements.
+
+## 3.2. What are the different ways to apply CSS to a webpage?
+
+ There are three ways of inserting a style sheet:
+
+1. Inline CSS
+   
+```<h1 style="color: red;">Inline CSS</h1>```
+
+2. Internal CSS
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+```
+3. External CSS
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+```
+```css
+h1{
+    color: red;
+}
+```
+ 
+## 3.3. What are CSS Selectors?
+
+A CSS selector selects the HMTL elements you want to style. We can divide CSS selectors into five categories:
+- Simple Selectors (element, id, class, universal, groping selector)
+- Combinator Selectors (descendant & child selector)
+- Pseudo-class Selectors (:hover, :focus, :nth-child(), :first-child, :checked, :disabled, :visited, :active etc)
+- Pseudo-elements Selectors (::before, ::after, ::first-letter, ::first-line etc)
+- Attribute selectors ([type=”text”], [target=”_blank”], [class^=”btn-”] etc)
+
+## 3.4. What are the differences between class and id selectors in CSS?
+
+- Class selector (.classname): Used for multiple elements.
+
+- ID selector (#idname): Used for unique elements, applied to only one element.
+
+## 3.5. What is CSS box model?
+
+In CSS, the term box model is used when taking about design and layout. The CSS box model is essentially a box that warps around every HTML element. It consists of: content, padding, borders, and margins. The image below illustrates the box model:
+
+![](./assets/images/html/box-model.png)
+
+Example 1:
+
+
+**box-sizing: border-box** 
+By default, when we set width and height for an element, only the content inside the element gets that size. However, if we add padding and borders, they increase the total size of the element, often breaking layouts. 
+
+```css
+        .div1 {
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            margin-bottom: 10px;
+        }
+
+
+        .div2 {
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            padding: 25px;
+        }
+```
+![](./assets/images/html/box-model-example-1.png.png)
+
+When we apply box-sizing: border-box;, the total width and height include content, padding, and border.
+
+```css
+        .div1 {
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+
+        .div2 {
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+```
+
+![](./assets/images/html/box-model-example-2.png)
+
+## 3.6. What is the difference between margin and padding?
+
+- margin is the space of outside an element
+- Padding is the space inside an element and its border (if any)
+
+- margin Does not increase the element’s size.
+- padding Increases the total size of the element (content + padding + border) unless you use box-sizing: border-box.
+
+- Vertical margins can collapse when two margins meet.
+- Vertical padding never collapses.
+
+## 3.7. What is the difference between display: none and visibility: hidden?
+
+- Elements with “display: none” are not visible and do not take up any space on the page, means the element are completely remove in the layout
+- while elements with “visibility: hidden” are not visible but still take up space, means the element are still in the layout but invisible.
+
+## 3.8. What is Flexbox, what is grid, what is the difference between them? 
+
+- Flexbox (Flexible Box Layout) is a one-dimensional layout system in CSS. It helps arrange items in a row or a column
+
+- CSS Grid is a two-dimensional layout system that allows us to work with both rows and columns at the same time.
+
+## 3.9. What are media queries in CSS?
+
+Media queries are used to make websites responsive by applying CSS rules based on media types and media features.
+
+- media types: 
+  - all → Default, applies to all devices.
+  - screen → For screens (monitors, mobiles, tablets).
+  - print → For printers.
+  - speech → For screen readers.
+  
+- media features
+  - min-width (Mobile first) → Apply styles when the screen is at least this width. That means the styles will work on screens greater than or equal to this width.
+  - max-width (Desktop first)→ Apply styles when the screen is at most this width. That means the styles will work on screens less than or equal to this width.
+  - min-height / max-height → Similar, but based on height.
+  - resolution → Useful for detecting high-DPI (Retina) displays.
+  - aspect-ratio → Based on width:height ratio.
+
+## 3.10. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?
+
+- static(default):
+All elements are static by default. They follow the normal document flow. Thats means top, left, right, bottom have no effect.
+
+![](./assets/images/html/static.png)
+
+-  Relative:	
+When we apply position: relative to an element, it stays in its original position within the document flow but allows us to move it around using properties like top, right, bottom, and left. The element's original space is still reserved, meaning other elements won't shift to take its place.
+
+![](./assets/images/html/relative.png)
+
+```html
+    <div class="swim_container">
+        <div class="box boy"><img src="assets/boy.svg" alt=""></div>
+        <div class="box ring"><img src="assets/ring.svg" alt=""></div>
+        <div class="box water"><img src="assets/water.svg" alt=""></div>
+    </div>
+CSS:
+.box{
+    border: 1px solid red;
+    width: 200px;
+}
+.ring{
+    position: relative;
+    bottom: 30px;
+}
+```
+
+- absolute:	
+When we apply position: absolute to an element, it is completely removed from its original position in the document flow and is positioned relative to the nearest ancestor that has a non-static position (usually relative, absolute, or fixed).This allows us to move it around freely using properties like top, right, bottom, and left to base on her parent frame. However, since the element is no longer part of the normal flow, its original space is not reserved, causing other elements to shift and fill the gap.
+
+![](./assets/images/html/absolute.png)
+
+```css
+.box{
+    border: 1px solid red;
+    width: 200px;
+}
+.ring{
+    position: absolute;
+    top: 105px;
+}
+
+```
+
+-  Sticky:	
+The position: sticky property allows an element to “stick” to a specified position within its parent container when scrolling.
+
+![](./assets/images/html/sticky.gif)
+
+
+```css
+.container{
+    border: 10px solid goldenrod;
+    height: 500px;
+    width: 200px;
+}
+.container2{
+    border: 10px solid red;
+    height: 500px;
+    width: 200px;
+}
+.box{
+    border: 1px solid red;
+    width: 200px;
+}
+.ring{
+    position: sticky;
+    top: 20px;
+}
+```
+
+-  Fixed:	
+
+The position: fixed property allows an element to “fixed” to the viewport, not its parent container when scrolling
+
+
+![](./assets/images/html/fixed2.gif)
+
+
+```css
+.container{
+    border: 10px solid goldenrod;
+    height: 500px;
+    width: 200px;
+}
+.container2{
+    border: 10px solid red;
+    height: 500px;
+    width: 200px;
+}
+.box{
+    border: 1px solid red;
+    width: 200px;
+}
+.ring{
+    position: fixed;
+    top: 20px;
+}
+```
+
+
+## 3.11. When to use relative and absolute?
+
+when you need to move freely a child element based on a parent element. 
+
+```css
+.card {
+  position: relative; /* parent element acts as reference for child */
+}
+
+.badge {
+  position: absolute; /* child can be moved freely within parent */
+  top: 10px;
+  right: 10px; 
+}
+
+```
+
+## 3.12. What is the z-index in CSS?
+
+z-index controls the stacking order of elements based on their value:
+
+- A lower value means the element is stacked toward the bottom.
+
+- A higher value means the element is stacked on top of other elements.
+
+```html
+        <style>
+        .box{
+            position: absolute;
+        }
+        .boy{
+            z-index: 3;
+        }
+        .ring{
+            z-index: 2;
+            top: 45px;
+        }
+        .water{
+            z-index: 1;
+            top: 60px;
+        }
+        </style>
+
+    <div>
+        <div class="box boy"><img src="assets/boy.svg" alt=""></div>
+        <div class="box ring"><img src="assets/ring.svg" alt=""></div>
+        <div class="box water"><img src="assets/water.svg" alt=""></div>
+    </div>
+```
+
+![](./assets/images/html/z-index.png)
+
+## 3.13. How is CSS different from CSS3?
+
+<table>
+  <tr>
+    <th>CSS</th>
+    <th>CSS3</>
+  </tr>
+  <tr>
+    <td>It is non-modular, meaning all styling rules are part of a single standard. If we update one rule, it can affect the whole style.</td>
+    <td>It is modular, divided into separate modules like Flexbox, Grid, Transitions, Animations, and Media Queries. Each module can be used and updated independently without affecting the others.</td>
+  </tr>
+  <tr>
+    <td>Dont support Flexbox, Grid, Transitions, Transforms, Animations, and Media Queries, text-shadow, Multiple Backgrounds, Variables, box-model, gradient, border-radius, box-shadow</td>
+    <td>support Flexbox, Grid, Transitions, Transforms, Animations, and Media Queries, text-shadow, Multiple Backgrounds, Variables, box-model, gradient, border-radius, box-shadow</td>
+  </tr>
+  <tr>
+    <td>Only support basic selectors (element (p), class (.class), ID (#id), descendant (div p), child (div > p))</td>
+    <td>Supports advanced selectors: combinator selectors, pseudo-class selectors (:hover, :first-child), pseudo-element selectors (::before, ::after), attribute selectors ([type="text"]),</td>
+  </tr>
+</table>
+
+## 3.14. what is tailwind css and bootstrap?
+- Tailwind CSS is a utility-first CSS framework. means instead of writing custom CSS, you apply pre-defined utility classes directly in HTML.
+
+```html
+<button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+  Click Me
+</button>
+```
+- Bootstrap is a component-based CSS framework. means It provides pre-built components like buttons, navbars, modals, and forms.
+
+```html
+<button class="btn btn-primary">
+  Click Me
+</button>
+```
+Note: If you use Tailwind CSS with DaisyUI, you get the ready-made component power like Bootstrap while keeping the flexibility and customization of Tailwind.
+
+```html
+<!-- Tailwind + DaisyUi -->
+<button class="btn btn-primary text-red-500 rounded-2xl">
+  Click Me
+</button>
+```
+
+## 3.15. what is the syntax for css?
+
+![](./assets/images/html/css-syntax.png)
+
+## 3.16. What are the different ways to apply CSS to a webpage?
+
+There are three ways of inserting a style sheet:
+
+1. Inline CSS
+   
+```<h1 style="color: red;">Inline CSS</h1>```
+
+2. Internal CSS
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+```
+3. External CSS
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+```
+```css
+h1{
+    color: red;
+}
+```
+
+##  3.17. what is cascading order and specificity?
+
+**Cascading Order** 
+The cascading order determines which style sheet apply to the html based on priority.
+- 1st priority = Inline CSS
+- 2nd priority = Internal CSS
+- 3rd priority = External CSS
+
+**Specificity**
+If there are two or more CSS rules that point to the same element, the selector with the highest specificity will win, and its style declaration will be applied to that HTML element.
+
+- 1st priority = Inline CSS
+- 2nd priority = Id selector (#navbar, #hero-section)
+- 3rd priority = Classes and pseudo-classes selector (.test, :hover)
+- 4th priority = Elements and pseudo-elements selector (h1, ::before, ::after)
+
+## 3.18. What is !important?
+The !important rule is used to give highest priority to a CSS property, overriding normal specificity and cascade rules.Even if another rule has higher specificity, the one with !important will win (unless the other one also has !important).
+
+```css
+p {
+  color: blue !important;  /* this wins */
+}
+
+p {
+  color: red; /* this is ignored */
+}
+```
+
+## 3.19. When is it better to use logical properties vs physical properties?
+
+- Use physical properties for fixed layouts where direction is always the same.
+- Use logical properties(block-start, block-end, inline-start, inline-end etc) for internationalized layouts.
+
+##  3.20. What are CSS custom properties (variables)?
+
+A CSS variable (also called a custom property) is a reusable value that you define once and use multiple times in your CSS. CSS variables are usually defined inside the :root selector so that they are available globally.
+
+```css
+:root{
+    --main-color: blue:
+    --main-font: 20px; 
+}
+
+body{
+    background-color: var(--main-color);
+    font-size: var(--main-font);
+}
+```
+
+## 3.21. What’s the difference between a CSS reset and a normalizer
+
+- css reset removes all default browser styles
+- normalizer preserves useful default styles and makes them consistent across different browsers.
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```   
+
+```css
+/* Normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+```
+## 3.22. how many css color available?
+
+- Named color --> red
+- Hex color --> #ff0000; (red)
+- RGB color --> rgb(255, 0, 0); (red)
+- RGBA color --> rgba(255, 0, 0, 0.5); (red with alpha (opacity) value (0–1))
+- HSL color --> hsl(0, 100%, 50%); (red)
+- HSLA color --> hsla(0, 100%, 50%, 0.5); (red with alpha (opacity) value (0–1))
+
+## 3.23. What is the difference between CSS border and outline?
+
+- A border is a line drawn around the element’s
+- An outline is a line drawn around the border.
+
+## 3.24. What are the different CSS link states?
+
+- a:link – a normal, unvisited (underline and blue)
+- a:visited – a link the user has visited (underlined and purple)
+- a:hover – a link when the user mouse over it
+- a:active – a link the moment it is clicked (underlined and red)
+
+## 3.25. What is CSS overflow?
+
+The CSS overflow property controls what happens to content that is too big to fit into an area. The overflow property only works for block elements with a specified height. 
+
+The overflow property has the following values:
+
+- visible(default)
+
+![](./assets/images/html/visible.png)  
+
+- hidden
+  
+![](./assets/images/html/hidden.png)    
+
+- scroll 
+  
+![](./assets/images/html/scroll.png)  
+
+- auto (Similar to scroll, but it adds scroll bars only when necessary)
+
+![](./assets/images/html/auto.png)
+
+- overflow-x and overflow-y
+
+```css
+     div {
+            background-color: darkcyan;
+            width: 200px;
+            height: 65px;
+            border: 3px solid black;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+```
+
+![](./assets/images/html/overflow-xy.png)
+
+## 3.26. What does the CSS float property do?
+The float property in CSS is used to position an element to the left or right of its container
+
+## 3.27. What are different display properties
+- inline --> Element takes only as much width as content, stays in the same line.
+- block --> Element takes full width, starts on a new line.
+- inline-block --> Behaves like inline but can have width and height.
+- none --> Element is hidden and removed from the layout.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <style>
+        .inline {
+            display: inline;
+            background-color: lightblue;
+            padding: 5px;
+        }
+
+
+        .block {
+            display: block;
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+
+        .inline-block {
+            display: inline-block;
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 5px;
+        }
+
+
+        .none {
+            display: none;
+        }
+
+
+        .container {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="inline">This is inline</div>
+    <div class="inline">Another inline</div>
+
+
+    <span class="block">This is block</span>
+    <span class="block">Another block</span>
+
+
+    <div class="inline-block">This is inline-block</div>
+    <div class="inline-block">Another inline-block</div>
+
+
+    <div class="none">You can't see me (display: none)</div>
+</body>
+
+
+</html>
+```
+
+![](./assets/images/html/display-property.png)
+
+## 3.28. How can we center an element in CSS?
+**with justify-content and align-items**
+
+```css
+.flex-container{
+    background-color: dodgerblue;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-container > div{
+    background-color: whitesmoke;
+    width: 100px;
+    line-height: 75px;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+```
+
+```html
+    <div class="flex-container">
+        <div>1</div>
+    </div>
+```
+
+![](./assets/images/html/perfect-centaring-1.png)
+
+**with margin: auto;**
+
+```css
+.flex-container{
+    background-color: dodgerblue;
+    height: 600px;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.child{
+    background-color: whitesmoke;
+    width: 100px;
+    line-height: 75px; 
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin: auto; /*magic*/
+}
+```
+
+```html
+    <div class="flex-container">
+        <div class="child">1</div>
+    </div>
+```
+
+![](./assets/images/html/perfect-centaring-2.png)
+
+## 3.29. How can we add gradients in CSS?
+- Linear Gradient --> background: linear-gradient(direction, color1, color2.... );
+
+![](./assets/images/html/linear-gradient.jpeg)  
+
+- Radial Gradient --> background: radial-gradient(cirle, color1, color2.... ); 
+
+![](./assets/images/html/redial-gradient.jpg)  
+
+
+- Conic Gradient --> background: conic-gradient(color1, color1, color2.... ); 
+
+![](./assets/images/html/conic-gradient.png)  
+
+##  3.30. How can we make our website responsive using CSS?
+
+- to use relative units (%, em, rem, vh, vw) instead of fixed pixels.
+- to use Media Queries
+- to make Flexible Images & Videos
+- to Use flexbox and grid for flexible layouts
+- to follow Mobile-First Design
+
+## 3.31. What is @import in CSS?
+The @import rule is used to include external CSS files inside a CSS file.
+
+```css
+/* main.css */
+@import url("reset.css");   /* importing reset styles */
+@import url("theme.css");   /* importing theme styles */
+
+body {
+  font-family: Arial, sans-serif;
+}
+```
+
+**note:** @import is slower than `<link>` because it makes extra HTTP requests.
+
+## 3.32. How @import makes extra HTTP requests?
+
+```css
+/* main.css */
+@import url("reset.css");   /* importing reset styles */
+@import url("theme.css");   /* importing theme styles */
+```
+
+Process:
+- Step 1: Browser loads main.css.
+- Step 2: Sees @import, then requests reset.css.
+- Step 3: Sees another @import, then requests theme.css.
+
+Total 3 requests (1 + 1 + 1), loaded sequentially.
+
+```html
+<!-- Using <link> -->
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="main.css">
+```
+
+Process:
+- Browser requests all 3 files at once, in parallel
+
+
+
 # 4. JavaScript
 # 5. React.js
 # 6. Node.js
