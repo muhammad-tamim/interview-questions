@@ -82,7 +82,7 @@
   - [3.34. what is Sass and SCSS](#334-what-is-sass-and-scss)
   - [3.35. Difference Between Sass and SCSS](#335-difference-between-sass-and-scss)
   - [3.36. what is scripting language and why sass is called a scripting language](#336-what-is-scripting-language-and-why-sass-is-called-a-scripting-language)
-  - [3.37. what is preprocessor and why sass call css preprocessor](#337-what-is-preprocessor-and-why-sass-call-css-preprocessor)
+  - [3.37. what is preprocessor and why sass call preprocessor](#337-what-is-preprocessor-and-why-sass-call-preprocessor)
   - [3.38. How does Calc work?](#338-how-does-calc-work)
 - [4. JavaScript](#4-javascript)
 - [5. React.js](#5-reactjs)
@@ -704,14 +704,24 @@ When we apply box-sizing: border-box;, the total width and height include conten
 
 ## 3.7. What is the difference between margin and padding?
 
-- margin is the space of outside an element
-- Padding is the space inside an element and its border (if any)
-
-- margin Does not increase the element’s size.
-- padding Increases the total size of the element (content + padding + border) unless you use box-sizing: border-box.
-
-- Vertical margins can collapse when two margins meet.
-- Vertical padding never collapses.
+<table>
+  <tr>
+    <th>Margin</th>
+    <th>Padding</th>
+  </tr>
+  <tr>
+    <td>margin is the space of outside an element</td>
+    <td>Padding is the space inside an element and its border (if any)</td>
+  </tr>
+  <tr>
+    <td>margin Does not increase the element’s size.</td>
+    <td>padding Increases the total size of the element (content + padding + border) unless you use box-sizing: border-box.</td>
+  </tr>
+  <tr>
+    <td>Vertical margins can collapse when two margins meet.</td>
+    <td>Vertical padding never collapses.</td>
+  </tr>
+</table>
 
 ## 3.8. What is the difference between display: none and visibility: hidden?
 
@@ -946,45 +956,10 @@ Note: If you use Tailwind CSS with DaisyUI, you get the ready-made component pow
 ![](./assets/images/html/css-syntax.png)
 
 
-
-There are three ways of inserting a style sheet:
-
-1. Inline CSS
-   
-```<h1 style="color: red;">Inline CSS</h1>```
-
-2. Internal CSS
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1{
-            color: red;
-        }
-    </style>
-</head>
-```
-3. External CSS
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-```
-```css
-h1{
-    color: red;
-}
-```
-
 ##  3.17. what is cascading order and specificity?
 
 **Cascading Order** 
-The cascading order determines which style sheet apply to the html based on priority.
+The cascading order determines which style sheet apply to the html based on priority/importance.
 - 1st priority = Inline CSS
 - 2nd priority = Internal CSS
 - 3rd priority = External CSS
@@ -1067,7 +1042,7 @@ html {
 
 ## 3.24. What are the different CSS link states?
 
-- a:link – a normal, unvisited (underline and blue)
+- a:link – a normal link, unvisited (underline and blue)
 - a:visited – a link the user has visited (underlined and purple)
 - a:hover – a link when the user mouse over it
 - a:active – a link the moment it is clicked (underlined and red)
@@ -1316,7 +1291,7 @@ CSS nomenclature refers to the conventions and naming patterns used for CSS sele
 
 **SCSS features:** 
 - variables: 
--  
+  
 ```css
 $primary-color: #3498db;
 $font-stack: Arial, sans-serif;
@@ -1451,13 +1426,13 @@ $primary-color: #3498db;
 
 ##  3.36. what is scripting language and why sass is called a scripting language 
 
-- interpreted language are interpreted pieces of code designed to run in the browser without compiling the entire program  
+- scripting language are interpreted pieces of code designed to run in the browser without compiling the entire program  
   
 Note: Interpreting: Is a process where the JS engine executes the bytecode step-by-step using an interpreter. 
 
 - Sass adds programming-like features to CSS, such as Variables, Functions, Loops (@for, @each), Conditionals (@if, @else). These features let you write dynamic, reusable, and logical CSS, which is why Sass is considered a scripting language.
 
-## 3.37. what is preprocessor and why sass call css preprocessor
+## 3.37. what is preprocessor and why sass call preprocessor
 
 - A preprocessor is a tool that takes one type of code, processes it, and outputs another type.
 
