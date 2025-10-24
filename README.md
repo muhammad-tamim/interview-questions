@@ -86,6 +86,16 @@
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
 - [React.js](#reactjs)
+- [Firebase](#firebase)
+  - [What is Firebase](#what-is-firebase)
+  - [Is firebase frontend or backend](#is-firebase-frontend-or-backend)
+  - [What is firebase architecture](#what-is-firebase-architecture)
+  - [What is the features of firebase](#what-is-the-features-of-firebase)
+  - [Difference between firebase and Mongodb](#difference-between-firebase-and-mongodb)
+  - [Authentication vs Authorization](#authentication-vs-authorization)
+  - [Can you tell me names of 3 authentication methods](#can-you-tell-me-names-of-3-authentication-methods)
+  - [what is OAuth 2.0 and how it is worked](#what-is-oauth-20-and-how-it-is-worked)
+  - [How firebase authentication works](#how-firebase-authentication-works)
 - [Node.js](#nodejs)
 - [Express.js](#expressjs)
 - [MongoDB](#mongodb)
@@ -1448,7 +1458,22 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 
 # JavaScript
+
 # React.js
+
+# Firebase
+## What is Firebase
+## Is firebase frontend or backend
+## What is firebase architecture
+## What is the features of firebase 
+## Difference between firebase and Mongodb
+## Authentication vs Authorization
+- Authentication = Verify who you are
+- Authorization = check what can you do
+## Can you tell me names of 3 authentication methods 
+## what is OAuth 2.0 and how it is worked 
+## How firebase authentication works
+
 # Node.js
 # Express.js
 # MongoDB
