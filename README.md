@@ -1,106 +1,102 @@
 <h1 align="center">Interview Questions</h1>
 
-### 0.0.1. Table of contents
-- [1. Interpersonal](#1-interpersonal)
-- [2. HTML](#2-html)
-  - [2.1.  What is HTML?](#21--what-is-html)
-  - [2.2. Difference between element, attribute and tag?](#22-difference-between-element-attribute-and-tag)
-  - [2.3. What is a marquee in HTML?](#23-what-is-a-marquee-in-html)
-  - [2.4. How do you separate a section of text in HTML?](#24-how-do-you-separate-a-section-of-text-in-html)
-  - [2.5. Define the list types in HTML.](#25-define-the-list-types-in-html)
-  - [2.6. What is the difference between HTML and CSS?](#26-what-is-the-difference-between-html-and-css)
-  - [2.7. What are void/empty elements in HTML?](#27-what-are-voidempty-elements-in-html)
-  - [2.8. What are HTML Entities?](#28-what-are-html-entities)
-  - [2.9. How do you display a table in an HTML webpage?](#29-how-do-you-display-a-table-in-an-html-webpage)
-  - [2.10. Define an image map.](#210-define-an-image-map)
-  - [2.11. Why do we use a separated style sheet in HTML?](#211-why-do-we-use-a-separated-style-sheet-in-html)
-  - [2.12. What is semantic HTML?](#212-what-is-semantic-html)
-  - [2.13. What is SVG in HTML?](#213-what-is-svg-in-html)
-  - [2.14. How can you include SVG graphics directly in an HTML document?](#214-how-can-you-include-svg-graphics-directly-in-an-html-document)
-  - [2.15. What is the purpose of the `<canvas>` element in HTML5?](#215-what-is-the-purpose-of-the-canvas-element-in-html5)
-  - [2.16. What is the difference between SVG and Canvas HTML5 elements?](#216-what-is-the-difference-between-svg-and-canvas-html5-elements)
-  - [2.17. What is the difference between the ‘id' and ‘class' attributes of HTML elements?](#217-what-is-the-difference-between-the-id-and-class-attributes-of-html-elements)
-  - [2.18. What is the difference between HTML and HTML5?](#218-what-is-the-difference-between-html-and-html5)
-  - [2.19. What is the difference between an absolute and relative URL?](#219-what-is-the-difference-between-an-absolute-and-relative-url)
-  - [2.20. What are the different types of form input fields in HTML?](#220-what-are-the-different-types-of-form-input-fields-in-html)
-  - [2.21. What is the difference between “display: none” and “visibility: hidden”](#221-what-is-the-difference-between-display-none-and-visibility-hidden)
-  - [2.22. What is the difference between link tag `<link>` and anchor tag `<a>`?](#222-what-is-the-difference-between-link-tag-link-and-anchor-tag-a)
-  - [2.23. When to use scripts in the head and when to use scripts in the body?](#223-when-to-use-scripts-in-the-head-and-when-to-use-scripts-in-the-body)
-  - [2.24. What are inline and block elements in HTML5?](#224-what-are-inline-and-block-elements-in-html5)
-  - [2.25. What is the difference between `<figure>` tag and `<img>` tag?](#225-what-is-the-difference-between-figure-tag-and-img-tag)
-  - [2.26. How can we include audio or video in a webpage?](#226-how-can-we-include-audio-or-video-in-a-webpage)
-  - [2.27. What are Web Workers?](#227-what-are-web-workers)
-  - [2.28. What are the different approaches to making an image responsive?](#228-what-are-the-different-approaches-to-making-an-image-responsive)
-  - [2.29. What is the Geolocation API in HTML5?](#229-what-is-the-geolocation-api-in-html5)
-  - [2.30. what is action and method attribute in form](#230-what-is-action-and-method-attribute-in-form)
-  - [2.31. What is the purpose of the `<meta>` tag?](#231-what-is-the-purpose-of-the-meta-tag)
-  - [2.32. How do you create an email link in HTML?](#232-how-do-you-create-an-email-link-in-html)
-  - [2.33. How do you create a checkbox in HTML?](#233-how-do-you-create-a-checkbox-in-html)
-  - [2.34. How do you create a dropdown list in HTML?](#234-how-do-you-create-a-dropdown-list-in-html)
-  - [2.35. How do you create a multi-line text input in an HTML form?](#235-how-do-you-create-a-multi-line-text-input-in-an-html-form)
-  - [2.36. How do you create a hidden input field in an HTML form?](#236-how-do-you-create-a-hidden-input-field-in-an-html-form)
-  - [2.37. What is the purpose of the `<address>` tag in HTML?](#237-what-is-the-purpose-of-the-address-tag-in-html)
-  - [2.38. What are data attributes in HTML, and how are they used?](#238-what-are-data-attributes-in-html-and-how-are-they-used)
-  - [2.39. What is the purpose of the rel attribute in a `<link>` tag?](#239-what-is-the-purpose-of-the-rel-attribute-in-a-link-tag)
-  - [2.40. Describe HTML layout structure.](#240-describe-html-layout-structure)
-  - [2.41. Is the `<datalist>` tag and `<select>` tag same?](#241-is-the-datalist-tag-and-select-tag-same)
-  - [2.42. What is the difference between `<meter` tag and `<progress>` tag?](#242-what-is-the-difference-between-meter-tag-and-progress-tag)
-- [3. CSS](#3-css)
-  - [3.1. What is cascading in CSS?](#31-what-is-cascading-in-css)
-  - [3.2. What is CSS, and why is it used?](#32-what-is-css-and-why-is-it-used)
-  - [3.3. What are the different ways to apply CSS to a webpage?](#33-what-are-the-different-ways-to-apply-css-to-a-webpage)
-  - [3.4. What are CSS Selectors?](#34-what-are-css-selectors)
-  - [3.5. What are the differences between class and id selectors in CSS?](#35-what-are-the-differences-between-class-and-id-selectors-in-css)
-  - [3.6. What is CSS box model?](#36-what-is-css-box-model)
-  - [3.7. What is the difference between margin and padding?](#37-what-is-the-difference-between-margin-and-padding)
-  - [3.8. What is the difference between display: none and visibility: hidden?](#38-what-is-the-difference-between-display-none-and-visibility-hidden)
-  - [3.9. What is Flexbox, what is grid, what is the difference between them?](#39-what-is-flexbox-what-is-grid-what-is-the-difference-between-them)
-  - [3.10. What are media queries in CSS?](#310-what-are-media-queries-in-css)
-  - [3.11. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?](#311-what-is-the-difference-between-static-relative-absolute-sticky-and-fixed-positioning-in-css)
-  - [3.12. When to use relative and absolute?](#312-when-to-use-relative-and-absolute)
-  - [3.13. What is the z-index in CSS?](#313-what-is-the-z-index-in-css)
-  - [3.14. How is CSS different from CSS3?](#314-how-is-css-different-from-css3)
-  - [3.15. what is tailwind css and bootstrap?](#315-what-is-tailwind-css-and-bootstrap)
-  - [3.16. what is the syntax for css?](#316-what-is-the-syntax-for-css)
-  - [3.17. what is cascading order and specificity?](#317-what-is-cascading-order-and-specificity)
-  - [3.18. What is !important?](#318-what-is-important)
-  - [3.19. When is it better to use logical properties vs physical properties?](#319-when-is-it-better-to-use-logical-properties-vs-physical-properties)
-  - [3.20. What are CSS custom properties (variables)?](#320-what-are-css-custom-properties-variables)
-  - [3.21. What’s the difference between a CSS reset and a normalizer](#321-whats-the-difference-between-a-css-reset-and-a-normalizer)
-  - [3.22. how many css color available?](#322-how-many-css-color-available)
-  - [3.23. What is the difference between CSS border and outline?](#323-what-is-the-difference-between-css-border-and-outline)
-  - [3.24. What are the different CSS link states?](#324-what-are-the-different-css-link-states)
-  - [3.25. What is CSS overflow?](#325-what-is-css-overflow)
-  - [3.26. What does the CSS float property do?](#326-what-does-the-css-float-property-do)
-  - [3.27. What are different display properties](#327-what-are-different-display-properties)
-  - [3.28. How can we center an element in CSS?](#328-how-can-we-center-an-element-in-css)
-  - [3.29. How can we add gradients in CSS?](#329-how-can-we-add-gradients-in-css)
-  - [3.30. How can we make our website responsive using CSS?](#330-how-can-we-make-our-website-responsive-using-css)
-  - [3.31. What is @import in CSS?](#331-what-is-import-in-css)
-  - [3.32. How @import makes extra HTTP requests?](#332-how-import-makes-extra-http-requests)
-  - [3.33. Tell us about the general CSS nomenclature.](#333-tell-us-about-the-general-css-nomenclature)
-  - [3.34. what is Sass and SCSS](#334-what-is-sass-and-scss)
-  - [3.35. Difference Between Sass and SCSS](#335-difference-between-sass-and-scss)
-  - [3.36. what is scripting language and why sass is called a scripting language](#336-what-is-scripting-language-and-why-sass-is-called-a-scripting-language)
-  - [3.37. what is preprocessor and why sass call preprocessor](#337-what-is-preprocessor-and-why-sass-call-preprocessor)
-  - [3.38. How does Calc work?](#338-how-does-calc-work)
-- [4. JavaScript](#4-javascript)
-- [5. React.js](#5-reactjs)
-- [6. Node.js](#6-nodejs)
-- [7. Express.js](#7-expressjs)
-- [8. MongoDB](#8-mongodb)
-- [9. TypeScript](#9-typescript)
-- [10. Next.js](#10-nextjs)
+### Table of contents
+- [Interpersonal](#interpersonal)
+- [HTML](#html)
+  - [What is HTML?](#what-is-html)
+  - [Difference between element, attribute and tag?](#difference-between-element-attribute-and-tag)
+  - [What is a marquee in HTML?](#what-is-a-marquee-in-html)
+  - [How do you separate a section of text in HTML?](#how-do-you-separate-a-section-of-text-in-html)
+  - [Define the list types in HTML.](#define-the-list-types-in-html)
+  - [What is the difference between HTML and CSS?](#what-is-the-difference-between-html-and-css)
+  - [What are void/empty elements in HTML?](#what-are-voidempty-elements-in-html)
+  - [What are HTML Entities?](#what-are-html-entities)
+  - [How do you display a table in an HTML webpage?](#how-do-you-display-a-table-in-an-html-webpage)
+  - [Define an image map.](#define-an-image-map)
+  - [Why do we use a separated style sheet in HTML?](#why-do-we-use-a-separated-style-sheet-in-html)
+  - [What is semantic HTML?](#what-is-semantic-html)
+  - [What is SVG in HTML?](#what-is-svg-in-html)
+  - [How can you include SVG graphics directly in an HTML document?](#how-can-you-include-svg-graphics-directly-in-an-html-document)
+  - [What is the purpose of the `<canvas>` element in HTML5?](#what-is-the-purpose-of-the-canvas-element-in-html5)
+  - [What is the difference between SVG and Canvas HTML5 elements?](#what-is-the-difference-between-svg-and-canvas-html5-elements)
+  - [What is the difference between the ‘id' and ‘class' attributes of HTML elements?](#what-is-the-difference-between-the-id-and-class-attributes-of-html-elements)
+  - [What is the difference between HTML and HTML5?](#what-is-the-difference-between-html-and-html5)
+  - [What is the difference between an absolute and relative URL?](#what-is-the-difference-between-an-absolute-and-relative-url)
+  - [What are the different types of form input fields in HTML?](#what-are-the-different-types-of-form-input-fields-in-html)
+  - [What is the difference between “display: none” and “visibility: hidden”](#what-is-the-difference-between-display-none-and-visibility-hidden)
+  - [What is the difference between link tag `<link>` and anchor tag `<a>`?](#what-is-the-difference-between-link-tag-link-and-anchor-tag-a)
+  - [When to use scripts in the head and when to use scripts in the body?](#when-to-use-scripts-in-the-head-and-when-to-use-scripts-in-the-body)
+  - [What are inline and block elements in HTML5?](#what-are-inline-and-block-elements-in-html5)
+  - [What is the difference between `<figure>` tag and `<img>` tag?](#what-is-the-difference-between-figure-tag-and-img-tag)
+  - [How can we include audio or video in a webpage?](#how-can-we-include-audio-or-video-in-a-webpage)
+  - [What are Web Workers?](#what-are-web-workers)
+  - [What are the different approaches to making an image responsive?](#what-are-the-different-approaches-to-making-an-image-responsive)
+  - [What is the Geolocation API in HTML5?](#what-is-the-geolocation-api-in-html5)
+  - [what is action and method attribute in form](#what-is-action-and-method-attribute-in-form)
+  - [What is the purpose of the `<meta>` tag?](#what-is-the-purpose-of-the-meta-tag)
+  - [How do you create an email link in HTML?](#how-do-you-create-an-email-link-in-html)
+  - [How do you create a checkbox in HTML?](#how-do-you-create-a-checkbox-in-html)
+  - [How do you create a dropdown list in HTML?](#how-do-you-create-a-dropdown-list-in-html)
+  - [How do you create a multi-line text input in an HTML form?](#how-do-you-create-a-multi-line-text-input-in-an-html-form)
+  - [How do you create a hidden input field in an HTML form?](#how-do-you-create-a-hidden-input-field-in-an-html-form)
+  - [What is the purpose of the `<address>` tag in HTML?](#what-is-the-purpose-of-the-address-tag-in-html)
+  - [What are data attributes in HTML, and how are they used?](#what-are-data-attributes-in-html-and-how-are-they-used)
+  - [What is the purpose of the rel attribute in a `<link>` tag?](#what-is-the-purpose-of-the-rel-attribute-in-a-link-tag)
+  - [Describe HTML layout structure.](#describe-html-layout-structure)
+  - [Is the `<datalist>` tag and `<select>` tag same?](#is-the-datalist-tag-and-select-tag-same)
+  - [What is the difference between `<meter` tag and `<progress>` tag?](#what-is-the-difference-between-meter-tag-and-progress-tag)
+- [CSS](#css)
+  - [What is cascading in CSS?](#what-is-cascading-in-css)
+  - [What is CSS, and why is it used?](#what-is-css-and-why-is-it-used)
+  - [What are the different ways to apply CSS to a webpage?](#what-are-the-different-ways-to-apply-css-to-a-webpage)
+  - [What are CSS Selectors?](#what-are-css-selectors)
+  - [What are the differences between class and id selectors in CSS?](#what-are-the-differences-between-class-and-id-selectors-in-css)
+  - [What is CSS box model?](#what-is-css-box-model)
+  - [What is the difference between margin and padding?](#what-is-the-difference-between-margin-and-padding)
+  - [What is the difference between display: none and visibility: hidden?](#what-is-the-difference-between-display-none-and-visibility-hidden-1)
+  - [What is Flexbox, what is grid, what is the difference between them?](#what-is-flexbox-what-is-grid-what-is-the-difference-between-them)
+  - [What are media queries in CSS?](#what-are-media-queries-in-css)
+  - [What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?](#what-is-the-difference-between-static-relative-absolute-sticky-and-fixed-positioning-in-css)
+  - [When to use relative and absolute?](#when-to-use-relative-and-absolute)
+  - [What is the z-index in CSS?](#what-is-the-z-index-in-css)
+  - [How is CSS different from CSS3?](#how-is-css-different-from-css3)
+  - [what is tailwind css and bootstrap?](#what-is-tailwind-css-and-bootstrap)
+  - [what is the syntax for css?](#what-is-the-syntax-for-css)
+  - [what is cascading order and specificity?](#what-is-cascading-order-and-specificity)
+  - [What is !important?](#what-is-important)
+  - [When is it better to use logical properties vs physical properties?](#when-is-it-better-to-use-logical-properties-vs-physical-properties)
+  - [What are CSS custom properties (variables)?](#what-are-css-custom-properties-variables)
+  - [What’s the difference between a CSS reset and a normalizer](#whats-the-difference-between-a-css-reset-and-a-normalizer)
+  - [how many css color available?](#how-many-css-color-available)
+  - [What is the difference between CSS border and outline?](#what-is-the-difference-between-css-border-and-outline)
+  - [What are the different CSS link states?](#what-are-the-different-css-link-states)
+  - [What is CSS overflow?](#what-is-css-overflow)
+  - [What does the CSS float property do?](#what-does-the-css-float-property-do)
+  - [What are different display properties](#what-are-different-display-properties)
+  - [How can we center an element in CSS?](#how-can-we-center-an-element-in-css)
+  - [How can we add gradients in CSS?](#how-can-we-add-gradients-in-css)
+  - [How can we make our website responsive using CSS?](#how-can-we-make-our-website-responsive-using-css)
+  - [What is @import in CSS?](#what-is-import-in-css)
+  - [How @import makes extra HTTP requests?](#how-import-makes-extra-http-requests)
+  - [Tell us about the general CSS nomenclature.](#tell-us-about-the-general-css-nomenclature)
+  - [what is Sass and SCSS](#what-is-sass-and-scss)
+  - [Difference Between Sass and SCSS](#difference-between-sass-and-scss)
+  - [what is scripting language and why sass is called a scripting language](#what-is-scripting-language-and-why-sass-is-called-a-scripting-language)
+  - [what is preprocessor and why sass call preprocessor](#what-is-preprocessor-and-why-sass-call-preprocessor)
+  - [How does Calc work?](#how-does-calc-work)
+- [JavaScript](#javascript)
+- [React.js](#reactjs)
+- [Node.js](#nodejs)
+- [Express.js](#expressjs)
+- [MongoDB](#mongodb)
+- [TypeScript](#typescript)
+- [Next.js](#nextjs)
 
-# 1. Interpersonal
+# Interpersonal
 
+# HTML
 
-
-
-
-# 2. HTML
-
-## 2.1.  What is HTML? 
+##  What is HTML? 
 
 HTML is the standard markup language for creating web pages. Its element tells the browser how to display the content.  
 
@@ -161,11 +157,11 @@ This is a paragraph of text.
 *This text is italic*
 ```
 
-## 2.2. Difference between element, attribute and tag?
+## Difference between element, attribute and tag?
 
 ![diffrenceBetweenElementTagAttribute.png](assets/images/html/diffrenceBetweenElementTagAttribute.png)
 
-## 2.3. What is a marquee in HTML?
+## What is a marquee in HTML?
 
 The `<marquee>` tag in HTML creates a scrolling text or image effect within a webpage. It allows content to move horizontally or vertically across the screen.
 
@@ -175,11 +171,11 @@ The `<marquee>` tag in HTML creates a scrolling text or image effect within a we
 
 ![HTML-marquee-Tag-3.gif](./assets/images/html/HTML-marquee-Tag-3.gif)
 
-## 2.4. How do you separate a section of text in HTML?
+## How do you separate a section of text in HTML?
 
 `<br>` tag – It separates the line of text. It breaks the current line and shifts the flow of the text to a new line.
 
-## 2.5. Define the list types in HTML.
+## Define the list types in HTML.
 
 - Ordered list – displays elements in a numbered format.
 - Unordered list –  displays elements in a bulleted format.
@@ -195,11 +191,11 @@ The `<marquee>` tag in HTML creates a scrolling text or image effect within a we
 ```
 ![description-list-image](./assets/images/html/description-list-image.png)
 
-## 2.6. What is the difference between HTML and CSS?
+## What is the difference between HTML and CSS?
 
 HTML creates a web page's structure and content, while CSS defines its and styles and layout.
 
-## 2.7. What are void/empty elements in HTML?
+## What are void/empty elements in HTML?
 
 Void elements (also called empty elements) are HTML tags that do not have any content or closing tag.
 They are self-closing because they don’t wrap text or other elements inside. 
@@ -208,7 +204,7 @@ Common Void/Empty Elements:
 
 ```<img>, <input>, <link>, <br>, <hr>```
 
-## 2.8. What are HTML Entities?
+## What are HTML Entities?
 
 HTML Entities are special codes used to display characters in HTML that otherwise have a reserved meaning in HTML or are not easily typed on a keyboard.
 
@@ -216,7 +212,7 @@ HTML Entities are special codes used to display characters in HTML that otherwis
 
 - ```&copy - © ```
 
-## 2.9. How do you display a table in an HTML webpage?
+## How do you display a table in an HTML webpage?
 
 - `<table>`
 - `<th>`
@@ -226,7 +222,7 @@ HTML Entities are special codes used to display characters in HTML that otherwis
 - `<thead>`
 - `<tfooter>`
 
-## 2.10. Define an image map.
+## Define an image map.
 
 An image map is an image with clickable areas that link to different destinations.
 
@@ -246,11 +242,11 @@ An image map is an image with clickable areas that link to different destination
             
 ```
 
-## 2.11. Why do we use a separated style sheet in HTML?
+## Why do we use a separated style sheet in HTML?
 
 We can link a single style sheet to various web pages, which makes it easier to maintain and change the website's look.
 
-## 2.12. What is semantic HTML?
+## What is semantic HTML?
 
 Semantic elements = Elements with a meaning. 
 
@@ -260,14 +256,14 @@ HTML has several semantic elements that define the different parts of a web page
 <header>, <nav>, <main>, <footer>, <section> 
 ```
 
-## 2.13. What is SVG in HTML?
+## What is SVG in HTML?
 
 SVG stands for Scalable Vector Graphics.
 It is an XML-based format used to display 2D graphics, shapes, and text directly in HTML.
 
 Unlike normal images (.jpg, .png), SVG does not lose quality when zoomed or resized because it is based on mathematical vectors, not pixels.
 
-## 2.14. How can you include SVG graphics directly in an HTML document?
+## How can you include SVG graphics directly in an HTML document?
 
 ```html
 <svg width="100" height="100">
@@ -276,7 +272,7 @@ Unlike normal images (.jpg, .png), SVG does not lose quality when zoomed or resi
 ```
 ![svg-circle](./assets/images/html/svg-circle.png)
 
-## 2.15. What is the purpose of the `<canvas>` element in HTML5?
+## What is the purpose of the `<canvas>` element in HTML5?
 The `<canvas>` element provides a drawable region in the document that can be used to render graphics, such as charts, games, or other visual images, on the fly via scripting (usually JavaScript).
 
 ```<canvas id="myCanvas" width="200" height="100"></canvas>```
@@ -303,18 +299,18 @@ ctx.stroke();
 ![canvas](./assets/images/html/canvas.png)
 
 
-## 2.16. What is the difference between SVG and Canvas HTML5 elements?
+## What is the difference between SVG and Canvas HTML5 elements?
 - SVG is vector based and can't get  blurry when zoom. Mostly used for icons, logos, charts, diagrams.
 - Canvas is pixel based and can't get  blurry when zoom. Mostly used for games, image editing, real-time graphics, animations.
 
 - SVG can be modified using CSS and scripts.	
 - Canvas can only be modified using scripts.
 
-## 2.17. What is the difference between the ‘id' and ‘class' attributes of HTML elements?
+## What is the difference between the ‘id' and ‘class' attributes of HTML elements?
 
 The ‘id' attribute defines a unique identifier for an HTML element, while the ‘class' attribute defines a class for a group of elements. An ‘id' can only be used once on a page, while a ‘class' can be used multiple times.
 
-## 2.18. What is the difference between HTML and HTML5?
+## What is the difference between HTML and HTML5?
 HTML5 is the latest version of HTML and includes new features: 
 - Semantic Elements
 - Built-in Multimedia Support `<audio> and <video>`
@@ -325,7 +321,7 @@ HTML5 is the latest version of HTML and includes new features:
 - Geolocation API
 - Support local and session storage
 
-## 2.19. What is the difference between an absolute and relative URL?
+## What is the difference between an absolute and relative URL?
 - Absolute: 
   - A link
   - Always points to the same location, no matter where it is used. 
@@ -336,7 +332,7 @@ HTML5 is the latest version of HTML and includes new features:
   - it Depends on the location of the current page.
   - `<a href="images/photo.jpg">Photo</a>` or `./images` or `../images`
 
-## 2.20. What are the different types of form input fields in HTML?
+## What are the different types of form input fields in HTML?
 
 - text inputs: 
   - text
@@ -356,17 +352,17 @@ HTML5 is the latest version of HTML and includes new features:
   - button
   - reset
 
-## 2.21. What is the difference between “display: none” and “visibility: hidden” 
+## What is the difference between “display: none” and “visibility: hidden” 
 
 - Elements with “display: none” are not visible and do not take up any space on the page, means the element are completely remove in the layout
 - while elements with “visibility: hidden” are not visible but still take up space, means the element are still in the layout but invisible.
 
-## 2.22. What is the difference between link tag `<link>` and anchor tag `<a>`?
+## What is the difference between link tag `<link>` and anchor tag `<a>`?
 
 - link: Used for external resources (like CSS, icons, fonts,  or prefetch files) to the HTML document.
 - `<a>`: used for clickable links that navigate to another page, section, or resource.
 
-## 2.23. When to use scripts in the head and when to use scripts in the body?
+## When to use scripts in the head and when to use scripts in the body?
 - Head
   - For scripts that must run before page content loads, e.g., critical libraries or configuration scripts.
 - body 
@@ -378,14 +374,14 @@ HTML5 is the latest version of HTML and includes new features:
 - async → Script executes as soon as it loads, may run before HTML parsing is finished.
 ```<script src="script.js" async></script>```
 
-## 2.24. What are inline and block elements in HTML5?
+## What are inline and block elements in HTML5?
 
 - Inline elements-Do not start on a new line, take only the width of their content.
 ```<span>, <a>, <img>, <input>```
 - Block elements → Start on a new line, take full width available.
 ```<div>, <p>, <h1>–<h6>, <section>, <ul>, <ol>, <li>```
 
-##  2.25. What is the difference between `<figure>` tag and `<img>` tag?
+##  What is the difference between `<figure>` tag and `<img>` tag?
 - `<img>` tag: used to embed just image
 - `<figure>` tag: A semantic tag used to embed image with it's content
 
@@ -396,7 +392,7 @@ HTML5 is the latest version of HTML and includes new features:
 </figure>
 ```
 
-##  2.26. How can we include audio or video in a webpage?
+##  How can we include audio or video in a webpage?
 ```html 
 <audio controls>
   <source src="audio.mp3" type="audio/mpeg">
@@ -409,7 +405,7 @@ HTML5 is the latest version of HTML and includes new features:
 </video>
 ```
 
-## 2.27. What are Web Workers?
+## What are Web Workers?
 Web Workers allow you to run JavaScript in the background, separate from the main thread, so your webpage remains responsive while performing heavy tasks.
 
 ```js
@@ -428,7 +424,7 @@ onmessage = function(e) {
 }
 ```
 
-## 2.28. What are the different approaches to making an image responsive?
+## What are the different approaches to making an image responsive?
 - Using the `<picture>` element (for different screen sizes)
 ```html 
 <picture>
@@ -439,7 +435,7 @@ onmessage = function(e) {
 ```
 - Using CSS width: 100% and height: auto
 
-## 2.29. What is the Geolocation API in HTML5?
+## What is the Geolocation API in HTML5?
 The Geolocation API allows a webpage to get the geographical location (latitude and longitude) of the user’s device.
 
 ```html
@@ -464,7 +460,7 @@ function showPosition(position) {
 
 ```
 
-## 2.30. what is action and method attribute in form
+## what is action and method attribute in form
 
 - action → Specifies the URL or path where the form data will be sent when submitted.
 ```html
@@ -473,16 +469,16 @@ function showPosition(position) {
 - method → Specifies how the form data will be sent to the server. It has two values:
   - GET → Data is sent in the URL (query string). Best for search forms.
   - POST → Data is sent in the request body. Best for sensitive or large data.
-## 2.31. What is the purpose of the `<meta>` tag?
+## What is the purpose of the `<meta>` tag?
 
 The `<meta>` tag provides metadata about the HTML document, such as character set, author, description, and keywords. It's placed within the `<head>` section.
 
-## 2.32. How do you create an email link in HTML?
+## How do you create an email link in HTML?
 
 To create a link that opens the user's default email client with a new message, use the mailto: scheme:
 ```<a href="mailto:example@example.com">Send Email</a>```
 
-## 2.33. How do you create a checkbox in HTML?
+## How do you create a checkbox in HTML?
 
 ```html
 <input type="checkbox" id="vehicle1" value="Bike">
@@ -494,7 +490,7 @@ To create a link that opens the user's default email client with a new message, 
 ```
 ![checkbox](./assets/images/html/checkbox.png)
 
-## 2.34. How do you create a dropdown list in HTML?
+## How do you create a dropdown list in HTML?
 
 ```html
 <label for="fruits">Choose a fruit:</label>
@@ -506,14 +502,14 @@ To create a link that opens the user's default email client with a new message, 
 ```
 ![dropdown](./assets/images/html/dropdown.png)
 
-## 2.35. How do you create a multi-line text input in an HTML form?
+## How do you create a multi-line text input in an HTML form?
 ```<textarea name="message" rows="4" cols="50"></textarea>```
 
-##  2.36. How do you create a hidden input field in an HTML form?
+##  How do you create a hidden input field in an HTML form?
 Use `<input type="hidden">` to create a hidden input field that stores data without displaying it to the user:
 ```<input type="hidden" name="userID" value="12345">```
 
-## 2.37. What is the purpose of the `<address>` tag in HTML?
+## What is the purpose of the `<address>` tag in HTML?
 The `<address>` tag is used to define contact information for the author or owner of a document or article.
 
 ```html
@@ -527,7 +523,7 @@ The `<address>` tag is used to define contact information for the author or owne
 ```
 
 
-## 2.38. What are data attributes in HTML, and how are they used?
+## What are data attributes in HTML, and how are they used?
 Data attributes in HTML are custom attributes that start with data- and allow you to store extra information on HTML elements. They are often used to embed custom data that can be accessed via JavaScript.
 
 ```html 
@@ -540,12 +536,12 @@ console.log(div.dataset.userId); // Outputs: 12345
 console.log(div.dataset.role);   // Outputs: admin
 ```
 
-## 2.39. What is the purpose of the rel attribute in a `<link>` tag?
+## What is the purpose of the rel attribute in a `<link>` tag?
 
 The rel attribute specifies the relationship between the current document and the linked resource. For example, rel="stylesheet" indicates that the linked file is a CSS stylesheet.
 ```<link rel="stylesheet" href="styles.css">```
 
-## 2.40. Describe HTML layout structure.
+## Describe HTML layout structure.
 ```html
 <!DOCTYPE html>
 <html>
@@ -566,12 +562,12 @@ The rel attribute specifies the relationship between the current document and th
 - The ```<title>``` element specifies a title for the HTML page which is shown the browser’s page’s tab.  
 - The ```<body>``` element defines the document’s body and is a container for all the visible contents.
 
-## 2.41. Is the `<datalist>` tag and `<select>` tag same?
+## Is the `<datalist>` tag and `<select>` tag same?
 No. The `<datalist>` tag and `<select>` tag are different. In the case of `<select>` tag a user will have to choose from a list of options, whereas `<datalist>` when used along with the `<input>` tag provides a suggestion that the user selects one of the options given or can enter some entirely different value.
 
 ![data-list](./assets/images/html/datalist.png)
 
-## 2.42. What is the difference between `<meter` tag and `<progress>` tag?
+## What is the difference between `<meter` tag and `<progress>` tag?
 
 - `<meter>` → Shows a measurement within a known range (like temperature, disk usage, rating).
   
@@ -583,9 +579,9 @@ No. The `<datalist>` tag and `<select>` tag are different. In the case of `<sele
 
 
 
-# 3. CSS
+# CSS
 
-##  3.1. What is cascading in CSS?
+##  What is cascading in CSS?
 
 Cascading in CSS refers to the order in which styles are applied to HTML elements when multiple rules could apply. The browser decides which style “wins” based on a set of rules called cascade rules.
 
@@ -594,11 +590,11 @@ The browser determines which CSS rule to apply using three main factors:
 - specificity
 - Source Order (When cascading order and specificity are equal, the later rule in the stylesheet wins.)
 
-## 3.2. What is CSS, and why is it used?
+## What is CSS, and why is it used?
 
 CSS stands for Cascading Style Sheets. It’s used to control the presentation and layout of HTML elements.
 
-## 3.3. What are the different ways to apply CSS to a webpage?
+## What are the different ways to apply CSS to a webpage?
 
  There are three ways of inserting a style sheet:
 
@@ -634,7 +630,7 @@ h1{
 }
 ```
  
-## 3.4. What are CSS Selectors?
+## What are CSS Selectors?
 
 A CSS selector selects the HMTL elements you want to style. We can divide CSS selectors into five categories:
 - Simple Selectors (element, id, class, universal, groping selector)
@@ -643,13 +639,13 @@ A CSS selector selects the HMTL elements you want to style. We can divide CSS se
 - Pseudo-elements Selectors (::before, ::after, ::first-letter, ::first-line etc)
 - Attribute selectors ([type=”text”], [target=”_blank”], [class^=”btn-”] etc)
 
-## 3.5. What are the differences between class and id selectors in CSS?
+## What are the differences between class and id selectors in CSS?
 
 - Class selector (.classname): Used for multiple elements.
 
 - ID selector (#idname): Used for unique elements, applied to only one element.
 
-## 3.6. What is CSS box model?
+## What is CSS box model?
 
 In CSS, the term box model is used when taking about design and layout. The CSS box model is essentially a box that warps around every HTML element. It consists of: content, padding, borders, and margins. The image below illustrates the box model:
 
@@ -702,7 +698,7 @@ When we apply box-sizing: border-box;, the total width and height include conten
 
 ![](./assets/images/html/box-model-example-2.png)
 
-## 3.7. What is the difference between margin and padding?
+## What is the difference between margin and padding?
 
 <table>
   <tr>
@@ -723,18 +719,18 @@ When we apply box-sizing: border-box;, the total width and height include conten
   </tr>
 </table>
 
-## 3.8. What is the difference between display: none and visibility: hidden?
+## What is the difference between display: none and visibility: hidden?
 
 - Elements with “display: none” are not visible and do not take up any space on the page, means the element are completely remove in the layout
 - while elements with “visibility: hidden” are not visible but still take up space, means the element are still in the layout but invisible.
 
-## 3.9. What is Flexbox, what is grid, what is the difference between them? 
+## What is Flexbox, what is grid, what is the difference between them? 
 
 - Flexbox (Flexible Box Layout) is a one-dimensional layout system in CSS. It helps arrange items in a row or a column
 
 - CSS Grid is a two-dimensional layout system that allows us to work with both rows and columns at the same time.
 
-## 3.10. What are media queries in CSS?
+## What are media queries in CSS?
 
 Media queries are used to make websites responsive by applying CSS rules based on media types and media features.
 
@@ -751,7 +747,7 @@ Media queries are used to make websites responsive by applying CSS rules based o
   - resolution → Useful for detecting high-DPI (Retina) displays.
   - aspect-ratio → Based on width:height ratio.
 
-## 3.11. What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?
+## What is the difference between static, relative, absolute, sticky and fixed positioning in CSS?
 
 - static(default):
 All elements are static by default. They follow the normal document flow. Thats means top, left, right, bottom have no effect.
@@ -854,7 +850,7 @@ The position: fixed property allows an element to “fixed” to the viewport, n
 ```
 
 
-## 3.12. When to use relative and absolute?
+## When to use relative and absolute?
 
 when you need to move freely a child element based on a parent element. 
 
@@ -871,7 +867,7 @@ when you need to move freely a child element based on a parent element.
 
 ```
 
-## 3.13. What is the z-index in CSS?
+## What is the z-index in CSS?
 
 z-index controls the stacking order of elements based on their value:
 
@@ -906,7 +902,7 @@ z-index controls the stacking order of elements based on their value:
 
 ![](./assets/images/html/z-index.png)
 
-## 3.14. How is CSS different from CSS3?
+## How is CSS different from CSS3?
 
 <table>
   <tr>
@@ -927,7 +923,7 @@ z-index controls the stacking order of elements based on their value:
   </tr>
 </table>
 
-## 3.15. what is tailwind css and bootstrap?
+## what is tailwind css and bootstrap?
 - Tailwind CSS is a utility-first CSS framework. means instead of writing custom CSS, you apply pre-defined utility classes directly in HTML.
 
 ```html
@@ -951,12 +947,12 @@ Note: If you use Tailwind CSS with DaisyUI, you get the ready-made component pow
 </button>
 ```
 
-## 3.16. what is the syntax for css?
+## what is the syntax for css?
 
 ![](./assets/images/html/css-syntax.png)
 
 
-##  3.17. what is cascading order and specificity?
+##  what is cascading order and specificity?
 
 **Cascading Order** 
 The cascading order determines which style sheet apply to the html based on priority/importance.
@@ -972,7 +968,7 @@ If there are two or more CSS rules that point to the same element, the selector 
 - 3rd priority = Classes and pseudo-classes selector (.test, :hover)
 - 4th priority = Elements and pseudo-elements selector (h1, ::before, ::after)
 
-## 3.18. What is !important?
+## What is !important?
 The !important rule is used to give highest priority to a CSS property, overriding normal specificity and cascade rules.Even if another rule has higher specificity, the one with !important will win (unless the other one also has !important).
 
 ```css
@@ -985,12 +981,12 @@ p {
 }
 ```
 
-## 3.19. When is it better to use logical properties vs physical properties?
+## When is it better to use logical properties vs physical properties?
 
 - Use physical properties for fixed layouts where direction is always the same.
 - Use logical properties(block-start, block-end, inline-start, inline-end etc) for internationalized layouts.
 
-##  3.20. What are CSS custom properties (variables)?
+##  What are CSS custom properties (variables)?
 
 A CSS variable (also called a custom property) is a reusable value that you define once and use multiple times in your CSS. CSS variables are usually defined inside the :root selector so that they are available globally.
 
@@ -1006,7 +1002,7 @@ body{
 }
 ```
 
-## 3.21. What’s the difference between a CSS reset and a normalizer
+## What’s the difference between a CSS reset and a normalizer
 
 - css reset removes all default browser styles
 - normalizer preserves useful default styles and makes them consistent across different browsers.
@@ -1026,7 +1022,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 ```
-## 3.22. how many css color available?
+## how many css color available?
 
 - Named color --> red
 - Hex color --> #ff0000; (red)
@@ -1035,19 +1031,19 @@ html {
 - HSL color --> hsl(0, 100%, 50%); (red)
 - HSLA color --> hsla(0, 100%, 50%, 0.5); (red with alpha (opacity) value (0–1))
 
-## 3.23. What is the difference between CSS border and outline?
+## What is the difference between CSS border and outline?
 
 - A border is a line drawn around the element’s
 - An outline is a line drawn around the border.
 
-## 3.24. What are the different CSS link states?
+## What are the different CSS link states?
 
 - a:link – a normal link, unvisited (underline and blue)
 - a:visited – a link the user has visited (underlined and purple)
 - a:hover – a link when the user mouse over it
 - a:active – a link the moment it is clicked (underlined and red)
 
-## 3.25. What is CSS overflow?
+## What is CSS overflow?
 
 The CSS overflow property controls what happens to content that is too big to fit into an area. The overflow property only works for block elements with a specified height. 
 
@@ -1084,10 +1080,10 @@ The overflow property has the following values:
 
 ![](./assets/images/html/overflow-xy.png)
 
-## 3.26. What does the CSS float property do?
+## What does the CSS float property do?
 The float property in CSS is used to position an element to the left or right of its container
 
-## 3.27. What are different display properties
+## What are different display properties
 - inline --> Element takes only as much width as content, stays in the same line.
 - block --> Element takes full width, starts on a new line.
 - inline-block --> Behaves like inline but can have width and height.
@@ -1158,7 +1154,7 @@ The float property in CSS is used to position an element to the left or right of
 
 ![](./assets/images/html/display-property.png)
 
-## 3.28. How can we center an element in CSS?
+## How can we center an element in CSS?
 **with justify-content and align-items**
 
 ```css
@@ -1216,7 +1212,7 @@ The float property in CSS is used to position an element to the left or right of
 
 ![](./assets/images/html/perfect-centaring-2.png)
 
-## 3.29. How can we add gradients in CSS?
+## How can we add gradients in CSS?
 - Linear Gradient --> background: linear-gradient(direction, color1, color2.... );
 
 ![](./assets/images/html/linear-gradient.jpeg)  
@@ -1230,7 +1226,7 @@ The float property in CSS is used to position an element to the left or right of
 
 ![](./assets/images/html/conic-gradient.png)  
 
-##  3.30. How can we make our website responsive using CSS?
+##  How can we make our website responsive using CSS?
 
 - to use relative units (%, em, rem, vh, vw) instead of fixed pixels.
 - to use Media Queries
@@ -1238,7 +1234,7 @@ The float property in CSS is used to position an element to the left or right of
 - to Use flexbox and grid for flexible layouts
 - to follow Mobile-First Design
 
-## 3.31. What is @import in CSS?
+## What is @import in CSS?
 The @import rule is used to include external CSS files inside a CSS file.
 
 ```css
@@ -1253,7 +1249,7 @@ body {
 
 **note:** @import is slower than `<link>` because it makes extra HTTP requests.
 
-## 3.32. How @import makes extra HTTP requests?
+## How @import makes extra HTTP requests?
 
 ```css
 /* main.css */
@@ -1278,12 +1274,12 @@ Total 3 requests (1 + 1 + 1), loaded sequentially.
 Process:
 - Browser requests all 3 files at once, in parallel
 
-## 3.33. Tell us about the general CSS nomenclature.
+## Tell us about the general CSS nomenclature.
 
 CSS nomenclature refers to the conventions and naming patterns used for CSS selectors, classes, and IDs to make styles readable, maintainable, and scalable.
 
 
-## 3.34. what is Sass and SCSS 
+## what is Sass and SCSS 
 
 - Sass (Syntactically Awesome Stylesheets) is a preprocessor scripting language that extends CSS with features like variables, conditions, functions, loops, nesting, mixins and modular imports, making stylesheets more maintainable, reusable, and scalable.
 
@@ -1415,7 +1411,7 @@ $primary-color: #3498db;
 - less
 - Stylus
 
-## 3.35. Difference Between Sass and SCSS
+## Difference Between Sass and SCSS
 
 | Sass                                                       | SCSS                                                                     |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -1424,7 +1420,7 @@ $primary-color: #3498db;
 | .sass                                                      | .scss                                                                    |
 | Cleaner for small projects or those who prefer indentation | More popular for larger projects because it’s easier to migrate from CSS |
 
-##  3.36. what is scripting language and why sass is called a scripting language 
+##  what is scripting language and why sass is called a scripting language 
 
 - scripting language are interpreted pieces of code designed to run in the browser without compiling the entire program  
   
@@ -1432,14 +1428,14 @@ Note: Interpreting: Is a process where the JS engine executes the bytecode step-
 
 - Sass adds programming-like features to CSS, such as Variables, Functions, Loops (@for, @each), Conditionals (@if, @else). These features let you write dynamic, reusable, and logical CSS, which is why Sass is considered a scripting language.
 
-## 3.37. what is preprocessor and why sass call preprocessor
+## what is preprocessor and why sass call preprocessor
 
 - A preprocessor is a tool that takes one type of code, processes it, and outputs another type.
 
 - Sass is called a preprocessor because Sass itself is the preprocessor, and it comes with a compiler that converts .sass or .scss files into standard .css.
 
 
-##  3.38. How does Calc work?
+##  How does Calc work?
 
 The calc() function in CSS allows you to perform calculations by (+ , -, / *) to determine property values dynamically. You can mix different units like px, %, em, rem, vh, vw, etc.
 
@@ -1451,10 +1447,10 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 
 
-# 4. JavaScript
-# 5. React.js
-# 6. Node.js
-# 7. Express.js
-# 8. MongoDB
-# 9. TypeScript
-# 10. Next.js
+# JavaScript
+# React.js
+# Node.js
+# Express.js
+# MongoDB
+# TypeScript
+# Next.js
