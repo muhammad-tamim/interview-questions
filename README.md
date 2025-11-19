@@ -87,6 +87,8 @@
 - [JavaScript](#javascript)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
+  - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
+  - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1522,6 +1524,90 @@ Here, toString is not defined inside obj. But it still works because JavaScript 
 Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
 
 obj --> Object.prototype -- null
+
+## What is JSON and its common operations: 
+
+JSON stands for JavaScript Object Notation — it's a lightweight data format used to store and exchange data, especially between in server and clients. JSON uses JavaScript object syntax but here keys are always in double quotes ("").
+
+Common operations in json:
+
+- JSON.stringify() — Convert JS → JSON string:
+
+```js
+const user = {
+    name: "Tamim",
+    age: 21
+};
+
+const jsonString = JSON.stringify(user);
+console.log(jsonString); // {"name":"Tamim","age":21}
+console.log(typeof jsonString); // string 
+```
+
+- JSON.parse() — Convert JSON string → JS object:
+
+```js
+const jsonStr = '{"name":"Tamim","age":21}';
+
+const obj = JSON.parse(jsonStr);
+console.log(obj); // { name: 'Tamim', age: 21 }
+console.log(typeof obj); // object 
+```
+
+## What is the difference between splice()/slice() and split()/join():
+
+- splice(start, deleteCount, ...items) –modifies the original array by adding, removing, or replacing elements and returns removed items:
+
+```js
+let arr = ["I", "study", "JavaScript"];
+// from index 1 remove 1 element
+console.log(arr.splice(1, 1));  // [ 'study' ]
+console.log(arr); // [ 'I', 'JavaScript' ]
+
+
+let arr2 = ["I", "study", "JavaScript", "right", "now"];
+// remove first 3 elements and replace them with another
+console.log(arr2.splice(0, 3, "Let's", "dance")); // [ 'I', 'study', 'JavaScript' ]
+console.log(arr2) // ["Let's", "dance", "right", "now"]
+
+
+let arr3 = ["I", "study", "JavaScript"];
+// from index 2, delete 0, then insert "complex" and "language"
+console.log(arr3.splice(2, 0, "complex", "language")); // []
+console.log(arr3); // [ 'I', 'study', 'complex', 'language', 'JavaScript' ]
+
+
+let arr4 = [1, 2, 5];
+// from index -1 (one step from the end) delete 0 elements, then insert 3 and 4
+console.log(arr4.splice(-1, 0, 3, 4));[]
+console.log(arr4); // [ 1, 2, 3, 4, 5 ]
+```
+
+- slice(start, end) — Extracts a portion of an array/string and returns a new array.
+
+```js
+// String
+const str = "JavaScript";
+console.log(str.slice(0, 4));    // "Java"
+console.log(str.slice(-6));      // "Script"
+
+// Array
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(1, 4));    // [2, 3, 4]
+console.log(arr.slice(-2));      // [4, 5]
+```
+- split() and join()-
+split() → converts a string to array
+join() → converts an array to string
+
+```js
+const str = "Hello";
+const split = str.split("")
+console.log(split) // [ 'H', 'e', 'l', 'l', 'o' ]
+
+const join = split.join("");
+console.log(join) // Hello
+```
 
 # React.js
 
