@@ -89,6 +89,7 @@
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
   - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
+  - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1608,6 +1609,18 @@ console.log(split) // [ 'H', 'e', 'l', 'l', 'o' ]
 const join = split.join("");
 console.log(join) // Hello
 ```
+
+## How do you compare Object and Map:
+
+| Feature                           | Object                      | Map                             |
+| --------------------------------- | --------------------------- | ------------------------------- |
+| Key Types                         | Strings or Symbols          | Any type (string, object, etc.) |
+| Size                              | Must calculate manually     | `map.size` property             |
+| Iteration                         | `for..in` / `Object.keys()` | `map.forEach()` or `for..of`    |
+| Performance (frequent add/remove) | Slower for many keys        | Faster                          |
+| Prototype inheritance             | Yes                         | No                              |
+| Order                             | Not guaranteed              | Guaranteed                      |
+
 
 # React.js
 
