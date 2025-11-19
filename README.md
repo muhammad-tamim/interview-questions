@@ -90,6 +90,7 @@
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
   - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
   - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
+  - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1621,6 +1622,28 @@ console.log(join) // Hello
 | Prototype inheritance             | Yes                         | No                              |
 | Order                             | Not guaranteed              | Guaranteed                      |
 
+
+## What is the difference between == and === operators:
+
+- Loose equality (==, !=): Performs type conversion if the types differ, comparing values after converting them to a common type.
+- Strict equality (===, !==): Compares both value and type, without any type conversion.
+
+```js
+0 == false            // true      (loose equality, type coercion)
+0 === false           // false     (strict equality, different types)
+1 == "1"              // true      (string converted to number)
+1 === "1"             // false     (different types)
+null == undefined     // true      (special case)
+null === undefined    // false     (different types)
+'0' == false          // true      ('0' is converted to 0)
+'0' === false         // false     (different types)
+NaN == NaN            // false     (NaN is never equal to itself)
+NaN === NaN           // false
+[] == []              // false     (different array objects)
+[] === []             // false
+{} == {}              // false     (different object references)
+{} === {}             // false
+```
 
 # React.js
 
