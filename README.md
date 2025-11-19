@@ -86,6 +86,7 @@
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
+  - [What is a prototype Chain:](#what-is-a-prototype-chain)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1506,6 +1507,21 @@ class Person {
 
 const p1 = new Person("Tamim", 20);
 ```
+
+## What is a prototype Chain: 
+
+The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
+
+```js
+const obj = { name: "Tamim" };
+
+console.log(obj.toString); 
+```
+Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
+
+Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
+
+obj --> Object.prototype -- null
 
 # React.js
 
