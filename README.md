@@ -85,6 +85,7 @@
   - [what is preprocessor and why sass call preprocessor](#what-is-preprocessor-and-why-sass-call-preprocessor)
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
+  - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1458,6 +1459,53 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 
 # JavaScript
+## What are the possible ways to create objects in JavaScript? 
+
+- Using Object Literal: 
+
+```js
+const person = {
+  name: "Tamim",
+  age: 20
+};
+```
+
+- Using the new Object() Constructor: 
+
+Constructor: A built-in function like Object that creates basic objects.
+
+```js
+const person = new Object();
+person.name = "Tamim";
+person.age = 20;
+```
+
+- For OOP: 
+  - Using Constructor Functions(Before ES6): 
+
+Constructor Function: A user-defined function (like Person) that used to create custom objects in OOP.
+
+```js 
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = new Person("Tamim", 20);
+```
+
+- Using ES6 Classes: 
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const p1 = new Person("Tamim", 20);
+```
 
 # React.js
 
