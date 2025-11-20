@@ -94,6 +94,7 @@
   - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
   - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function)
   - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
+  - [What is TDZ:](#what-is-tdz)
 
 # Interpersonal
 
@@ -1798,3 +1799,7 @@ console.log(curryUnaryFunction(1)(2)(3)); // Output: 6
 | Hoisted and initialized with undefined.                                      | Hoisted but not initialized(TDZ)                                                       | Hoisted but not initialized (TDZ)                                                      |
 | Can be re-declared and re-assign in the same scope.                          | Cannot be re-declared but can re-assign in the same scope.                             | Cannot be re-declared but can re-assign in the same scope.                             |
 | Declaring var globally adds it to window object as a property (in browsers). | Declaring const doesn't globally adds it to window object as a property (in browsers). | Declaring const doesn't globally adds it to window object as a property (in browsers). |
+
+## What is TDZ: 
+
+TDZ (Temporal Dead Zone) is the period between variable declaration and initialization, during this time accessing that variable results in an ReferenceError.
