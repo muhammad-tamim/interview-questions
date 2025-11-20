@@ -92,6 +92,7 @@
   - [what is Event Delegation? (important):](#what-is-event-delegation-important)
   - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
   - [What is Web API? (important):](#what-is-web-api-important)
+  - [What is Event loop? (important):](#what-is-event-loop-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1822,7 +1823,18 @@ A Web API is a feature provided by the browser (or the environment like Node.js)
 - Work with the DOM
 - Use browser storage (localStorage, sessionStorage)
 
+## What is Event loop? (important):
+The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
 
+so, After parsing, compiling, and interpreting the code, the JavaScript engine uses these key parts:
+- Call Stack - Executes synchronous code line by line with FIFO structure.
+- Web APIs – Handle asynchronous operations features (timers, fetch, events) and send completed callbacks to the callback Queues.
+- Callback Queue - all pending async task added here by event loop
+- Event Loop - Constantly checks, is the call stack empty? If yes → it moves asynchronous tasks from callback queue into the call stack to be run
+
+Note: 
+- Web APIs provide the environment and methods for async operations.
+- Event Loop manages the execution order, ensuring async tasks run without blocking the single-threaded call stack.
 
 ## What are the possible ways to create objects in JavaScript? 
 
