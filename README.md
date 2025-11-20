@@ -97,6 +97,7 @@
   - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
   - [What is TDZ:](#what-is-tdz)
   - [what is Hoisting:](#what-is-hoisting)
+  - [What is scope in javascript:](#what-is-scope-in-javascript)
 
 # Interpersonal
 
@@ -1878,3 +1879,77 @@ TDZ (Temporal Dead Zone) is the period between variable declaration and initiali
 
 ## what is Hoisting:
 Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their scope during parsing and compiling the AST to Bytecode phase, before the code is executed by interpreter or JIT compiler(if applicable).
+
+## What is scope in javascript:
+Scope determines where variables can be accessed in your code. There are 4 types of scopes in js:
+
+1. Block Scope:  
+   
+A variable has block scope if it is declared with let or const inside a curly braces { }. It is accessible only within that block.
+
+```js
+if (true) {
+    let age = 25;
+    const city = "Dhaka";
+    console.log(age, city); // 25 Dhaka
+}
+
+console.log(age);  //  ReferenceError: age is not defined
+console.log(city); //  ReferenceError: city is not defined
+```
+
+2. Function Scope:  
+   
+A variable has function scope if it is declared inside a function. It is accessible only within that function.
+
+```js
+function sayHello() {
+    let message = "Hello";
+    console.log(message); // Hello    
+}
+
+sayHello();
+console.log(message); // ReferenceError: message is not defined
+```
+
+3. Global Scope:  
+   
+A variable has global scope if it is declared outside of any function or block. It is accessible from anywhere in the code.
+
+```js
+let name = "Tamim";
+
+function greet() {
+    console.log("Hi", name); // Hi Tamim
+}
+
+greet();
+console.log(name); // Tamim
+```
+
+4. Lexical Scope:  
+    
+Lexical scope means You can access variables from outer to inner scope, but not from inner to outer scope.
+
+```js
+let outerVar = "I am outer";
+
+function outerFunction() {
+    let innerVar1 = "I am inner1";
+
+    function innerFunction() {
+        let innerVar2 = "I am inner2"
+        console.log(outerVar); // I am outer
+        console.log(innerVar1); // I am inner1
+    }
+
+    innerFunction();
+
+    console.log(innerVar2) // ReferenceError: innerVar2 is not defined
+}
+
+outerFunction();
+
+console.log(innerVar1); // ReferenceError: innerVar1 is not defined
+```
+
