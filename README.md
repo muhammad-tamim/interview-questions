@@ -98,6 +98,7 @@
   - [What is TDZ:](#what-is-tdz)
   - [what is Hoisting:](#what-is-hoisting)
   - [What is scope in javascript:](#what-is-scope-in-javascript)
+    - [what is Scope Chain](#what-is-scope-chain)
 
 # Interpersonal
 
@@ -1953,3 +1954,34 @@ outerFunction();
 console.log(innerVar1); // ReferenceError: innerVar1 is not defined
 ```
 
+### what is Scope Chain
+Scope chain is a process of JS to find a variable. When you try to access a variable:
+- JavaScript first looks in the current scope
+- If not found, it goes to the outer scope
+- This continues until it reaches the global scope
+
+```js
+let num = 1;
+
+function outerFunction() {
+    let num = 2;
+
+    function innerFunction() {
+        let num = 3;
+
+        console.log(num);
+    }
+
+    innerFunction();
+    console.log(num);
+}
+
+outerFunction();
+console.log(num);
+
+/*
+3
+2
+1
+*/
+```
