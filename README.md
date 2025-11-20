@@ -85,38 +85,40 @@
   - [what is preprocessor and why sass call preprocessor](#what-is-preprocessor-and-why-sass-call-preprocessor)
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
-  - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
-  - [What is callback function? (important):](#what-is-callback-function-important)
-  - [What is callback hell? (important):](#what-is-callback-hell-important)
-  - [What is Event Flow? (important):](#what-is-event-flow-important)
-  - [what is Event Delegation? (important):](#what-is-event-delegation-important)
-  - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
-  - [What is Web API? (important):](#what-is-web-api-important)
-  - [What is a prototype Chain in js? (important):](#what-is-a-prototype-chain-in-js-important)
-  - [What is Event loop? (important):](#what-is-event-loop-important)
-  - [What is Call Stack:](#what-is-call-stack)
-  - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
-  - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
-  - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
-  - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
-  - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
-  - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
-  - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function-what-is-iife)
-  - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
-  - [What is TDZ:](#what-is-tdz)
-  - [what is Hoisting:](#what-is-hoisting)
-  - [What is scope in javascript:](#what-is-scope-in-javascript)
+  - [Theory Based Questions:](#theory-based-questions)
+    - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
+    - [What is callback function? (important):](#what-is-callback-function-important)
+    - [What is callback hell? (important):](#what-is-callback-hell-important)
+    - [What is Event Flow? (important):](#what-is-event-flow-important)
+    - [what is Event Delegation? (important):](#what-is-event-delegation-important)
+    - [What is Web API? (important):](#what-is-web-api-important)
+    - [What is a prototype Chain in js? (important):](#what-is-a-prototype-chain-in-js-important)
+    - [What is Event loop? (important):](#what-is-event-loop-important)
+    - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
+    - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
-  - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
-  - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
-  - [What is Promise:](#what-is-promise)
-  - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
-  - [Difference between null and undefined:](#difference-between-null-and-undefined)
-  - [What is event:](#what-is-event)
-  - [What are main ES6 features:](#what-are-main-es6-features)
-  - [What is Programming Paradigm:](#what-is-programming-paradigm)
-  - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
-  - [What is babel:](#what-is-babel)
+    - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
+    - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
+    - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
+    - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
+    - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
+    - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function-what-is-iife)
+    - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
+    - [What is TDZ:](#what-is-tdz)
+    - [what is Hoisting:](#what-is-hoisting)
+    - [What is scope in javascript:](#what-is-scope-in-javascript)
+    - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
+    - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
+    - [What is Promise:](#what-is-promise)
+    - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
+    - [Difference between null and undefined:](#difference-between-null-and-undefined)
+    - [What is event:](#what-is-event)
+    - [What are main ES6 features:](#what-are-main-es6-features)
+    - [What is Programming Paradigm:](#what-is-programming-paradigm)
+    - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
+    - [What is babel:](#what-is-babel)
+  - [Coding Exercise:](#coding-exercise)
+  - [problem solving:](#problem-solving)
 
 # Interpersonal
 
@@ -1474,7 +1476,10 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 
 # JavaScript
-## What are closure in JavaScript? (important):
+
+## Theory Based Questions:
+
+### What are closure in JavaScript? (important):
 A closure is a function technique where an inner function remembers the variables from its outer function, even after that outer function has finished executing. This means JavaScript keeps a reference to the outer variables in memory so the inner function can remember and access them.
 
 ```js
@@ -1534,7 +1539,7 @@ console.log(double(5)); // 10
 console.log(triple(5)); // 15
 ```
 
-## What is callback function? (important):
+### What is callback function? (important):
 A callback function is a function that is passed as an argument to another function to be executed later by that function.
 
 Note: Any function that receives a function as a parameter or returns a function is called a *higher-order function.
@@ -1584,7 +1589,7 @@ numbers.forEach(element => {
 });
 ```
 
-## What is callback hell? (important):
+### What is callback hell? (important):
 When we write too many nested callback functions that are hard to read and maintain, it is called callback hell.
 
 ```js
@@ -1613,7 +1618,7 @@ first(1, function (res1) {
 });
 ```
 
-## What is Event Flow? (important): 
+### What is Event Flow? (important): 
 
 Event Flow describes how events travel through the DOM tree. When you click, type, or interact with a webpage, the event doesn’t go straight to the target element. It flows through three phases:
 
@@ -1622,7 +1627,7 @@ Event Flow describes how events travel through the DOM tree. When you click, typ
 3.  Event Bubbling: Event bubbling is the last phase of Event Flow, where the event travels back up (propagates) from the target element to the document after reaching the target.
 
 
-## what is Event Delegation? (important):
+### what is Event Delegation? (important):
 
 Event Delegation is a technique where you attach a single event listener to a parent element instead of attaching listeners to each child element individually. It works because of event bubbling
 
@@ -1715,7 +1720,48 @@ Now, suppose we click the second `<li>`: so the event flow is:
 Here, we check e.target.tagName === "LI" because the event runs for every child under the `<ul>`. If we have other elements inside the `<ul>` (like `<span>` or `<p>`), the event would still trigger when clicking them, but we only want to respond to `<li>` elements.
 
 
-## What is the use of useCapture parameter and stopPropagation method:
+
+
+
+### What is Web API? (important):
+
+A Web API is a feature provided by the browser (or the environment like Node.js) that JavaScript can use to do extra things that is not part of the js itself, like:
+
+- setTimeout(), setInterval()
+- Make HTTP requests (fetch)
+- Handle user events (clicks, input)
+- Work with the DOM
+- Use browser storage (localStorage, sessionStorage)
+
+### What is a prototype Chain in js? (important): 
+
+The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
+
+```js
+const obj = { name: "Tamim" };
+
+console.log(obj.toString); 
+```
+Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
+
+Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
+
+obj --> Object.prototype -- null
+
+### What is Event loop? (important):
+The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
+
+so, After parsing, compiling, and interpreting the code, the JavaScript engine uses these key parts:
+- Call Stack - Executes synchronous code line by line with FIFO structure.
+- Web APIs – Handle asynchronous operations features (timers, fetch, events) and send completed callbacks to the callback Queues.
+- Callback Queue - all pending async task added here by event loop
+- Event Loop - Constantly checks, is the call stack empty? If yes → it moves asynchronous tasks from callback queue into the call stack to be run
+
+Note: 
+- Web APIs provide the environment and methods for async operations.
+- Event Loop manages the execution order, ensuring async tasks run without blocking the single-threaded call stack.
+
+### What is the use of useCapture parameter and stopPropagation method:
 
 The useCapture parameter controls when the event handler runs:
 - If useCapture is set to true, the event listener runs during the event capturing phase 
@@ -1817,100 +1863,46 @@ stopPropagation() method used to stop the event from bubbling up.
 </html>
 ```
 
-
-## What is Web API? (important):
-
-A Web API is a feature provided by the browser (or the environment like Node.js) that JavaScript can use to do extra things that is not part of the js itself, like:
-
-- setTimeout(), setInterval()
-- Make HTTP requests (fetch)
-- Handle user events (clicks, input)
-- Work with the DOM
-- Use browser storage (localStorage, sessionStorage)
-
-## What is a prototype Chain in js? (important): 
-
-The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
-
-```js
-const obj = { name: "Tamim" };
-
-console.log(obj.toString); 
-```
-Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
-
-Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
-
-obj --> Object.prototype -- null
-
-## What is Event loop? (important):
-The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
-
-so, After parsing, compiling, and interpreting the code, the JavaScript engine uses these key parts:
-- Call Stack - Executes synchronous code line by line with FIFO structure.
-- Web APIs – Handle asynchronous operations features (timers, fetch, events) and send completed callbacks to the callback Queues.
-- Callback Queue - all pending async task added here by event loop
-- Event Loop - Constantly checks, is the call stack empty? If yes → it moves asynchronous tasks from callback queue into the call stack to be run
-
-Note: 
-- Web APIs provide the environment and methods for async operations.
-- Event Loop manages the execution order, ensuring async tasks run without blocking the single-threaded call stack.
-
-## What is Call Stack:
+### What is Call Stack:
 A call stack is a data structure that keeps track of function calls in a Last-In-First-Out (LIFO) manner. When a recursive function calls itself, here's what happens:
 
 - new frame creation and stack growing
 - Base case reached and stack un-winding
 
-## What are the possible ways to create objects in JavaScript? 
-
-- Using Object Literal: 
-
-```js
-const person = {
-  name: "Tamim",
-  age: 20
-};
-```
-
-- Using the new Object() Constructor: 
-
-Constructor: A built-in function like Object that creates basic objects.
+### what is Scope Chain
+Scope chain is a process of JS to find a variable. When you try to access a variable:
+- JavaScript first looks in the current scope
+- If not found, it goes to the outer scope
+- This continues until it reaches the global scope
 
 ```js
-const person = new Object();
-person.name = "Tamim";
-person.age = 20;
-```
+let num = 1;
 
-- For OOP: 
-  - Using Constructor Functions(Before ES6): 
+function outerFunction() {
+    let num = 2;
 
-Constructor Function: A user-defined function (like Person) that used to create custom objects in OOP.
+    function innerFunction() {
+        let num = 3;
 
-```js 
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
+        console.log(num);
+    }
+
+    innerFunction();
+    console.log(num);
 }
 
-const p1 = new Person("Tamim", 20);
+outerFunction();
+console.log(num);
+
+/*
+3
+2
+1
+*/
 ```
 
-- Using ES6 Classes: 
 
-```js
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-}
-
-const p1 = new Person("Tamim", 20);
-```
-
-## What is JSON and its common operations: 
+### What is JSON and its common operations: 
 
 JSON stands for JavaScript Object Notation — it's a lightweight data format used to store and exchange data, especially between in server and clients. JSON uses JavaScript object syntax but here keys are always in double quotes ("").
 
@@ -1939,7 +1931,7 @@ console.log(obj); // { name: 'Tamim', age: 21 }
 console.log(typeof obj); // object 
 ```
 
-## What is the difference between splice()/slice() and split()/join():
+### What is the difference between splice()/slice() and split()/join():
 
 - splice(start, deleteCount, ...items) –modifies the original array by adding, removing, or replacing elements and returns removed items:
 
@@ -1994,7 +1986,7 @@ const join = split.join("");
 console.log(join) // Hello
 ```
 
-## How do you compare Object and Map:
+### How do you compare Object and Map:
 
 | Feature                           | Object                      | Map                             |
 | --------------------------------- | --------------------------- | ------------------------------- |
@@ -2006,7 +1998,7 @@ console.log(join) // Hello
 | Order                             | Not guaranteed              | Guaranteed                      |
 
 
-## What is the difference between == and === operators:
+### What is the difference between == and === operators:
 
 - Loose equality (==, !=): Performs type conversion if the types differ, comparing values after converting them to a common type.
 - Strict equality (===, !==): Compares both value and type, without any type conversion.
@@ -2028,7 +2020,7 @@ NaN === NaN           // false
 {} === {}             // false
 ```
 
-## Difference Between Arrow Function and Normal Function:
+### Difference Between Arrow Function and Normal Function:
 
 | Normal Function                                                              | Arrow Function                                                                |
 | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
@@ -2162,7 +2154,7 @@ const squaredArrow = numbers.map(num => num * num);
 console.log(squaredArrow); // [1, 4, 9, 16, 25]
 ```
 
-## What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE
+### What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE
 
 - first class function: A language has first-class functions when functions are treated like values — you can store them in variables, pass them as arguments, and return them from other functions.
 - first order function: A function that does NOT take any function as an argument and does NOT return a function.
@@ -2217,7 +2209,7 @@ console.log(message); // ReferenceError: message is not defined
 ```
 
 
-## What is the difference between let and var and const:
+### What is the difference between let and var and const:
 
 | var                                                                          | let                                                                                    | const                                                                                  |
 | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -2226,14 +2218,14 @@ console.log(message); // ReferenceError: message is not defined
 | Can be re-declared and re-assign in the same scope.                          | Cannot be re-declared but can re-assign in the same scope.                             | Cannot be re-declared but can re-assign in the same scope.                             |
 | Declaring var globally adds it to window object as a property (in browsers). | Declaring const doesn't globally adds it to window object as a property (in browsers). | Declaring const doesn't globally adds it to window object as a property (in browsers). |
 
-## What is TDZ: 
+### What is TDZ: 
 
 TDZ (Temporal Dead Zone) is the period between variable declaration and initialization, during this time accessing that variable results in an ReferenceError.
 
-## what is Hoisting:
+### what is Hoisting:
 Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their scope during parsing and compiling the AST to Bytecode phase, before the code is executed by interpreter or JIT compiler(if applicable).
 
-## What is scope in javascript:
+### What is scope in javascript:
 Scope determines where variables can be accessed in your code. There are 4 types of scopes in js:
 
 1. Block Scope:  
@@ -2306,43 +2298,11 @@ outerFunction();
 console.log(innerVar1); // ReferenceError: innerVar1 is not defined
 ```
 
-### what is Scope Chain
-Scope chain is a process of JS to find a variable. When you try to access a variable:
-- JavaScript first looks in the current scope
-- If not found, it goes to the outer scope
-- This continues until it reaches the global scope
-
-```js
-let num = 1;
-
-function outerFunction() {
-    let num = 2;
-
-    function innerFunction() {
-        let num = 3;
-
-        console.log(num);
-    }
-
-    innerFunction();
-    console.log(num);
-}
-
-outerFunction();
-console.log(num);
-
-/*
-3
-2
-1
-*/
-```
-
-## What is Cookie, Local Storage and Session Storage:
+### What is Cookie, Local Storage and Session Storage:
 - A cookie is a small piece of data (4KB) stored by the browser, which can be used on the client side or sent to the server with HTTP requests to remember information like User Authentication, Login/Logout, tracking data.
 - local and session storage is a Web Storage API feature that allows you to store up to 10MB (5 + 5) key-value pairs in the browser.
 
-## Difference between Cookie, local storage and session storage:
+### Difference between Cookie, local storage and session storage:
 
 | Feature        | Cookie                                   | Local Storage         | Session Storage     |
 | -------------- | ---------------------------------------- | --------------------- | ------------------- |
@@ -2350,7 +2310,7 @@ console.log(num);
 | Expiry         | Manually configured using Expires option | Forever until deleted | until tab is closed |
 | Sent to server | Yes                                      | No                    | No                  |
 
-## What is Promise:
+### What is Promise:
 A Promise is a JavaScript object that represents the eventual completion or failure of an asynchronous operation.
 
 Promise States:
@@ -2358,7 +2318,7 @@ Promise States:
 - Resolved(fulfilled) - if the operation is successful
 - Rejected - if the operation fails
 
-## What is a strict mode in javascript:
+### What is a strict mode in javascript:
 In JavaScript, "use strict"; is a directive that activates Strict Mode, which is a stricter set of rules for executing your JavaScript code.
 
 It helps you to:
@@ -2407,7 +2367,7 @@ function sum(a, a) { // SyntaxError: Duplicate parameter name not allowed in thi
 console.log(sum(2, 2));
 ```
 
-## Difference between null and undefined:
+### Difference between null and undefined:
 
 | Feature     | `null`              | `undefined`           |
 | ----------- | ------------------- | --------------------- |
@@ -2415,10 +2375,10 @@ console.log(sum(2, 2));
 | meaning     | Explicit “no value” | Variable not assigned |
 | Assigned by | Programmer          | JavaScript            |
 
-## What is event: 
+### What is event: 
 An event is an action or occurrence (like a click, keypress, or mouse move) that happens in the browser, and the DOM lets you detect and respond to it.
 
-## What are main ES6 features: 
+### What are main ES6 features: 
 - let & const-
 - Arrow Functions
 - Template Literals
@@ -2429,11 +2389,11 @@ An event is an action or occurrence (like a click, keypress, or mouse move) that
 - For…of Loop → Iterate over iterable objects
 - Map & Set → New collection types
 
-## What is Programming Paradigm: 
+### What is Programming Paradigm: 
 
 Programming paradigm is a way of structuring and organizing programs, such as object-oriented programming, functional programming, procedural programming, etc.
 
-## What is truthy and falsy values:
+### What is truthy and falsy values:
 
 In JavaScript, any value used in a conditional statement gets automatically converted to true or false.
 
@@ -2459,6 +2419,10 @@ if (undefined) console.log('Falsy');
 if (NaN) console.log('Falsy');
 ```
 
-## What is babel:
+### What is babel:
 
 Babel is a JavaScript compiler that lets you write modern JavaScript (ES6+), and then transforms it into older JavaScript (ES5) so that it can run in older browsers or environments that don’t support new features.
+
+## Coding Exercise:
+
+## problem solving:
