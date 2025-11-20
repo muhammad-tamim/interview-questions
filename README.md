@@ -116,6 +116,7 @@
   - [What are main ES6 features:](#what-are-main-es6-features)
   - [What is Programming Paradigm:](#what-is-programming-paradigm)
   - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
+  - [What is babel:](#what-is-babel)
 
 # Interpersonal
 
@@ -2457,3 +2458,7 @@ if (null) console.log('Falsy');
 if (undefined) console.log('Falsy');
 if (NaN) console.log('Falsy');
 ```
+
+## What is babel:
+
+Babel is a JavaScript compiler that lets you write modern JavaScript (ES6+), and then transforms it into older JavaScript (ES5) so that it can run in older browsers or environments that don’t support new features.
