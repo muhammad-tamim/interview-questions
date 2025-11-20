@@ -91,6 +91,7 @@
   - [What is Event Flow? (important):](#what-is-event-flow-important)
   - [what is Event Delegation? (important):](#what-is-event-delegation-important)
   - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
+  - [What is Web API? (important):](#what-is-web-api-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1809,6 +1810,18 @@ stopPropagation() method used to stop the event from bubbling up.
 
 </html>
 ```
+
+
+## What is Web API? (important):
+
+A Web API is a feature provided by the browser (or the environment like Node.js) that JavaScript can use to do extra things that is not part of the js itself, like:
+
+- setTimeout(), setInterval()
+- Make HTTP requests (fetch)
+- Handle user events (clicks, input)
+- Work with the DOM
+- Use browser storage (localStorage, sessionStorage)
+
 
 
 ## What are the possible ways to create objects in JavaScript? 
