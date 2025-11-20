@@ -93,6 +93,7 @@
   - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
   - [What is Web API? (important):](#what-is-web-api-important)
   - [What is Event loop? (important):](#what-is-event-loop-important)
+  - [What is Call Stack:](#what-is-call-stack)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1835,6 +1836,12 @@ so, After parsing, compiling, and interpreting the code, the JavaScript engine u
 Note: 
 - Web APIs provide the environment and methods for async operations.
 - Event Loop manages the execution order, ensuring async tasks run without blocking the single-threaded call stack.
+
+## What is Call Stack:
+A call stack is a data structure that keeps track of function calls in a Last-In-First-Out (LIFO) manner. When a recursive function calls itself, here's what happens:
+
+- new frame creation and stack growing
+- Base case reached and stack un-winding
 
 ## What are the possible ways to create objects in JavaScript? 
 
