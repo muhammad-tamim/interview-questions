@@ -89,6 +89,7 @@
   - [What is callback function? (important):](#what-is-callback-function-important)
   - [What is callback hell? (important):](#what-is-callback-hell-important)
   - [What is Event Flow? (important):](#what-is-event-flow-important)
+  - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1611,6 +1612,109 @@ Event Flow describes how events travel through the DOM tree. When you click, typ
 1.  Event Capturing: Event capturing is the first phase of Event Flow, where the event travels from the document down to the target element before it reaches the target.
 2.  Target: The actual element that triggered the event.
 3.  Event Bubbling: Event bubbling is the last phase of Event Flow, where the event travels back up (propagates) from the target element to the document after reaching the target.
+
+
+## What is the use of useCapture parameter and stopPropagation method:
+
+The useCapture parameter controls when the event handler runs:
+- If useCapture is set to true, the event listener runs during the event capturing phase 
+- If useCapture is set to false (default), the event listener runs during the event bubbling phase 
+
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        }, true) // or { capture: true }
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        })
+        document.getElementById("button").addEventListener("click", () => {
+            console.log("Button")
+        })
+        /*
+        Outer Div
+        Button
+        Inner Div
+        */
+    </script>
+</body>
+
+</html>
+```
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        })
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        }, { capture: true })
+        document.getElementById("button").addEventListener("click", () => {
+            console.log("Button")
+        })
+        /*
+        Inner Div
+        Button
+        Outer Div
+        */
+    </script>
+</body>
+
+</html>
+```
+
+stopPropagation() method used to stop the event from bubbling up.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        });
+
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        });
+
+        document.getElementById("button").addEventListener("click", (event) => {
+            console.log("Button");
+            event.stopPropagation(); // Stop the event here
+        });
+
+        // output: Button
+    </script>
+</body>
+
+</html>
+```
 
 
 ## What are the possible ways to create objects in JavaScript? 
