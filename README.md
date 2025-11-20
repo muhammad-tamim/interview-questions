@@ -105,6 +105,7 @@
   - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
   - [What is Promise:](#what-is-promise)
   - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
+  - [Difference between null and undefined:](#difference-between-null-and-undefined)
 
 # Interpersonal
 
@@ -2160,3 +2161,11 @@ function sum(a, a) { // SyntaxError: Duplicate parameter name not allowed in thi
 }
 console.log(sum(2, 2));
 ```
+
+## Difference between null and undefined:
+
+| Feature     | `null`              | `undefined`           |
+| ----------- | ------------------- | --------------------- |
+| Type        | Object              | Undefined             |
+| meaning     | Explicit “no value” | Variable not assigned |
+| Assigned by | Programmer          | JavaScript            |
