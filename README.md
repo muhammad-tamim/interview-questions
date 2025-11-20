@@ -115,6 +115,7 @@
   - [What is event:](#what-is-event)
   - [What are main ES6 features:](#what-are-main-es6-features)
   - [What is Programming Paradigm:](#what-is-programming-paradigm)
+  - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
 
 # Interpersonal
 
@@ -2430,3 +2431,29 @@ An event is an action or occurrence (like a click, keypress, or mouse move) that
 ## What is Programming Paradigm: 
 
 Programming paradigm is a way of structuring and organizing programs, such as object-oriented programming, functional programming, procedural programming, etc.
+
+## What is truthy and falsy values:
+
+In JavaScript, any value used in a conditional statement gets automatically converted to true or false.
+
+There are 6 total falsy values in js, everything else is truthy:
+
+- false
+- 0
+- ""
+- null
+- undefined
+- NaN
+
+```js
+// None of the console.log() will run because all the values are falsy.
+
+if (false) console.log('Falsy');
+if (0) console.log('Falsy');
+if (-0) console.log('Falsy');
+if (0n) console.log('Falsy');
+if ("") console.log('Falsy');
+if (null) console.log('Falsy');
+if (undefined) console.log('Falsy');
+if (NaN) console.log('Falsy');
+```
