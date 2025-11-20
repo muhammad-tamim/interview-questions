@@ -91,6 +91,7 @@
   - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
   - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
   - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
+  - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
 - [React.js](#reactjs)
 - [Firebase](#firebase)
   - [What is Firebase](#what-is-firebase)
@@ -1643,6 +1644,140 @@ NaN === NaN           // false
 [] === []             // false
 {} == {}              // false     (different object references)
 {} === {}             // false
+```
+
+## Difference Between Arrow Function and Normal Function:
+
+| Normal Function                                                              | Arrow Function                                                                |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| If you want to use the result outside the function, you must return a value. | Can omit {} and return for single-expression functions.                       |
+| Have their own this and its depend on the function call.                     | Does NOT have its own this. Inherits this from the surrounding scope.         |
+| have prototype property so can be used as a constructor with `new`           | don't have prototype property. so Cannot be used as a constructor with `new`  |
+| arguments is available.                                                      | arguments is not available.                                                   |
+| not ideal for callback                                                       | ideal for callbacks, especially with array methods like map, filter, forEach. |
+
+- Normal function: If you want to use the result outside the function, you must return a value.
+- Arrow function: Can omit {} and return for single-expression functions.
+
+```js
+function multiply(a, b) {
+  return a * b;
+}
+
+const multiplyArrow = (a, b) => a * b;
+```
+
+- Normal functions: Have their own this and its depend on the function call.
+- Arrow functions: Does NOT have its own this. Inherits this from the surrounding scope.
+
+Normal function:
+
+```js
+const person = {
+  name: "Tamim",
+
+  showInfo() {
+    console.log("Outer this:", this.name); // Tamim
+
+    function inner() {
+      console.log("Inner this:", this.name); 
+      // ❌ undefined (because this = global)
+    }
+
+    inner();
+  }
+};
+
+person.showInfo();
+```
+Arrow function:
+
+```js
+const person = {
+  name: "Tamim",
+  age: 20,
+
+  showInfo() {
+    console.log("Outer this:", this.name); // Tamim
+
+    const inner = () => {
+      console.log("Inner this:", this.name); // Also Tamim
+    };
+
+    inner();
+  }
+};
+
+person.showInfo();
+```
+
+- Normal Function: have prototype property, can be used as a constructor.
+- Arrow Function: do not have prototype property, cannot be used as a constructor.
+
+Normal Function:
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+console.log(Person.prototype);
+// ✔ { constructor: Person }
+
+const p = new Person("Tamim");
+console.log(p.name);  // ✔ Works
+```
+
+Arrow Function:
+
+```js
+const Person = (name) => {
+  this.name = name;
+};
+
+console.log(Person.prototype); 
+// ❌ undefined → NO prototype
+
+const p = new Person("Tamim");  
+// ❌ Error: Person is not a constructor
+```
+
+- Normal function: arguments is available.
+- Arrow function: arguments is not available.
+
+```js
+function normalFunc(a, b) {
+  console.log(arguments); // [1, 2]
+}
+normalFunc(1, 2);
+
+const arrowFunc = (a, b) => console.log(arguments); // ReferenceError
+arrowFunc(1, 2);
+```
+
+- normal function are not ideal for callback
+- Arrow functions are ideal for callbacks, especially with array methods like map, filter, forEach.
+
+Normal function:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const squaredNormal = numbers.map(function(num) {
+  return num * num;
+});
+
+console.log(squaredNormal); // [1, 4, 9, 16, 25]
+```
+
+Arrow function:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const squaredArrow = numbers.map(num => num * num);
+
+console.log(squaredArrow); // [1, 4, 9, 16, 25]
 ```
 
 # React.js
