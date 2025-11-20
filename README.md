@@ -92,10 +92,10 @@
   - [what is Event Delegation? (important):](#what-is-event-delegation-important)
   - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
   - [What is Web API? (important):](#what-is-web-api-important)
+  - [What is a prototype Chain in js? (important):](#what-is-a-prototype-chain-in-js-important)
   - [What is Event loop? (important):](#what-is-event-loop-important)
   - [What is Call Stack:](#what-is-call-stack)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
-  - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
   - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
   - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
@@ -114,6 +114,7 @@
   - [Difference between null and undefined:](#difference-between-null-and-undefined)
   - [What is event:](#what-is-event)
   - [What are main ES6 features:](#what-are-main-es6-features)
+  - [What is Programming Paradigm:](#what-is-programming-paradigm)
 
 # Interpersonal
 
@@ -1825,6 +1826,21 @@ A Web API is a feature provided by the browser (or the environment like Node.js)
 - Work with the DOM
 - Use browser storage (localStorage, sessionStorage)
 
+## What is a prototype Chain in js? (important): 
+
+The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
+
+```js
+const obj = { name: "Tamim" };
+
+console.log(obj.toString); 
+```
+Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
+
+Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
+
+obj --> Object.prototype -- null
+
 ## What is Event loop? (important):
 The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
 
@@ -1891,21 +1907,6 @@ class Person {
 
 const p1 = new Person("Tamim", 20);
 ```
-
-## What is a prototype Chain: 
-
-The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
-
-```js
-const obj = { name: "Tamim" };
-
-console.log(obj.toString); 
-```
-Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
-
-Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
-
-obj --> Object.prototype -- null
 
 ## What is JSON and its common operations: 
 
@@ -2425,3 +2426,7 @@ An event is an action or occurrence (like a click, keypress, or mouse move) that
 - Modules → import / export for modular code
 - For…of Loop → Iterate over iterable objects
 - Map & Set → New collection types
+
+## What is Programming Paradigm: 
+
+Programming paradigm is a way of structuring and organizing programs, such as object-oriented programming, functional programming, procedural programming, etc.
