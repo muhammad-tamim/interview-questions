@@ -92,22 +92,8 @@
   - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
   - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
   - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
-- [React.js](#reactjs)
-- [Firebase](#firebase)
-  - [What is Firebase](#what-is-firebase)
-  - [Is firebase frontend or backend](#is-firebase-frontend-or-backend)
-  - [What is firebase architecture](#what-is-firebase-architecture)
-  - [What is the features of firebase](#what-is-the-features-of-firebase)
-  - [Difference between firebase and Mongodb](#difference-between-firebase-and-mongodb)
-  - [Authentication vs Authorization](#authentication-vs-authorization)
-  - [Can you tell me names of 3 authentication methods](#can-you-tell-me-names-of-3-authentication-methods)
-  - [what is OAuth 2.0 and how it is worked](#what-is-oauth-20-and-how-it-is-worked)
-  - [How firebase authentication works](#how-firebase-authentication-works)
-- [Node.js](#nodejs)
-- [Express.js](#expressjs)
-- [MongoDB](#mongodb)
-- [TypeScript](#typescript)
-- [Next.js](#nextjs)
+  - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function)
+  - [](#)
 
 # Interpersonal
 
@@ -1780,23 +1766,28 @@ const squaredArrow = numbers.map(num => num * num);
 console.log(squaredArrow); // [1, 4, 9, 16, 25]
 ```
 
-# React.js
+## What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function
 
-# Firebase
-## What is Firebase
-## Is firebase frontend or backend
-## What is firebase architecture
-## What is the features of firebase 
-## Difference between firebase and Mongodb
-## Authentication vs Authorization
-- Authentication = Verify who you are
-- Authorization = check what can you do
-## Can you tell me names of 3 authentication methods 
-## what is OAuth 2.0 and how it is worked 
-## How firebase authentication works
+- first class function: A language has first-class functions when functions are treated like values — you can store them in variables, pass them as arguments, and return them from other functions.
+- first order function: A function that does NOT take any function as an argument and does NOT return a function.
+- Higher-Order Function: A function that takes another function as an argument OR returns a function.
+- Unary or monadic Function: A function that takes exactly ONE argument.
+- Currying Function: A technique where a function takes multiple arguments one at a time, instead of all at once.
 
-# Node.js
-# Express.js
-# MongoDB
-# TypeScript
-# Next.js
+```js
+function add(a) {
+  return function(b) {
+    return a + b;
+  }
+}
+
+add(2)(3); // 5
+
+const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+
+console.log(curryUnaryFunction(1)(2)(3)); // Output: 6
+```
+
+- Pure Function: A function that, Always returns the same output for the same input, and ha no side effects (does not modify any external state or variables).
+
+## 
