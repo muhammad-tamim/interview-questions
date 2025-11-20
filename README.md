@@ -99,6 +99,7 @@
   - [what is Hoisting:](#what-is-hoisting)
   - [What is scope in javascript:](#what-is-scope-in-javascript)
     - [what is Scope Chain](#what-is-scope-chain)
+  - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
 
 # Interpersonal
 
@@ -1985,3 +1986,9 @@ console.log(num);
 1
 */
 ```
+
+## What is Cookie, Local Storage and Session Storage:
+- A cookie is a small piece of data (4KB) stored by the browser, which can be used on the client side or sent to the server with HTTP requests to remember information like User Authentication, Login/Logout, tracking data.
+- local and session storage is a Web Storage API feature that allows you to store up to 10MB (5 + 5) key-value pairs in the browser.
+
+
