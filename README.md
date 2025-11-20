@@ -104,6 +104,7 @@
   - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
   - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
   - [What is Promise:](#what-is-promise)
+  - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
 
 # Interpersonal
 
@@ -2110,3 +2111,52 @@ Promise States:
 - Pending - operation initial stage
 - Resolved(fulfilled) - if the operation is successful
 - Rejected - if the operation fails
+
+## What is a strict mode in javascript:
+In JavaScript, "use strict"; is a directive that activates Strict Mode, which is a stricter set of rules for executing your JavaScript code.
+
+It helps you to:
+-  Catch common mistakes earlier
+-  Prevent silent errors
+-  Write cleaner, safer code
+
+
+**Key Effects of Strict Mode:**
+
+- No undeclared variables 
+
+```js
+// without strict mode
+x = 5;
+console.log(x); // 5
+```
+    
+```js
+// with strict mode
+"use strict"
+
+x = 5;
+console.log(x); // ReferenceError: x is not defined
+```
+    
+- No duplicate parameter names
+    
+```js
+// without strict mode
+
+function sum(a, a) {
+    return a + a;
+}
+
+console.log(sum(2, 2)); // 4
+```
+    
+```js
+// with strict mode
+
+"use strict";
+function sum(a, a) { // SyntaxError: Duplicate parameter name not allowed in this context
+    return a + a;
+}
+console.log(sum(2, 2));
+```
