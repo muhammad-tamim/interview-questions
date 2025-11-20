@@ -100,6 +100,7 @@
   - [What is scope in javascript:](#what-is-scope-in-javascript)
     - [what is Scope Chain](#what-is-scope-chain)
   - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
+  - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
 
 # Interpersonal
 
@@ -1991,4 +1992,10 @@ console.log(num);
 - A cookie is a small piece of data (4KB) stored by the browser, which can be used on the client side or sent to the server with HTTP requests to remember information like User Authentication, Login/Logout, tracking data.
 - local and session storage is a Web Storage API feature that allows you to store up to 10MB (5 + 5) key-value pairs in the browser.
 
+## Difference between Cookie, local storage and session storage:
 
+| Feature        | Cookie                                   | Local Storage         | Session Storage     |
+| -------------- | ---------------------------------------- | --------------------- | ------------------- |
+| Size           | 4KB                                      | 5MB                   | 5MB                 |
+| Expiry         | Manually configured using Expires option | Forever until deleted | until tab is closed |
+| Sent to server | Yes                                      | No                    | No                  |
