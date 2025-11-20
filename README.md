@@ -95,6 +95,7 @@
   - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function-what-is-iife)
   - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
   - [What is TDZ:](#what-is-tdz)
+  - [what is Hoisting:](#what-is-hoisting)
 
 # Interpersonal
 
@@ -1814,3 +1815,5 @@ console.log(message); // ReferenceError: message is not defined
 
 TDZ (Temporal Dead Zone) is the period between variable declaration and initialization, during this time accessing that variable results in an ReferenceError.
 
+## what is Hoisting:
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their scope during parsing and compiling the AST to Bytecode phase, before the code is executed by interpreter or JIT compiler(if applicable).
