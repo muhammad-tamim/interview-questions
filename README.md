@@ -101,6 +101,7 @@
     - [what is Scope Chain](#what-is-scope-chain)
   - [What is Cookie, Local Storage and Session Storage:](#what-is-cookie-local-storage-and-session-storage)
   - [Difference between Cookie, local storage and session storage:](#difference-between-cookie-local-storage-and-session-storage)
+  - [What is Promise:](#what-is-promise)
 
 # Interpersonal
 
@@ -1999,3 +2000,11 @@ console.log(num);
 | Size           | 4KB                                      | 5MB                   | 5MB                 |
 | Expiry         | Manually configured using Expires option | Forever until deleted | until tab is closed |
 | Sent to server | Yes                                      | No                    | No                  |
+
+## What is Promise:
+A Promise is a JavaScript object that represents the eventual completion or failure of an asynchronous operation.
+
+Promise States:
+- Pending - operation initial stage
+- Resolved(fulfilled) - if the operation is successful
+- Rejected - if the operation fails
