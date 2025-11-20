@@ -85,6 +85,7 @@
   - [what is preprocessor and why sass call preprocessor](#what-is-preprocessor-and-why-sass-call-preprocessor)
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
+  - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1453,6 +1454,66 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 
 # JavaScript
+## What are closure in JavaScript? (important):
+A closure is a function technique where an inner function remembers the variables from its outer function, even after that outer function has finished executing. This means JavaScript keeps a reference to the outer variables in memory so the inner function can remember and access them.
+
+```js
+function secretCounter() {
+    let count = 0;
+
+    return function () {
+        count++;
+        console.log("Count is: " + count);
+    };
+}
+
+const counter = secretCounter();
+
+counter(); // Count is: 1
+counter(); // Count is: 2
+counter(); // Count is: 3
+```
+
+```js
+function bankAccount(initialBalance) {
+  let balance = initialBalance;
+
+  return {
+    deposit: function(amount) {
+      balance += amount;
+      console.log("Deposited: " + amount + " | Balance: " + balance);
+    },
+    withdraw: function(amount) {
+      if (amount <= balance) {
+        balance -= amount;
+        console.log("Withdrew: " + amount + " | Balance: " + balance);
+      } else {
+        console.log("Insufficient funds!");
+      }
+    }
+  };
+}
+
+const account = bankAccount(100);
+account.deposit(50);   // Deposited: 50 | Balance: 150
+account.withdraw(70);  // Withdrew: 70 | Balance: 80
+account.withdraw(200); // Insufficient funds!
+```
+
+```js
+function makeMultiplier(multiplier) {
+  return function(num) {
+    return num * multiplier;
+  };
+}
+
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
+
+console.log(double(5)); // 10
+console.log(triple(5)); // 15
+```
+
 ## What are the possible ways to create objects in JavaScript? 
 
 - Using Object Literal: 
