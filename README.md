@@ -113,6 +113,7 @@
   - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
   - [Difference between null and undefined:](#difference-between-null-and-undefined)
   - [What is event:](#what-is-event)
+  - [What are main ES6 features:](#what-are-main-es6-features)
 
 # Interpersonal
 
@@ -2414,3 +2415,13 @@ console.log(sum(2, 2));
 ## What is event: 
 An event is an action or occurrence (like a click, keypress, or mouse move) that happens in the browser, and the DOM lets you detect and respond to it.
 
+## What are main ES6 features: 
+- let & const-
+- Arrow Functions
+- Template Literals
+- Default Parameters
+- Destructuring
+- Spread & Rest Operators 
+- Modules → import / export for modular code
+- For…of Loop → Iterate over iterable objects
+- Map & Set → New collection types
