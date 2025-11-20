@@ -87,6 +87,7 @@
 - [JavaScript](#javascript)
   - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
   - [What is callback function? (important):](#what-is-callback-function-important)
+  - [What is callback hell? (important):](#what-is-callback-hell-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1570,6 +1571,34 @@ numbers.forEach(element => {
 });
 ```
 
+## What is callback hell? (important):
+When we write too many nested callback functions that are hard to read and maintain, it is called callback hell.
+
+```js
+function first(number, callback) {
+    const result = number + 2;
+    callback(result);
+}
+
+function second(number, callback) {
+    const result = number * 2;
+    callback(result);
+}
+
+function third(number, callback) {
+    const result = number - 1;
+    callback(result);
+}
+
+// Callback Hell
+first(1, function (res1) {
+    second(res1, function (res2) {
+        third(res2, function (res3) {
+            console.log("Final Result:", res3); // Final Result: 5
+        });
+    });
+});
+```
 
 ## What are the possible ways to create objects in JavaScript? 
 
