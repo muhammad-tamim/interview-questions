@@ -89,6 +89,7 @@
   - [What is callback function? (important):](#what-is-callback-function-important)
   - [What is callback hell? (important):](#what-is-callback-hell-important)
   - [What is Event Flow? (important):](#what-is-event-flow-important)
+  - [what is Event Delegation? (important):](#what-is-event-delegation-important)
   - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
@@ -1612,6 +1613,99 @@ Event Flow describes how events travel through the DOM tree. When you click, typ
 1.  Event Capturing: Event capturing is the first phase of Event Flow, where the event travels from the document down to the target element before it reaches the target.
 2.  Target: The actual element that triggered the event.
 3.  Event Bubbling: Event bubbling is the last phase of Event Flow, where the event travels back up (propagates) from the target element to the document after reaching the target.
+
+
+## what is Event Delegation? (important):
+
+Event Delegation is a technique where you attach a single event listener to a parent element instead of attaching listeners to each child element individually. It works because of event bubbling
+
+Without Delegation:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const items = document.querySelectorAll("li");→ HTML
+        // items.forEach(item => {
+        //     item.addEventListener("click", function () {
+        //         alert("You clicked " + item.textContent);
+        //     });
+        // });
+        // or
+        for (const item of items) {
+            item.addEventListener("click", () => {
+                alert(`You clicked ${item.innerText}`); 
+            })
+        }
+    </script>
+</body>
+
+</html>
+```
+Problems:
+- You must manually attach listeners to every li.
+- Won’t work for new li that added dynamically.
+
+With Delegation:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const list = document.getElementById("list");
+
+        list.addEventListener("click", (e) => {
+            // console.log(e.target.tagName) // LI
+            if (e.target.tagName === "LI") {
+                alert("You Clicked " + event.target.innerText);
+            }
+        })
+
+    </script>
+</body>
+
+</html>
+```
+
+Note: Here we set the event listener on the parent (ul) tag, so all its children are covered by the event listener range. Whenever we click any element within this range, we can get the clicked element using the e.target property.
+
+Now, suppose we click the second `<li>`: so the event flow is: 
+
+- Capturing Phase: document → html → body → ul (event set here)
+- Target Phase: li (Item 2 — event reaches target)
+- Bubbling Phase: li (Item 2) → ul (event listener runs here) → body → html → document
+
+Here, we check e.target.tagName === "LI" because the event runs for every child under the `<ul>`. If we have other elements inside the `<ul>` (like `<span>` or `<p>`), the event would still trigger when clicking them, but we only want to respond to `<li>` elements.
 
 
 ## What is the use of useCapture parameter and stopPropagation method:
