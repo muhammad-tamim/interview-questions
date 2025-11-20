@@ -88,6 +88,7 @@
   - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
   - [What is callback function? (important):](#what-is-callback-function-important)
   - [What is callback hell? (important):](#what-is-callback-hell-important)
+  - [What is Event Flow? (important):](#what-is-event-flow-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1601,6 +1602,15 @@ first(1, function (res1) {
     });
 });
 ```
+
+## What is Event Flow? (important): 
+
+Event Flow describes how events travel through the DOM tree. When you click, type, or interact with a webpage, the event doesn’t go straight to the target element. It flows through three phases:
+
+1.  Event Capturing: Event capturing is the first phase of Event Flow, where the event travels from the document down to the target element before it reaches the target.
+2.  Target: The actual element that triggered the event.
+3.  Event Bubbling: Event bubbling is the last phase of Event Flow, where the event travels back up (propagates) from the target element to the document after reaching the target.
+
 
 ## What are the possible ways to create objects in JavaScript? 
 
