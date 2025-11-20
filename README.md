@@ -92,7 +92,7 @@
   - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
   - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
   - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
-  - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function)
+  - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function-what-is-iife)
   - [What is the difference between let and var and const:](#what-is-the-difference-between-let-and-var-and-const)
   - [What is TDZ:](#what-is-tdz)
 
@@ -1767,7 +1767,7 @@ const squaredArrow = numbers.map(num => num * num);
 console.log(squaredArrow); // [1, 4, 9, 16, 25]
 ```
 
-## What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function
+## What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE
 
 - first class function: A language has first-class functions when functions are treated like values — you can store them in variables, pass them as arguments, and return them from other functions.
 - first order function: A function that does NOT take any function as an argument and does NOT return a function.
@@ -1790,6 +1790,16 @@ console.log(curryUnaryFunction(1)(2)(3)); // Output: 6
 ```
 
 - Pure Function: A function that, Always returns the same output for the same input, and ha no side effects (does not modify any external state or variables).
+- IIFE (Immediately Invoked Function Expression): A function that runs as soon as it is defined. The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. 
+
+```js
+(function () {
+    var message = "IIFE";
+    console.log(message);
+})();
+console.log(message); // ReferenceError: message is not defined
+```
+
 
 ## What is the difference between let and var and const:
 
@@ -1803,3 +1813,4 @@ console.log(curryUnaryFunction(1)(2)(3)); // Output: 6
 ## What is TDZ: 
 
 TDZ (Temporal Dead Zone) is the period between variable declaration and initialization, during this time accessing that variable results in an ReferenceError.
+
