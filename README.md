@@ -86,6 +86,7 @@
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
   - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
+  - [What is callback function? (important):](#what-is-callback-function-important)
   - [What are the possible ways to create objects in JavaScript?](#what-are-the-possible-ways-to-create-objects-in-javascript)
   - [What is a prototype Chain:](#what-is-a-prototype-chain)
   - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1519,6 +1520,57 @@ console.log(double(5)); // 10
 console.log(triple(5)); // 15
 ```
 
+## What is callback function? (important):
+A callback function is a function that is passed as an argument to another function to be executed later by that function.
+
+Note: Any function that receives a function as a parameter or returns a function is called a *higher-order function.
+
+Here,
+- great is a higher order function
+- sayGoodbye is a callback function
+
+```js
+function greet(name, callback) { 
+  console.log("Hello " + name);
+  callback(); 
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Tamim", sayGoodbye); 
+
+/* 
+Output:
+Hello Tamim
+Goodbye!
+*/
+```
+
+```js
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+console.log(calculate(5, 3, add)); // 8 -- here add is a callback function
+```
+
+We use callback functions in JavaScript every day — in methods like map(), filter(), find(), forEach(), .then(), and addEventListener(), etc.
+
+```js
+const numbers = [1, 2, 3];
+
+numbers.forEach(element => {
+    console.log(element)
+});
+```
+
+
 ## What are the possible ways to create objects in JavaScript? 
 
 - Using Object Literal: 
@@ -1839,6 +1891,27 @@ console.log(squaredArrow); // [1, 4, 9, 16, 25]
 - first class function: A language has first-class functions when functions are treated like values — you can store them in variables, pass them as arguments, and return them from other functions.
 - first order function: A function that does NOT take any function as an argument and does NOT return a function.
 - Higher-Order Function: A function that takes another function as an argument OR returns a function.
+- callback function: A callback function is a function that is passed as an argument to another function to be executed later by that function.
+
+```js
+function greet(name, callback) { 
+  console.log("Hello " + name);
+  callback(); 
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Tamim", sayGoodbye); 
+
+/* 
+Output:
+Hello Tamim
+Goodbye!
+*/
+```
+
 - Unary or monadic Function: A function that takes exactly ONE argument.
 - Currying Function: A technique where a function takes multiple arguments one at a time, instead of all at once.
 
