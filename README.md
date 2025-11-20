@@ -107,6 +107,7 @@
   - [What is Promise:](#what-is-promise)
   - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
   - [Difference between null and undefined:](#difference-between-null-and-undefined)
+  - [What is event:](#what-is-event)
 
 # Interpersonal
 
@@ -2179,3 +2180,7 @@ console.log(sum(2, 2));
 | Type        | Object              | Undefined             |
 | meaning     | Explicit “no value” | Variable not assigned |
 | Assigned by | Programmer          | JavaScript            |
+
+## What is event: 
+An event is an action or occurrence (like a click, keypress, or mouse move) that happens in the browser, and the DOM lets you detect and respond to it.
+
