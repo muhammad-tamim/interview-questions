@@ -3028,4 +3028,891 @@ JavaScript uses automatic garbage collection, which automatically frees memory b
 
 ## Coding Exercise:
 
+- What is the outputs of below code:
+
+```js
+console.log("5" + 3 - 2) // "53" - 2 -> 53 - 2 -> 51 (number)
+console.log([] + []) // "" (empty arrays are converted to empty strings)
+console.log([] + {}) // "[object Object]" 
+console.log({} + []) // "[object Object]" 
+console.log({} + {}) // "[object Object][object Object]"
+console.log(0.1 + 0.2) // 0.30000000000000004 → floating-point precision issue
+console.log(0.1 + 0.2 === 0.3) // false → 0.30000000000000004 !== 0.3
+console.log(0.1 + 0.2 == 0.3) // false → 0.30000000000000004 != 0.3
+console.log(!!"") // false → empty string is falsy, double negation converts it to boolean
+console.log("b" + "a" + +"a" + "a") // "baNaNa" 
+console.log(Math.max() > Math.min()) // false → Math.max() = -Infinity, Math.min() = Infinity → -Infinity > Infinity = false
+console.log("1" - -"1") // 2 → unary -"1" converts string to number so: 1 - (-1) = 2
+console.log(NaN === NaN) // flase
+```
+
+- What is the output of below code:
+
+```js
+var car = new Vehicle("Honda", "white", "2010", "UK");
+console.log(car); // Vehicle { model: 'Honda', color: 'white', year: '2010', country: 'UK' }
+
+function Vehicle(model, color, year, country) {
+    this.model = model;
+    this.color = color;
+    this.year = year;
+    this.country = country;
+}
+```
+
+- What is the output of below code:
+
+```js
+function foo() {
+  let x = (y = 0);
+  x++;
+  y++;
+  return x;
+}
+
+console.log(foo(), typeof x, typeof y); // 1 undefined number
+```
+
+- What is the output of below code:
+
+```js
+function main() {
+    console.log("A");
+    setTimeout(function print() {
+        console.log("B");
+    }, 0);
+    console.log("C");
+}
+main();
+/*
+A
+C
+B
+*/
+```
+
+- What is the output of below code:
+
+```js
+var y = 1;
+if (function f() { }) {
+    y += typeof f;
+}
+console.log(y); // 1undefined
+```
+
+- What is the output of below code:
+
+```js
+function foo() {
+    return; // function return here
+    {
+        message: "Hello World";
+    }
+}
+console.log(foo()); // undefined
+```
+
+- What is the output of below code:
+
+```js
+var myChars = ["a", "b", "c", "d"];
+delete myChars[0];
+console.log(myChars);
+console.log(myChars[0]);
+console.log(myChars.length);
+
+/*
+[ <1 empty item>, 'b', 'c', 'd' ]
+undefined
+4
+*/
+```
+
+- What is the output of below code:
+
+```js
+var array1 = new Array(3);
+console.log(array1);
+
+var array2 = [];
+array2[2] = 100;
+console.log(array2);
+
+var array3 = [, , ,];
+console.log(array3);
+
+/*
+[ <3 empty items> ]
+[ <2 empty items>, 100 ]
+[ <3 empty items> ]
+*/
+```
+
+- What is the output of below code:
+
+```js
+const obj = {
+    prop1: function () {
+        return 0;
+    },
+    prop2() {
+        return 1;
+    },
+    ["prop" + 3]() {
+        return 2;
+    },
+};
+
+console.log(obj.prop1());
+console.log(obj.prop2());
+console.log(obj.prop3());
+
+/*
+0
+1
+2
+*/
+```
+
+- What is the output of below code:
+
+```js
+console.log(1 < 2 < 3); // true < 3 --> 1 < 3 = true
+console.log(3 > 2 > 1); // true > 1 --> 1 > 1 = false
+```
+
+- What is the output of below code:
+
+```js
+function printNumbers(first, second, first) {
+    console.log(first, second, first);
+}
+printNumbers(1, 2, 3); // 3 2 3
+```
+
+- What is the output of below code:
+
+```js
+const printNumbersArrow = (first, second, first) => {
+    console.log(first, second, first);
+};
+printNumbersArrow(1, 2, 3); // SyntaxError: Duplicate parameter name not allowed in this context
+
+/*
+unlike regular function are function doesn't allow duplicate parameters in either strict or non-strict mode.
+*/
+```
+
+- What is the output of below code:
+
+```js
+const arrowFunc = () => arguments.length;
+console.log(arrowFunc(1, 2, 3)); // ReferenceError: arguments is not defined
+
+// arrow function doesn't have arguments, this etc.
+```
+
+- What is the output of below code:
+
+```js
+const func = function () {
+    return arguments.length;
+};
+console.log(func(1, 2, 3)); // 3
+```
+
+- What is the output of below code:
+
+```js
+console.log(10 == [10]); // true because [10] -> '10' -> 10; so 10 == 10 true
+console.log(10 == [[[[[[[10]]]]]]]); // true because [[[[[[[10]]]]]]] -> '10'
+```
+
+- What is the output of below code:
+
+```js
+console.log(10 + "10"); // 1010 --> only + operation do concatenation
+console.log(10 - "10"); // 0 --> convert string "10" to number 10 and then subtract
+```
+
+- What is the output of below code:
+
+```js
+console.log([0] == false); // [0] == false --> "0" == false --> 0 == false --> true
+if ([0]) {
+    console.log("I'm True"); // I'm True
+} else {
+    console.log("I'm False");
+}
+```
+
+- What is the output of below code:
+
+```js
+console.log([1, 2] + [3, 4]); // "1,2" + "3,4" --> "1,23,4"
+```
+
+- What is the output of below code:
+
+```js
+const numbers = new Set([1, 1, 2, 3, 4]);
+console.log(numbers); // Set(4) { 1, 2, 3, 4 }
+
+const browser = new Set("Firefox");
+console.log(browser); // Set(7) { 'F', 'i', 'r', 'e', 'f', 'o', 'x' }
+```
+
+- What is the output of below code:
+
+```js
+let numbers = [1, 2, 3, 4, NaN];
+console.log(numbers.indexOf(NaN)); // -1 
+// indexOf uses strict equality operator (===), since NaN === NaN is false so indexOf can't find it
+```
+
+- What is the output of below code:
+
+```js
+let numbers = [1, 2, 3, 4, NaN];
+console.log(numbers.findIndex(Number.isNaN)); // 4
+console.log(numbers.includes(NaN)); // true
+```
+
+- What is the output of below code:
+
+```js
+let [a, ...b, c] = [1, 2, 3, 4, 5];
+console.log(a, b, c); // A rest element must be last in a destructuring pattern.
+
+// When using rest parameters, trailing commas are not allowed 
+```
+
+- What is the output of below code:
+
+```js
+let [a, ...b] = [1, 2, 3, 4, 5];
+console.log(a, b); // 1, [2, 3, 4, 5]
+```
+
+- What is the output of below code:
+
+```js
+async function func() {
+    return 10;
+}
+console.log(func()); // Promise {10}
+```
+
+- What is the output of below code:
+
+```js
+async function func() {
+    await 10;
+}
+console.log(func()); // Promise { <pending> }
+```
+
+- What is the output of below code:
+
+```js
+var set = new Set();
+set.add("+0").add("-0").add(NaN).add(undefined).add(NaN).add(undefined);
+console.log(set); // Set(4) { '+0', '-0', NaN, undefined }
+```
+
+- What is the output of below code:
+
+```js
+let myNumber = 100;
+let myString = "100";
+
+if (!typeof myNumber === "string") {
+    console.log("It is not a string!");
+} else {
+    console.log("It is a string!"); // It is a string!
+}
+
+if (!typeof myString === "number") {
+    console.log("It is not a number!");
+} else {
+    console.log("It is a number!"); // It is a number!
+}
+```
+
+- What is the output of below code:
+
+```js
+function area({ length = 10, width = 20 }) {
+    console.log(length * width);
+}
+
+area(); // TypeError: Cannot read properties of undefined (reading 'length')
+```
+
+- What is the output of below code:
+
+```js
+const props = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Jack" },
+    { id: 3, name: "Tom" },
+];
+
+const [, , { name }] = props;
+console.log(name); // Tom
+```
+
+- What is the output of below code:
+
+```js
+function checkType(num = 1) {
+    console.log(typeof num);
+}
+
+checkType(); // number
+checkType(undefined); // number
+checkType(""); // string
+checkType(null); // object
+```
+
+- What is the output of below code:
+
+```js
+function add(item, items = []) {
+    items.push(item);
+    return items;
+}
+
+console.log(add("Orange")); // ["Orange"]
+console.log(add("Apple")); // ["Apple"]
+```
+
+- What is the output of below code:
+
+```js
+function greet(greeting, name, message = greeting + " " + name) {
+    console.log([greeting, name, message]);
+}
+
+greet("Hello", "John"); // [ 'Hello', 'John', 'Hello John' ]
+greet("Hello", "John", "Good morning!"); // [ 'Hello', 'John', 'Good morning!' ]
+```
+
+- What is the output of below code:
+
+```js
+function outer(f = inner()) {
+    function inner() {
+        return "Inner";
+    }
+}
+outer(); // ReferenceError: inner is not defined
+```
+
+- What is the output of below code:
+
+```js
+function myFun(x, y, ...manyMoreArgs) {
+    console.log(manyMoreArgs);
+}
+
+myFun(1, 2, 3, 4, 5); // [3, 4, 5]
+myFun(1, 2); // []
+
+// The rest parameter is used to hold the remaining parameters of a function and it becomes an empty array if the argument is not provided.
+```
+
+- What is the output of below code:
+
+```js
+const obj = { key: "value" };
+const array = [...obj];
+console.log(array); // TypeError: obj is not iterable
+```
+
+- What is the output of below code:
+
+```js
+class Square {
+    constructor(length) {
+        this.length = length;
+    }
+
+    get area() {
+        return this.length * this.length;
+    }
+
+    set area(value) {
+        this.area = value;
+    }
+}
+
+const squareObj = new Square(10);
+console.log(squareObj.area); // 100
+```
+
+- What is the output of below code:
+
+```js
+const squareObj = new Square(10);
+console.log(squareObj.area); // ReferenceError: Cannot access 'Square' before initialization
+
+class Square {
+    constructor(length) {
+        this.length = length;
+    }
+
+    get area() {
+        return this.length * this.length;
+    }
+
+    set area(value) {
+        this.area = value;
+    }
+}
+```
+
+- What is the output of below code:
+
+```js
+class Vehicle {
+    constructor(name) {
+        this.name = name;
+    }
+
+    start() {
+        console.log(`${this.name} vehicle started`);
+    }
+}
+
+class Car extends Vehicle {
+    start() {
+        console.log(`${this.name} car started`);
+        super.start();
+    }
+}
+
+const car = new Car("BMW");
+console.log(car.start());
+
+/*
+BMW car started
+BMW vehicle started
+undefined
+*/
+```
+
+- What is the output of below code:
+
+```js
+console.log(typeof typeof typeof 1); // string
+console.log(typeof typeof typeof true); // string 
+
+/*
+- typeof typeof typeof 1 = number
+- type typeof 'number' = string
+- type 'string' = string
+- So the final output is string.
+*/
+```
+
+- What is the output of below code:
+
+```js
+let zero = new Number(0);
+
+if (zero) {
+    console.log("If"); // If --> because new Number(0) is an object and objects are truthy in JavaScript.
+} else {
+    console.log("Else");
+}
+```
+
+- What is the output of below code:
+
+```js
+let msg = "Good morning!!";
+
+msg.name = "John";
+
+console.log(msg.name); // undefined
+```
+
+- What is the output of below code:
+
+```js
+let count = 10;
+
+(function innerFunc() {
+    if (count === 10) {
+        let count = 11;
+        console.log(count);
+    }
+    console.log(count);
+})();
+
+/*
+11 
+10
+*/
+```
+
+- What is the output of below code:
+
+```js
+console.log(true && 'hi'); // hi
+console.log(true && 'hi' && 1); // 1
+console.log(true && '' && 0); // ''
+```
+
+- What is the output of below code:
+
+```js
+let arr = [1, 2, 3];
+let str = "1,2,3";
+
+console.log(arr == str); // true ; [1, 2, 3] is converted to string "1,2,3" for comparison
+```
+
+- What is the output of below code:
+
+```js
+getMessage(); // TypeError: getMessage is not a function
+
+var getMessage = () => {
+    console.log("Good morning");
+}
+
+// here, var getMessage is hoisted But arrow functions are not hoisted like normal functions
+```
+
+behind the scene it works like this: 
+
+```js
+var getMessage; // hoisted, initialized to undefined
+
+getMessage();   // ❌ TypeError: getMessage is not a function
+
+getMessage = () => {
+    console.log("Good morning");
+}
+```
+
+
+- What is the output of below code:
+
+```js
+getMessage(); // Good morning
+
+function getMessage() {
+    console.log("Good morning");
+}
+// Here, function getMessage is hoisted, so it can be called before its declaration
+```
+
+- What is the output of below code:
+
+```js
+var of = ["of"];
+for (var of of of) {
+    console.log(of); // of
+}
+```
+
+- What is the output of below code:
+
+```js
+const numbers = [11, 25, 31, 23, 33, 18, 200];
+numbers.sort();
+console.log(numbers);  // [11, 18, 200, 23, 25, 31, 33]
+// sort() converts numbers to strings and sorts them lexicographically 
+```
+
+- What is the output of below code:
+
+```js
+setTimeout(() => {
+    console.log("1");
+}, 0);
+Promise.resolve("hello").then(() => console.log("2"));
+console.log("3");
+
+/*
+3 
+2
+1
+*/ 
+```
+
+- What is the output of below code:
+
+```js
+console.log(name)
+var name = "tamim" // undefined
+
+// Note: Only the declaration is hoisted. The assignment are happens in the original line 
+```
+
+- What is the output of below code:
+
+```js
+console.log(name); // undefined
+console.log(message()); // ReferenceError: message is not defined
+var name = "John";
+(function message() {
+    console.log("Hello John: Welcome");
+});
+```
+
+- What is the output of below code:
+
+```js
+message(); // Bye
+
+function message() {
+    console.log("Hello");
+}
+function message() {
+    console.log("Bye");
+}
+```
+
+- What is the output of below code:
+
+```js
+var currentCity = "NewYork";
+
+var changeCurrentCity = function () {
+    console.log("Current City:", currentCity);
+    var currentCity = "Singapore";
+    console.log("Current City:", currentCity);
+};
+
+changeCurrentCity();
+
+/*
+Current City: undefined
+Current City: Singapore
+*/ 
+```
+Why the first one is undefined, even though the global value is "NewYork"?
+
+Because variables declared with var inside a function are hoisted to the top of that function, creating a new local variable that shadows the global one.
+
+```js
+var currentCity = "NewYork";
+
+var changeCurrentCity = function () {
+    var currentCity; // ← HOISTED to top of function (local variable)
+
+    console.log("Current City:", currentCity); // undefined (local variable exists but not assigned yet)
+
+    currentCity = "Singapore"; // assignment happens here
+
+    console.log("Current City:", currentCity); // "Singapore"
+};
+```
+
+- What is the output of below code:
+
+```js
+function second() {
+    var message;
+    console.log(message);
+}
+
+function first() {
+    var message = "first";
+    second();
+    console.log(message);
+}
+
+var message = "default";
+first();
+console.log(message);
+
+/*
+undefined
+first
+default
+*/
+```
+
+- What is the output of below code:
+
+```js
+var expressionOne = function functionOne() {
+    console.log("functionOne");
+};
+functionOne(); // ReferenceError: functionOne is not defined
+
+// Note: in the above code, functionOne is not hoisted because it is defined as a variable.
+// expressionOne(); // functionOne
+```
+
+- What is the output of below code:
+
+```js
+const user = {
+    name: "John",
+    eat() {
+        console.log(this);
+        var eatFruit = function () {
+            console.log(this);
+        };
+        eatFruit();
+    },
+};
+user.eat();
+
+//  { name: 'John', eat: [Function: eat] }, Window {...}
+```
+
+- What is the output of below code:
+
+```js
+const user = {
+    name: "John",
+    eat() {
+        console.log(this);
+        var eatFruit = () => {
+            console.log(this);
+        };
+        eatFruit();
+    },
+};
+user.eat();
+
+/*
+{ name: 'John', eat: [Function: eat] }
+{ name: 'John', eat: [Function: eat] }
+*/
+```
+
+- What is the output of below code:
+
+```js
+let message = "Hello World!";
+message[0] = "J";
+console.log(message); // Hello World!
+// Note: Strings are immutable in JavaScript, so the original string remains unchanged.
+
+let name = "John";
+name = name + " Smith";
+console.log(name); // John Smith
+```
+
+- What is the output of below code:
+
+```js
+let user1 = {
+    name: "Jacob",
+    age: 28,
+};
+
+let user2 = {
+    name: "Jacob",
+    age: 28,
+};
+
+console.log(user1 === user2); // false
+```
+
+- What is the output of below code:
+
+```js
+function greeting() {
+    setTimeout(function () {
+        console.log(message);
+    }, 5000);
+    const message = "Hello, Good morning";
+}
+greeting(); // Hello, Good morning
+
+// Note: let and const are hoisted also, but they are not initialized until their declaration is reached in the code. 
+```
+
+- What is the output of below code:
+
+```js
+const a = new Number(10);
+const b = 10;
+console.log(a === b); // false because object a is not equal to primitive b
+```
+
+- What is the output of below code:
+
+```js
+let a = 10;
+if (true) {
+    let a = 20;
+    console.log(a, "inside");
+}
+console.log(a, "outside");
+
+/*
+20 inside
+10 outside
+*/
+```
+
+- What is the output of below code:
+
+```js
+let arr = [1, 2, 3, 4, 5, -6, 7];
+arr.length = 0;
+console.log(arr); // []
+```
+
+- What is the output of below code:
+
+```js
+printHello(); // Hello
+
+printMessage(); // ReferenceError: printMessage is not defined
+
+function printHello() {
+    console.log("Hello");
+
+    function printMessage() {
+        console.log("Good day");
+    }
+}
+```
+
+- What is the output of below code:
+
+```js
+printHello();
+
+function printHello() {
+    printMessage();
+    console.log("Hello");
+
+    function printMessage() {
+        console.log("Good day");
+    }
+}
+
+/*
+Good day
+Hello
+*/
+```
+
+- What is the output of below code:
+
+```js
+function func(a, b = 2) {
+    console.log(arguments.length);
+}
+
+func(undefined); // 1
+func(); // 0
+
+// Because arguments.length counts ONLY the number of arguments actually passed, NOT the number of parameters.
+// Default parameters do NOT increase arguments.length.
+```
+
 ## problem solving:
