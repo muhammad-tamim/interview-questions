@@ -125,6 +125,7 @@
     - [Difference between function declaration and function expression:](#difference-between-function-declaration-and-function-expression)
     - [What is Memoization:](#what-is-memoization)
     - [Explain async/await syntax:](#explain-asyncawait-syntax)
+    - [Explain setTimeout() vs setInterval():](#explain-settimeout-vs-setinterval)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2782,6 +2783,52 @@ const fetchData = async () => {
 fetchData();
 ```
 
+
+### Explain setTimeout() vs setInterval():
+
+setTimeout() runs a function once after a specified delay (in milliseconds):
+
+```js
+
+console.log(1);
+
+console.log(2);
+setTimeout(() => {
+    console.log(3)
+});
+console.log(4);
+console.log(5);
+console.log(6);
+
+/*
+1
+2
+4
+5
+6
+3 - runs 0 second delay
+*/
+```
+setInterval() runs a function again and again, with a fixed time delay between each cal
+
+```js
+// runs infinitely with one seconde delay
+setInterval(() => {
+    console.log("I print every 1 second");
+}, 1000);
+```
+
+```js
+// Stop setInterval() with clearInterval(id)
+let i = 1;
+const id = setInterval(() => {
+    console.log("i =", i);
+    i++;
+    if (i > 5) {
+        clearInterval(id); // Stop after 5 times
+    }
+}, 1000);
+```
 
 ## Coding Exercise:
 
