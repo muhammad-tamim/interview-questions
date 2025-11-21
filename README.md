@@ -122,6 +122,7 @@
     - [Explain call(), apply(), and bind() with examples:](#explain-call-apply-and-bind-with-examples)
     - [What is the arguments object in functions:](#what-is-the-arguments-object-in-functions)
     - [Explain default parameters in ES6:](#explain-default-parameters-in-es6)
+    - [Difference between function declaration and function expression:](#difference-between-function-declaration-and-function-expression)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2650,6 +2651,36 @@ function showGreet(name = "Guest") {
 }
 showGreet("Tamim"); // Output: Hello, Tamim!
 showGreet();        // Output: Hello, Guest!
+```
+
+### Difference between function declaration and function expression:
+function declaration: 
+- Declares a function with a name using the function keyword.
+- Hoisted → can be called before it is defined.
+
+```js
+greet(); // Works because of hoisting
+
+function greet() {
+  console.log("Hello!");
+}
+```
+
+function expression:
+- Defines a function and assigns it to a variable.
+- Not hoisted → cannot be called before it is defined.
+
+```js
+const greet = function() {
+  console.log("Hello!");
+};
+
+greet(); // Works
+```
+
+```js
+sayHi(); // Error: Cannot access 'sayHi' before initialization
+const sayHi = function() { console.log("Hi!"); };
 ```
 
 ## Coding Exercise:
