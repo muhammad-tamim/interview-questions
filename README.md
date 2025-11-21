@@ -118,6 +118,7 @@
     - [What is Programming Paradigm:](#what-is-programming-paradigm)
     - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
     - [What is babel:](#what-is-babel)
+    - [Explain call(), apply(), and bind() with examples:](#explain-call-apply-and-bind-with-examples)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2534,6 +2535,55 @@ if (NaN) console.log('Falsy');
 ### What is babel:
 
 Babel is a JavaScript compiler that lets you write modern JavaScript (ES6+), and then transforms it into older JavaScript (ES5) so that it can run in older browsers or environments that don’t support new features.
+
+### Explain call(), apply(), and bind() with examples:
+These methods allow you to manually control the value of this inside a function.
+
+- call():  
+  - Calls the function immediately
+  - Lets you set this
+  - Passes arguments individually
+
+```js
+function greet(greeting) {
+  console.log(greeting + ", " + this.name);
+}
+
+const person = { name: "Tamim" };
+
+greet.call(person, "Hello");
+// Output: Hello, Tamim
+```
+
+- apply(): same as call(), but takes arguments in an array.
+
+```js
+function introduce(age, city) {
+  console.log(`${this.name}, Age: ${age}, City: ${city}`);
+}
+
+const user = { name: "Alex" };
+
+introduce.apply(user, [20, "Dhaka"]);
+// Output: Alex, Age: 20, City: Dhaka
+```
+
+- bind():
+  - Does NOT call the function immediately
+  - Returns a new function with this permanently set
+  - you call the function later
+
+```js
+function sayHi() {
+  console.log("Hi " + this.name);
+}
+
+const student = { name: "Tamim" };
+
+const hi = sayHi.bind(student);
+hi();
+// Output: Hi Tamim
+```
 
 ## Coding Exercise:
 
