@@ -124,6 +124,7 @@
     - [Explain default parameters in ES6:](#explain-default-parameters-in-es6)
     - [Difference between function declaration and function expression:](#difference-between-function-declaration-and-function-expression)
     - [What is Memoization:](#what-is-memoization)
+    - [Explain async/await syntax:](#explain-asyncawait-syntax)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2735,6 +2736,52 @@ Step-by-Step Logic: fibonacci(5)
 - fibonacci(3) = fibonacci(2) + fibonacci(1) = 1 + 1 = 2 (cache[3] = 2)
 - fibonacci(4) = fibonacci(3) + fibonacci(2) = 2 + 1 = 3 (cache[4] = 3)
 - fibonacci(5) = fibonacci(4) + fibonacci(3) = 3 + 2 = 5 (cache[5] = 5) - The end result
+
+### Explain async/await syntax:
+
+async and await are modern JavaScript keywords that let you write asynchronous code in a way that looks like synchronous code. They make working with Promises cleaner and easier to read.
+
+- async - Used to declare an async function that returns a Promise that resolves when the function is finished running.
+- await - Used inside an async function to pause execution until a Promise resolves.If the Promise is rejected, it throws an error that you can catch with try...catch.
+  - await fetch() --> fetch(url) returns a Promise --> await pauses the async function until that fetch Promise resolves --> Once resolved, the variable response becomes a Response object
+  - await response.json(); --> response.json() also returns a Promise --> await waits until that Promise resolves --> Once resolved, data becomes a JavaScript object.
+
+Note:
+
+Normally, try...catch only catches synchronous errors. But when you use await, JavaScript temporarily pauses the function — so the asynchronous error behaves like a synchronous one. That’s why try...catch works perfectly with await even though the operation is asynchronous.
+
+```js
+// Without arrow function
+async function fetchData() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        const data = await response.json();
+        console.log(data);
+    }
+    catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+```
+
+```js
+// With arrow function
+const fetchData = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        const data = await response.json();
+        console.log(data);
+    }
+    catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+```
+
 
 ## Coding Exercise:
 
