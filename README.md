@@ -127,6 +127,7 @@
     - [Explain async/await syntax:](#explain-asyncawait-syntax)
     - [Explain setTimeout() vs setInterval():](#explain-settimeout-vs-setinterval)
     - [difference between microtasks and macrotasks:](#difference-between-microtasks-and-macrotasks)
+    - [What is the difference between __proto__ and prototype:](#what-is-the-difference-between-proto-and-prototype)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -1762,6 +1763,7 @@ Note:
 - Prototype Chain: The chain of objects used by JavaScript to look up properties and methods.
 - Prototype Inheritance: When an object inherits properties and methods from another object via the prototype chain.
 
+
 ### What is Event loop? (important):
 The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
 
@@ -2898,6 +2900,26 @@ const id = setInterval(() => {
 In the callback queue, tasks are separated into two different queues:
 - Microtask Queue — runs before the macrotask queue (Promise.then(), async/await etc)
 - Macrotask Queue — runs after the microtask queue is empty (setTimeout(), setInterval(), I/O operations, UI events etc)
+
+
+### What is the difference between __proto__ and prototype:
+- prototype → Exists on constructor functions and classes. It is the object that instances inherit from.
+- `__proto__` → Exists on objects. It points to the prototype object the instance inherited from (part of the prototype chain).
+
+```js
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function () {
+    console.log(`Hello, ${this.name}`);
+};
+
+const tamim = new Person("Tamim");
+tamim.greet(); // Hello, Tamim
+
+console.log(tamim.__proto__ === Person.prototype); // true
+```
 
 ## Coding Exercise:
 
