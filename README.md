@@ -94,6 +94,7 @@
     - [What is Web API? (important):](#what-is-web-api-important)
     - [What is a prototype Chain in js? (important):](#what-is-a-prototype-chain-in-js-important)
     - [What is Event loop? (important):](#what-is-event-loop-important)
+    - [What is this keyword? (important):](#what-is-this-keyword-important)
     - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
     - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
@@ -1760,6 +1761,117 @@ so, After parsing, compiling, and interpreting the code, the JavaScript engine u
 Note: 
 - Web APIs provide the environment and methods for async operations.
 - Event Loop manages the execution order, ensuring async tasks run without blocking the single-threaded call stack.
+
+### What is this keyword? (important):
+
+In JavaScript, the `this` keyword refers to an object but it's object depends on how and where the function is called.
+
+- Alone, `this` refers to the global object.
+
+![image](/images/JavaScript/this-keyword-window-object.png)
+
+- In a normal function, `this` also refers to the global object
+  
+![image](/images/JavaScript/this-keyword-in-normal-function.png)
+
+- In a function, in strict mode, this is undefined.
+
+```js
+"use strict";
+
+function showThis() {
+  console.log(this);
+}
+
+showThis();  // undefined
+```
+
+- In an object method with normal function, this refers to the object
+
+```js
+const obj = {
+    name: "Tamim",
+    printName() {
+        console.log(this.name)
+    }
+}
+obj.printName() // tamim
+```
+
+- In an object method with normal function, this refers to the undefined
+
+```js
+const obj = {
+    name: "Tamim",
+    printName: () => {
+        console.log(this.name)
+    }
+}
+obj.printName() // undefined
+```
+- In an event, this refers to the element that received the event.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">Click Me</button>
+
+    <script>
+        const button = document.getElementById("btn");
+
+        button.addEventListener("click", function () {
+            console.log(this);          // <button id="btn">Click Me</button>
+            console.log(this.id);       // btn
+            console.log(this.textContent); // Click Me
+        });
+    </script>
+
+</body>
+
+</html>
+```
+
+- Methods like call(), apply(), and bind() can refer this to any object.
+
+```js
+function greet() {
+  console.log("Hello " + this.name);
+}
+
+const person = { name: "Tamim" };
+
+greet.call(person);  
+// Hello Tamim
+
+
+function introduce(age, city) {
+  console.log(`${this.name}, Age: ${age}, City: ${city}`);
+}
+
+const user = { name: "Alex" };
+
+introduce.apply(user, [25, "Dhaka"]);
+// Alex, Age: 25, City: Dhaka
+
+
+function sayHi() {
+  console.log("Hi " + this.name);
+}
+
+const student = { name: "Tamim" };
+
+const hi = sayHi.bind(student);
+hi();  
+// Hi Tamim
+```
 
 ### What is the use of useCapture parameter and stopPropagation method:
 
