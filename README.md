@@ -132,6 +132,7 @@
     - [Explain Object.freeze() vs Object.seal():](#explain-objectfreeze-vs-objectseal)
     - [What is service workers and web workers:](#what-is-service-workers-and-web-workers)
     - [What is debouncing and throttling?](#what-is-debouncing-and-throttling)
+    - [What is memory leak and how does JavaScript handle memory leak?](#what-is-memory-leak-and-how-does-javascript-handle-memory-leak)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3019,8 +3020,11 @@ Note: Exists only while the page is open; stops when the page is closed or refre
 
 - Throttling: Throttling is a technique that ensures a function is called at most once in a specified time interval, regardless of how many times it is triggered.
 
+### What is memory leak and how does JavaScript handle memory leak?
+A memory leak happens when a program keeps using memory but never releases it, even though it’s no longer needed.
 
-
+How JavaScript Handles Memory Leaks:
+JavaScript uses automatic garbage collection, which automatically frees memory by removing objects and variables that are no longer reachable (i.e., cannot be accessed by the program anymore).
 
 ## Coding Exercise:
 
