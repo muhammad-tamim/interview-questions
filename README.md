@@ -126,6 +126,7 @@
     - [What is Memoization:](#what-is-memoization)
     - [Explain async/await syntax:](#explain-asyncawait-syntax)
     - [Explain setTimeout() vs setInterval():](#explain-settimeout-vs-setinterval)
+    - [difference between microtasks and macrotasks:](#difference-between-microtasks-and-macrotasks)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2829,6 +2830,12 @@ const id = setInterval(() => {
     }
 }, 1000);
 ```
+
+### difference between microtasks and macrotasks:
+
+In the callback queue, tasks are separated into two different queues:
+- Microtask Queue — runs before the macrotask queue (Promise.then(), async/await etc)
+- Macrotask Queue — runs after the microtask queue is empty (setTimeout(), setInterval(), I/O operations, UI events etc)
 
 ## Coding Exercise:
 
