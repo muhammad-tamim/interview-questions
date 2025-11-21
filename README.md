@@ -100,7 +100,7 @@
     - [what is Scope Chain](#what-is-scope-chain)
     - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
     - [What is the difference between splice()/slice() and split()/join():](#what-is-the-difference-between-spliceslice-and-splitjoin)
-    - [How do you compare Object and Map:](#how-do-you-compare-object-and-map)
+    - [How do you compare array/set and  Object/Map:](#how-do-you-compare-arrayset-and--objectmap)
     - [What is the difference between == and === operators:](#what-is-the-difference-between--and--operators)
     - [Difference Between Arrow Function and Normal Function:](#difference-between-arrow-function-and-normal-function)
     - [What is a first class function, What is a first order function, What is a higher order function, What is a unary function, What is the currying function, What is a pure function, what is IIFE](#what-is-a-first-class-function-what-is-a-first-order-function-what-is-a-higher-order-function-what-is-a-unary-function-what-is-the-currying-function-what-is-a-pure-function-what-is-iife)
@@ -2107,7 +2107,65 @@ const join = split.join("");
 console.log(join) // Hello
 ```
 
-### How do you compare Object and Map:
+### How do you compare array/set and  Object/Map:
+
+array/set: 
+- array: 
+  - Ordered collection of elements
+  - Can contain duplicates
+  - Accessed by index
+
+```js
+const numbers = [10, 20, 20, 30]; 
+console.log(numbers[2]); // 20
+```
+- set:
+  - Unordered collection of unique elements
+  - No duplicates allowed
+  - Accessed by value
+
+```js
+const uniqueNumbers = new Set([10, 20, 20, 30]);
+console.log(uniqueNumbers.has(20)); // true
+```
+
+object/map: 
+- object:
+  - Key-value pairs
+  - Keys are strings or symbols
+
+```js
+const id1 = Symbol();
+const id2 = Symbol("id2");  // description help to understand what the symbol is for.
+
+const user = {
+    name: "Tamim",
+    age: 20,
+    country: "Bangladesh",
+
+    [id1]: 12345,
+    [id2]: 98765
+};
+
+// Access symbol keys
+console.log(user[id1]); // 12345
+console.log(user[id2]); // 98765
+console.log(user.name); // Tamim
+```
+
+- map:
+  - Key-value pairs
+  - Keys can be any type (not just strings or symbols)
+
+```js
+const studentMarks = new Map();
+studentMarks.set("Math", 95);     // key: string
+studentMarks.set(101, "Passed");  // key: number
+studentMarks.set({ id: 1 }, true); // key: object
+
+console.log(studentMarks.get("Math")); // 95
+
+```
 
 | Feature                           | Object                      | Map                             |
 | --------------------------------- | --------------------------- | ------------------------------- |
