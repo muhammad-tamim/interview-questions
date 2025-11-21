@@ -120,6 +120,7 @@
     - [What is truthy and falsy values:](#what-is-truthy-and-falsy-values)
     - [What is babel:](#what-is-babel)
     - [Explain call(), apply(), and bind() with examples:](#explain-call-apply-and-bind-with-examples)
+    - [What is the arguments object in functions:](#what-is-the-arguments-object-in-functions)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2610,6 +2611,22 @@ const hi = sayHi.bind(student);
 hi();
 // Output: Hi Tamim
 ```
+
+### What is the arguments object in functions:
+The arguments object stores all the values passed to a function, allowing you to access them by index.
+
+```js
+function demo(a, b) {
+  console.log(arguments);     // {0: 10, 1: 20, length: 2}
+  console.log(arguments[0]);  // 10
+  console.log(arguments[1]);  // 20
+}
+
+demo(10, 20);
+```
+
+Note: Arrow functions do NOT have arguments object
+
 
 ## Coding Exercise:
 
