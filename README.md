@@ -113,6 +113,7 @@
     - [What is Promise:](#what-is-promise)
     - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
     - [Difference between null and undefined:](#difference-between-null-and-undefined)
+    - [Explain NaN and how to check for it:](#explain-nan-and-how-to-check-for-it)
     - [What is event:](#what-is-event)
     - [What are main ES6 features:](#what-are-main-es6-features)
     - [What is Programming Paradigm:](#what-is-programming-paradigm)
@@ -2487,6 +2488,31 @@ console.log(sum(2, 2));
 | Type        | Object              | Undefined             |
 | meaning     | Explicit “no value” | Variable not assigned |
 | Assigned by | Programmer          | JavaScript            |
+
+### Explain NaN and how to check for it:
+NaN stands for Not-a-Number. It is a special value in JavaScript that represents a failed or invalid number operation.
+
+```js
+console.log("abc" * 5);   // NaN
+console.log(Number("hello")); // NaN
+console.log(undefined + 10); // NaN
+```
+
+Note: NaN is the only value that is NOT equal to itself.
+
+```js
+console.log(NaN === NaN); // false ❌
+```
+
+Number.isNaN(): Checks only if the value is exactly NaN
+
+```js
+console.log(Number.isNaN(NaN));        // true
+console.log(Number.isNaN("abc"));      // false
+console.log(Number.isNaN(undefined));  // false
+```
+
+
 
 ### What is event: 
 An event is an action or occurrence (like a click, keypress, or mouse move) that happens in the browser, and the DOM lets you detect and respond to it.
