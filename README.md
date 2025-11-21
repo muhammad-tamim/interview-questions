@@ -130,6 +130,7 @@
     - [What is the difference between __proto__ and prototype:](#what-is-the-difference-between-proto-and-prototype)
     - [what is shallow copy and deep copy:](#what-is-shallow-copy-and-deep-copy)
     - [Explain Object.freeze() vs Object.seal():](#explain-objectfreeze-vs-objectseal)
+    - [What is service workers and web workers:](#what-is-service-workers-and-web-workers)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2999,6 +3000,20 @@ console.log(car);
 ```
 
 Note: Object.seal also doesn’t affect nested objects.
+
+
+### What is service workers and web workers:
+Service Worker: A script that runs in the background of the browser to:
+- Make web apps work offline
+- Handle caching for faster load times
+- Enable push notifications and background sync
+Note: Runs even when the page is closed; 
+
+Web Worker: A script that runs in the background of the browser to:
+- Run heavy CPU-intensive tasks without blocking the main thread (UI)
+Note: Exists only while the page is open; stops when the page is closed or refreshed.
+
+
 
 
 ## Coding Exercise:
