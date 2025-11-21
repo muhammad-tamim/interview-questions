@@ -131,6 +131,7 @@
     - [what is shallow copy and deep copy:](#what-is-shallow-copy-and-deep-copy)
     - [Explain Object.freeze() vs Object.seal():](#explain-objectfreeze-vs-objectseal)
     - [What is service workers and web workers:](#what-is-service-workers-and-web-workers)
+    - [What is debouncing and throttling?](#what-is-debouncing-and-throttling)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3012,6 +3013,11 @@ Note: Runs even when the page is closed;
 Web Worker: A script that runs in the background of the browser to:
 - Run heavy CPU-intensive tasks without blocking the main thread (UI)
 Note: Exists only while the page is open; stops when the page is closed or refreshed.
+
+### What is debouncing and throttling?
+- Debouncing: Debouncing is a technique that ensures a function is only called after a specified period of inactivity. If the function is called again before the delay period ends, the timer resets.
+
+- Throttling: Throttling is a technique that ensures a function is called at most once in a specified time interval, regardless of how many times it is triggered.
 
 
 
