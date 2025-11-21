@@ -92,7 +92,7 @@
     - [What is Event Flow? (important):](#what-is-event-flow-important)
     - [what is Event Delegation? (important):](#what-is-event-delegation-important)
     - [What is Web API? (important):](#what-is-web-api-important)
-    - [What is a prototype Chain in js? (important):](#what-is-a-prototype-chain-in-js-important)
+    - [What is a prototype Chain/prototype inheritance in js? (important):](#what-is-a-prototype-chainprototype-inheritance-in-js-important)
     - [What is Event loop? (important):](#what-is-event-loop-important)
     - [What is this keyword? (important):](#what-is-this-keyword-important)
     - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
@@ -1743,9 +1743,9 @@ A Web API is a feature provided by the browser (or the environment like Node.js)
 - Work with the DOM
 - Use browser storage (localStorage, sessionStorage)
 
-### What is a prototype Chain in js? (important): 
+### What is a prototype Chain/prototype inheritance in js? (important): 
 
-The prototype chain enables inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
+The prototype chain enables prototype inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
 
 ```js
 const obj = { name: "Tamim" };
@@ -1757,6 +1757,10 @@ Here, toString is not defined inside obj. But it still works because JavaScript 
 Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
 
 obj --> Object.prototype -- null
+
+Note: 
+- Prototype Chain: The chain of objects used by JavaScript to look up properties and methods.
+- Prototype Inheritance: When an object inherits properties and methods from another object via the prototype chain.
 
 ### What is Event loop? (important):
 The Event Loop is a mechanism that allows JavaScript to perform asynchronous operations even though it is single-threaded (has only one call stack).
