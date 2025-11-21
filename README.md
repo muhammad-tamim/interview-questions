@@ -129,6 +129,7 @@
     - [difference between microtasks and macrotasks:](#difference-between-microtasks-and-macrotasks)
     - [What is the difference between __proto__ and prototype:](#what-is-the-difference-between-proto-and-prototype)
     - [what is shallow copy and deep copy:](#what-is-shallow-copy-and-deep-copy)
+    - [Explain Object.freeze() vs Object.seal():](#explain-objectfreeze-vs-objectseal)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2947,6 +2948,58 @@ deep.address.city = "Chittagong";
 
 console.log(original.address.city); // "Dhaka" (unchanged)
 ```
+
+### Explain Object.freeze() vs Object.seal():
+
+**Object.freeze():**
+
+Object.freeze() freezes an object, so the object becomes immutable. This means:
+- You cannot add new properties.
+- You cannot delete existing properties.
+- You cannot modify existing property values.
+
+```js
+const person = {
+    name: "Alice",
+    age: 25
+};
+
+Object.freeze(person);
+
+person.age = 30;
+person.city = "NY";
+delete person.name;
+
+console.log(person);
+// Output: { name: "Alice", age: 25 }
+```
+
+Note: Object.freeze() only freezes the immediate properties. If object properties are objects themselves, those nested objects can still be mutated unless they are frozen separately.
+
+**Object.seal():**
+Object.seal() seals an object. This means:
+- You cannot add new properties.
+- You cannot delete existing properties.
+- But you can modify existing property values.
+
+```js
+const car = {
+    brand: "Toyota",
+    year: 2020
+};
+
+Object.seal(car);
+
+car.year = 2022;
+car.color = "red";
+delete car.brand;
+
+console.log(car);
+// { brand: "Toyota", year: 2022 }
+```
+
+Note: Object.seal also doesn’t affect nested objects.
+
 
 ## Coding Exercise:
 
