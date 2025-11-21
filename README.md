@@ -121,6 +121,7 @@
     - [What is babel:](#what-is-babel)
     - [Explain call(), apply(), and bind() with examples:](#explain-call-apply-and-bind-with-examples)
     - [What is the arguments object in functions:](#what-is-the-arguments-object-in-functions)
+    - [Explain default parameters in ES6:](#explain-default-parameters-in-es6)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2627,6 +2628,29 @@ demo(10, 20);
 
 Note: Arrow functions do NOT have arguments object
 
+### Explain default parameters in ES6:
+
+In JavaScript, default parameters allow you to set default values for function parameters. If no arguments is passed when the function is called, the default parameter will be used.
+
+Without default parameter: 
+
+```js
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+greet(); // Hello undefined ❌
+```
+
+With default parameter:
+
+```js
+function showGreet(name = "Guest") {
+  console.log("Hello, " + name + "!");
+}
+showGreet("Tamim"); // Output: Hello, Tamim!
+showGreet();        // Output: Hello, Guest!
+```
 
 ## Coding Exercise:
 
