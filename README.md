@@ -128,6 +128,7 @@
     - [Explain setTimeout() vs setInterval():](#explain-settimeout-vs-setinterval)
     - [difference between microtasks and macrotasks:](#difference-between-microtasks-and-macrotasks)
     - [What is the difference between __proto__ and prototype:](#what-is-the-difference-between-proto-and-prototype)
+    - [what is shallow copy and deep copy:](#what-is-shallow-copy-and-deep-copy)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2919,6 +2920,32 @@ const tamim = new Person("Tamim");
 tamim.greet(); // Hello, Tamim
 
 console.log(tamim.__proto__ === Person.prototype); // true
+```
+
+### what is shallow copy and deep copy:
+
+- Shallow Copy: Copies only the top-level of an object/array. If the object/array contains nested objects or arrays, the nested objects/array are still have referenced. (spread, slice, concat, Object.assign())
+
+```js
+const original = { name: "Tamim", address: { city: "Dhaka" } };
+const shallow = { ...original }; // Shallow copy
+
+shallow.name = "Ali";          // Only affects shallow
+shallow.address.city = "Chittagong"; // Affects original too
+
+console.log(shallow.address.city); // "Chittagong"
+console.log(original.address.city); // "Chittagong"
+```
+
+- Deep Copy: Copies everything, completely independent. (structuredClone(), JSON.stringify, JSON.parse)
+
+```js
+const original = { name: "Tamim", address: { city: "Dhaka" } };
+const deep = JSON.parse(JSON.stringify(original)); // Deep copy
+
+deep.address.city = "Chittagong";
+
+console.log(original.address.city); // "Dhaka" (unchanged)
 ```
 
 ## Coding Exercise:
