@@ -123,6 +123,7 @@
     - [What is the arguments object in functions:](#what-is-the-arguments-object-in-functions)
     - [Explain default parameters in ES6:](#explain-default-parameters-in-es6)
     - [Difference between function declaration and function expression:](#difference-between-function-declaration-and-function-expression)
+    - [What is Memoization:](#what-is-memoization)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -2682,6 +2683,58 @@ greet(); // Works
 sayHi(); // Error: Cannot access 'sayHi' before initialization
 const sayHi = function() { console.log("Hi!"); };
 ```
+
+### What is Memoization:
+Memoization is an optimization technique used to speed up functions by caching the results of expensive function calls and returning the cached result when the same inputs occur again without recalculating. It's commonly used in recursive functions(recursion) to avoid redundant calculations.
+
+Fibonacci Without Memoization, works fine for small n but very slow for larger n due to recalculations: 
+
+```js
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // 55
+```
+
+Fibonacci With Memoization, much faster for larger n:
+
+```js
+function fibonacci(n, cache = {}) {
+  if (n <= 1) return n;
+  
+  if (cache[n]) return cache[n]; // Return cached result
+
+  cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);
+  return cache[n];
+}
+
+console.log(fibonacci(50)); // 12586269025 (fast!)
+```
+
+Explanation: 
+
+- `function fibonacci(n, cache = {}) { ... }`:here n is the fibonacci number and cache = {} is a default parameter that is used to stores results of previous calls.
+- `if (cache[n]) return cache[n];`: Before calculating, check if we already computed it.
+- `cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);`:
+  - here we calculated the fibonacci with classic Fibonacci formula: `Fib(n) = Fib(n-1) + Fib(n-2)`
+  - Notice that we pass the same cache object in recursive calls.
+    - This ensures all computed values are stored in the same cache, not lost in recursion.
+  - Once calculated, we store it in cache[n] so next time we can reuse it.
+
+Step-by-Step Logic: fibonacci(5)
+- n (5) - n <= 1? No - continue - cache[n] exists? No - calculate - cache[n] = fibonacci(4) + fibonacci(3)
+- n (4) - n <= 1? No - continue - cache[n] exists? No - calculate - cache[n] = fibonacci(3) + fibonacci(2)
+- n (3) - n <= 1? No - continue - cache[n] exists? No - calculate - cache[n] = fibonacci(2) + fibonacci(1)
+- n (2) - n <= 1? No - continue - cache[n] exists? No - calculate - cache[n] = fibonacci(1) + fibonacci(0)
+- n (1) - n <= 1? Yes - return 1
+- n (0) - n <= 1? Yes - return 0
+- Now we can resolve back up:
+- fibonacci(2) = 1 + 0 = 1 (cache[2] = 1)
+- fibonacci(3) = fibonacci(2) + fibonacci(1) = 1 + 1 = 2 (cache[3] = 2)
+- fibonacci(4) = fibonacci(3) + fibonacci(2) = 2 + 1 = 3 (cache[4] = 3)
+- fibonacci(5) = fibonacci(4) + fibonacci(3) = 3 + 2 = 5 (cache[5] = 5) - The end result
 
 ## Coding Exercise:
 
