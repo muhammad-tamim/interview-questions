@@ -92,9 +92,9 @@
     - [What is Event Flow? (important):](#what-is-event-flow-important)
     - [what is Event Delegation? (important):](#what-is-event-delegation-important)
     - [What is Web API? (important):](#what-is-web-api-important)
-    - [What is a prototype Chain/prototype inheritance in js? (important):](#what-is-a-prototype-chainprototype-inheritance-in-js-important)
     - [What is Event loop? (important):](#what-is-event-loop-important)
     - [What is this keyword? (important):](#what-is-this-keyword-important)
+    - [What is a prototype, prototype Chain and prototype inheritance in js? (important):](#what-is-a-prototype-prototype-chain-and-prototype-inheritance-in-js-important)
     - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
     - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
@@ -127,7 +127,6 @@
     - [Explain async/await syntax:](#explain-asyncawait-syntax)
     - [Explain setTimeout() vs setInterval():](#explain-settimeout-vs-setinterval)
     - [difference between microtasks and macrotasks:](#difference-between-microtasks-and-macrotasks)
-    - [What is the difference between __proto__ and prototype:](#what-is-the-difference-between-proto-and-prototype)
     - [what is shallow copy and deep copy:](#what-is-shallow-copy-and-deep-copy)
     - [Explain Object.freeze() vs Object.seal():](#explain-objectfreeze-vs-objectseal)
     - [What is service workers and web workers:](#what-is-service-workers-and-web-workers)
@@ -1749,24 +1748,6 @@ A Web API is a feature provided by the browser (or the environment like Node.js)
 - Work with the DOM
 - Use browser storage (localStorage, sessionStorage)
 
-### What is a prototype Chain/prototype inheritance in js? (important): 
-
-The prototype chain enables prototype inheritance in JavaScript. It allows objects to inherit properties and methods from other objects. When you try to access a property or method on an object, JavaScript first looks for it on that object itself. If it’s not found, the engine looks up the prototype chain  and continues searching up the chain until it finds the property or reaches the null.
-
-```js
-const obj = { name: "Tamim" };
-
-console.log(obj.toString); 
-```
-Here, toString is not defined inside obj. But it still works because JavaScript looks for it in the prototype chain, and since toString is a built-in method stored inside Object.prototype, JavaScript finds it there.
-
-Note: Object.prototype is the topmost object in the prototype chain, and it has all built-in methods like toString, hasOwnProperty, etc.
-
-obj --> Object.prototype -- null
-
-Note: 
-- Prototype Chain: The chain of objects used by JavaScript to look up properties and methods.
-- Prototype Inheritance: When an object inherits properties and methods from another object via the prototype chain.
 
 
 ### What is Event loop? (important):
@@ -1892,6 +1873,25 @@ const hi = sayHi.bind(student);
 hi();  
 // Hi Tamim
 ```
+
+### What is a prototype, prototype Chain and prototype inheritance in js? (important): 
+
+- **What is Prototype:**
+A prototype is an hidden object associated with every JavaScript object that provides properties and methods.
+
+We can access the prototype object by using __proto__ property of an object.
+```js
+const obj = {};
+console.log(obj.__proto__); // [Object: null prototype] {}
+```
+
+- **What is Prototype Chain:**
+The prototype chain is the chain of linked objects that is used for look up properties and methods. If a property or method is not found on the object itself, JS continues looking up the chain until it reaches null.
+
+- **What is Prototype Inheritance:**
+Prototype inheritance happens when an object inherits properties and methods from another object via its prototype chain.
+
+
 
 ### What is the use of useCapture parameter and stopPropagation method:
 
@@ -2951,24 +2951,7 @@ In the callback queue, tasks are separated into two different queues:
 - Macrotask Queue — runs after the microtask queue is empty (setTimeout(), setInterval(), I/O operations, UI events etc)
 
 
-### What is the difference between __proto__ and prototype:
-- prototype → Exists on constructor functions and classes. It is the object that instances inherit from.
-- `__proto__` → Exists on objects. It points to the prototype object the instance inherited from (part of the prototype chain).
 
-```js
-function Person(name) {
-    this.name = name;
-}
-
-Person.prototype.greet = function () {
-    console.log(`Hello, ${this.name}`);
-};
-
-const tamim = new Person("Tamim");
-tamim.greet(); // Hello, Tamim
-
-console.log(tamim.__proto__ === Person.prototype); // true
-```
 
 ### what is shallow copy and deep copy:
 
