@@ -95,6 +95,7 @@
     - [What is Event loop? (important):](#what-is-event-loop-important)
     - [What is this keyword? (important):](#what-is-this-keyword-important)
     - [What is a prototype, prototype Chain and prototype inheritance in js? (important):](#what-is-a-prototype-prototype-chain-and-prototype-inheritance-in-js-important)
+    - [What is the difference between __proto__ and prototype property? (important):](#what-is-the-difference-between-proto-and-prototype-property-important)
     - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
     - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
@@ -1891,6 +1892,31 @@ The prototype chain is the chain of linked objects that is used for look up prop
 - **What is Prototype Inheritance:**
 Prototype inheritance happens when an object inherits properties and methods from another object via its prototype chain.
 
+### What is the difference between __proto__ and prototype property? (important):
+
+- `__proto__` is a property of an object that points to its prototype object.
+- prototype property is a property of a constructor function or class that is used to add properties and methods to the prototype object of that constructor function or class.
+
+```js
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function () {
+    console.log(`Hello, ${this.name}`);
+};
+
+const tamim = new Person("Tamim");
+tamim.greet(); // Hello, Tamim
+
+console.log(tamim.__proto__ === Person.prototype); // true
+```
+here, 
+- `Person.prototype` refers to the prototype object for Person constructor.
+- `tamim.__proto__` refers to the prototype object of the tamim instance, which is Person.prototype.
+
+the final fact when we use new Person(), js automatically sets: 
+`tamim.__proto__ = Person.prototype;`
 
 
 ### What is the use of useCapture parameter and stopPropagation method:
