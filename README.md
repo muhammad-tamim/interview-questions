@@ -2606,7 +2606,51 @@ An event is an action or occurrence (like a click, keypress, or mouse move) that
 
 ### What is Programming Paradigm: 
 
-Programming paradigm is a way of structuring and organizing programs, such as object-oriented programming, functional programming, procedural programming, etc.
+Programming paradigm is a way of structuring and organizing programs. JavaScript is a multi-paradigm programming language — it supports Procedural, Object-Oriented, and Functional programming paradigms.
+
+- Procedural Programming: Writing step-by-step instructions using functions. 
+
+```js
+function getArea(w, h) {
+  return w * h;
+}
+
+console.log(getArea(4, 5));
+```
+
+- Object-Oriented Programming (OOP): Writing code into objects that contain properties and methods. 
+
+```js
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        return `Hello, I'm ${this.name}`;
+    }
+}
+
+const p1 = new Person("John", 30);
+
+console.log(p1.greet());
+```
+
+- Functional Programming: Writing code using pure, higher-order functions without mutating the original data.
+
+Pure function: 
+
+```js
+const add = (a, b) => a + b;
+console.log(add(4, 6));
+```
+Higher order function (): 
+
+```js
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+```
 
 ### What is truthy and falsy values:
 
