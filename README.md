@@ -96,6 +96,7 @@
     - [What is this keyword? (important):](#what-is-this-keyword-important)
     - [What is a prototype, prototype Chain and prototype inheritance in js? (important):](#what-is-a-prototype-prototype-chain-and-prototype-inheritance-in-js-important)
     - [What is the difference between __proto__ and prototype property? (important):](#what-is-the-difference-between-proto-and-prototype-property-important)
+    - [Difference between class inheritance and prototype inheritance? (important):](#difference-between-class-inheritance-and-prototype-inheritance-important)
     - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
     - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
@@ -1918,6 +1919,10 @@ here,
 the final fact when we use new Person(), js automatically sets: 
 `tamim.__proto__ = Person.prototype;`
 
+### Difference between class inheritance and prototype inheritance? (important):
+Class inheritance is just a syntactic sugar over the prototype inheritance. so under the hood, all inheritance in js works through prototype inheritance.
+
+- Syntactic sugar means a simpler or cleaner way to write something that works the same way under the hood.
 
 ### What is the use of useCapture parameter and stopPropagation method:
 
