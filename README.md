@@ -91,13 +91,14 @@
     - [What is callback hell? (important):](#what-is-callback-hell-important)
     - [What is Event Flow? (important):](#what-is-event-flow-important)
     - [what is Event Delegation? (important):](#what-is-event-delegation-important)
+    - [What is the use of useCapture parameter and stopPropagation method? (important):](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method-important)
     - [What is Web API? (important):](#what-is-web-api-important)
     - [What is Event loop? (important):](#what-is-event-loop-important)
     - [What is this keyword? (important):](#what-is-this-keyword-important)
     - [What is a prototype, prototype Chain and prototype inheritance in js? (important):](#what-is-a-prototype-prototype-chain-and-prototype-inheritance-in-js-important)
     - [What is the difference between __proto__ and prototype property? (important):](#what-is-the-difference-between-proto-and-prototype-property-important)
     - [Difference between class inheritance and prototype inheritance? (important):](#difference-between-class-inheritance-and-prototype-inheritance-important)
-    - [What is the use of useCapture parameter and stopPropagation method:](#what-is-the-use-of-usecapture-parameter-and-stoppropagation-method)
+    - [pros and cons of functional programming vs object-oriented programming?](#pros-and-cons-of-functional-programming-vs-object-oriented-programming)
     - [What is Call Stack:](#what-is-call-stack)
     - [what is Scope Chain](#what-is-scope-chain)
     - [What is JSON and its common operations:](#what-is-json-and-its-common-operations)
@@ -1740,6 +1741,108 @@ Here, we check e.target.tagName === "LI" because the event runs for every child 
 
 
 
+### What is the use of useCapture parameter and stopPropagation method? (important):
+
+The useCapture parameter controls when the event handler runs:
+- If useCapture is set to true, the event listener runs during the event capturing phase 
+- If useCapture is set to false (default), the event listener runs during the event bubbling phase 
+
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        }, true) // or { capture: true }
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        })
+        document.getElementById("button").addEventListener("click", () => {
+            console.log("Button")
+        })
+        /*
+        Outer Div
+        Button
+        Inner Div
+        */
+    </script>
+</body>
+
+</html>
+```
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        })
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        }, { capture: true })
+        document.getElementById("button").addEventListener("click", () => {
+            console.log("Button")
+        })
+        /*
+        Inner Div
+        Button
+        Outer Div
+        */
+    </script>
+</body>
+
+</html>
+```
+
+stopPropagation() method used to stop the event from bubbling up.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <button id="button">Click me</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click", () => {
+            console.log("Outer Div")
+        });
+
+        document.getElementById("inner").addEventListener("click", () => {
+            console.log("Inner Div")
+        });
+
+        document.getElementById("button").addEventListener("click", (event) => {
+            console.log("Button");
+            event.stopPropagation(); // Stop the event here
+        });
+
+        // output: Button
+    </script>
+</body>
+
+</html>
+```
+
 ### What is Web API? (important):
 
 A Web API is a feature provided by the browser (or the environment like Node.js) that JavaScript can use to do extra things that is not part of the js itself, like:
@@ -1924,107 +2027,16 @@ Class inheritance is just a syntactic sugar over the prototype inheritance. so u
 
 - Syntactic sugar means a simpler or cleaner way to write something that works the same way under the hood.
 
-### What is the use of useCapture parameter and stopPropagation method:
+### pros and cons of functional programming vs object-oriented programming?
 
-The useCapture parameter controls when the event handler runs:
-- If useCapture is set to true, the event listener runs during the event capturing phase 
-- If useCapture is set to false (default), the event listener runs during the event bubbling phase 
+**FP:**
 
+pros: Easier to test, debug, and reason about code. Functions are pure and have no side effects.
+cons: Can lead to complex code with many nested functions. Harder to manage state and data.
 
-```html
-<!DOCTYPE html>
-<html>
-
-<body>
-    <div id="outer">
-        <div id="inner">
-            <button id="button">Click me</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById("outer").addEventListener("click", () => {
-            console.log("Outer Div")
-        }, true) // or { capture: true }
-        document.getElementById("inner").addEventListener("click", () => {
-            console.log("Inner Div")
-        })
-        document.getElementById("button").addEventListener("click", () => {
-            console.log("Button")
-        })
-        /*
-        Outer Div
-        Button
-        Inner Div
-        */
-    </script>
-</body>
-
-</html>
-```
-
-```html
-<!DOCTYPE html>
-<html>
-
-<body>
-    <div id="outer">
-        <div id="inner">
-            <button id="button">Click me</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById("outer").addEventListener("click", () => {
-            console.log("Outer Div")
-        })
-        document.getElementById("inner").addEventListener("click", () => {
-            console.log("Inner Div")
-        }, { capture: true })
-        document.getElementById("button").addEventListener("click", () => {
-            console.log("Button")
-        })
-        /*
-        Inner Div
-        Button
-        Outer Div
-        */
-    </script>
-</body>
-
-</html>
-```
-
-stopPropagation() method used to stop the event from bubbling up.
-
-```html
-<!DOCTYPE html>
-<html>
-
-<body>
-    <div id="outer">
-        <div id="inner">
-            <button id="button">Click me</button>
-        </div>
-    </div>
-    <script>
-        document.getElementById("outer").addEventListener("click", () => {
-            console.log("Outer Div")
-        });
-
-        document.getElementById("inner").addEventListener("click", () => {
-            console.log("Inner Div")
-        });
-
-        document.getElementById("button").addEventListener("click", (event) => {
-            console.log("Button");
-            event.stopPropagation(); // Stop the event here
-        });
-
-        // output: Button
-    </script>
-</body>
-
-</html>
-```
+**OOP:**
+pros: Easy to understand and maintain, keeps data organized, can reuse code through inheritance.
+cons: hard to track change, codes depends on each other so much, hard to test and objects can have side effects.
 
 ### What is Call Stack:
 A call stack is a data structure that keeps track of function calls in a Last-In-First-Out (LIFO) manner. When a recursive function calls itself, here's what happens:
