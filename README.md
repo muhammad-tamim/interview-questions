@@ -140,6 +140,7 @@
     - [How to check if an object is an array or not?](#how-to-check-if-an-object-is-an-array-or-not)
     - [How to check whether a key exist in a JavaScript object or not.](#how-to-check-whether-a-key-exist-in-a-javascript-object-or-not)
     - [What’s the difference between typeof and instanceof?](#whats-the-difference-between-typeof-and-instanceof)
+    - [Difference between Function, Method and Constructor calls in JavaScript.](#difference-between-function-method-and-constructor-calls-in-javascript)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3149,6 +3150,13 @@ typeof [];           // "object" (quirk)
 [] instanceof Array; // true
 [] instanceof Object; // true
 ```
+
+### Difference between Function, Method and Constructor calls in JavaScript.
+
+- Function call `foo()`: standalone call
+- Method call `obj.foo()`: called on an object
+- Constructor call `new Foo()`: creates a new object
+
 
 ## Coding Exercise:
 
