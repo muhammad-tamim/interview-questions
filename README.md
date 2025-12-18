@@ -139,6 +139,7 @@
     - [How to empty an array in JavaScript?](#how-to-empty-an-array-in-javascript)
     - [How to check if an object is an array or not?](#how-to-check-if-an-object-is-an-array-or-not)
     - [How to check whether a key exist in a JavaScript object or not.](#how-to-check-whether-a-key-exist-in-a-javascript-object-or-not)
+    - [What’s the difference between typeof and instanceof?](#whats-the-difference-between-typeof-and-instanceof)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3133,6 +3134,20 @@ Array.isArray(value);
 ```js
 key in obj
 obj.hasOwnProperty(key)
+```
+
+### What’s the difference between typeof and instanceof?
+
+- typeof → checks the type of a value
+- instanceof → checks the prototype chain
+
+```js
+typeof 5;            // "number"
+typeof "hi";         // "string"
+typeof [];           // "object" (quirk)
+
+[] instanceof Array; // true
+[] instanceof Object; // true
 ```
 
 ## Coding Exercise:
