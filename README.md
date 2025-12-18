@@ -136,6 +136,7 @@
     - [What is service workers and web workers:](#what-is-service-workers-and-web-workers)
     - [What is debouncing and throttling?](#what-is-debouncing-and-throttling)
     - [What is memory leak and how does JavaScript handle memory leak?](#what-is-memory-leak-and-how-does-javascript-handle-memory-leak)
+    - [How to empty an array in JavaScript?](#how-to-empty-an-array-in-javascript)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3110,6 +3111,15 @@ A memory leak happens when a program keeps using memory but never releases it, e
 
 How JavaScript Handles Memory Leaks:
 JavaScript uses automatic garbage collection, which automatically frees memory by removing objects and variables that are no longer reachable (i.e., cannot be accessed by the program anymore).
+
+### How to empty an array in JavaScript?
+
+```js
+arr.length = 0;
+arr = [];
+const newArray = arr.splice(0);
+```
+
 
 ## Coding Exercise:
 
