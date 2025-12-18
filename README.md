@@ -138,6 +138,7 @@
     - [What is memory leak and how does JavaScript handle memory leak?](#what-is-memory-leak-and-how-does-javascript-handle-memory-leak)
     - [How to empty an array in JavaScript?](#how-to-empty-an-array-in-javascript)
     - [How to check if an object is an array or not?](#how-to-check-if-an-object-is-an-array-or-not)
+    - [How to check whether a key exist in a JavaScript object or not.](#how-to-check-whether-a-key-exist-in-a-javascript-object-or-not)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3125,6 +3126,13 @@ const newArray = arr.splice(0);
 
 ```js
 Array.isArray(value);
+```
+
+### How to check whether a key exist in a JavaScript object or not.
+
+```js
+key in obj
+obj.hasOwnProperty(key)
 ```
 
 ## Coding Exercise:
