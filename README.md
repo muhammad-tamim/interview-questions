@@ -142,6 +142,7 @@
     - [What’s the difference between typeof and instanceof?](#whats-the-difference-between-typeof-and-instanceof)
     - [Difference between Function, Method and Constructor calls in JavaScript.](#difference-between-function-method-and-constructor-calls-in-javascript)
     - [How to merge two JavaScript Object dynamically](#how-to-merge-two-javascript-object-dynamically)
+    - [What is non-enumerable property in JavaScript and how you can create one?](#what-is-non-enumerable-property-in-javascript-and-how-you-can-create-one)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3176,6 +3177,25 @@ console.log(merged);
 const merged = Object.assign({}, obj1, obj2);
 console.log(merged); 
 // Output: { a: 1, b: 3, c: 4 }
+```
+
+### What is non-enumerable property in JavaScript and how you can create one?
+
+A non-enumerable property is a property that does not show up in for...in loops or Object.keys(), but it still exists on the object.
+
+we can create one using Object.defineProperty:
+
+```js
+const obj = {};
+
+// Create a non-enumerable property
+Object.defineProperty(obj, 'hidden', {
+  value: 42,
+  enumerable: false, // key point
+});
+
+console.log(obj.hidden);      // 42
+console.log(Object.keys(obj)); // []
 ```
 
 ## Coding Exercise:
