@@ -143,6 +143,7 @@
     - [Difference between Function, Method and Constructor calls in JavaScript.](#difference-between-function-method-and-constructor-calls-in-javascript)
     - [How to merge two JavaScript Object dynamically](#how-to-merge-two-javascript-object-dynamically)
     - [What is non-enumerable property in JavaScript and how you can create one?](#what-is-non-enumerable-property-in-javascript-and-how-you-can-create-one)
+    - [What is Function binding ?](#what-is-function-binding-)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3196,6 +3197,48 @@ Object.defineProperty(obj, 'hidden', {
 
 console.log(obj.hidden);      // 42
 console.log(Object.keys(obj)); // []
+```
+
+### What is Function binding ?
+
+Function binding is a way to set the value of this for a function, permanently or temporarily, regardless of how the function is called.
+
+```js
+const person = {
+  name: "Tamim",
+  greet() {
+    console.log("Hello " + this.name);
+  }
+};
+
+const greetFn = person.greet;
+greetFn(); // Hello undefined (this is lost)
+
+const boundGreet = person.greet.bind(person);
+boundGreet(); // Hello Tamim
+```
+
+Note: 
+- bind() → returns a new function with this fixed
+- call() → calls function immediately with a given this
+- apply() → same as call(), but arguments are passed as an array
+
+```js
+const person = {
+  name: "Tamim"
+};
+
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+greet.call(person, "Hello", "!"); 
+// Output: Hello, Tamim!
+```
+
+```js
+greet.apply(person, ["Hi", "!!"]); 
+// Output: Hi, Tamim!!
 ```
 
 ## Coding Exercise:
