@@ -116,6 +116,7 @@
     - [What is Promise:](#what-is-promise)
     - [What is a strict mode in javascript:](#what-is-a-strict-mode-in-javascript)
     - [Difference between null and undefined:](#difference-between-null-and-undefined)
+    - [What's the difference between undefined and not defined in JavaScript:](#whats-the-difference-between-undefined-and-not-defined-in-javascript)
     - [Explain NaN and how to check for it:](#explain-nan-and-how-to-check-for-it)
     - [What is event:](#what-is-event)
     - [What are main ES6 features:](#what-are-main-es6-features)
@@ -2608,6 +2609,20 @@ console.log(sum(2, 2));
 | meaning     | Explicit “no value” | Variable not assigned |
 | Assigned by | Programmer          | JavaScript            |
 
+### What's the difference between undefined and not defined in JavaScript:
+
+- undefined → the variable exists but has no value assigned, means undefined is a value
+- not defined → the variable does not exist at all, means not defined is a runtime error.
+
+```js
+let a;
+console.log(a); // undefined
+```
+
+```js
+console.log(b); // ReferenceError: b is not defined
+```
+
 ### Explain NaN and how to check for it:
 NaN stands for Not-a-Number. It is a special value in JavaScript that represents a failed or invalid number operation.
 
@@ -3984,5 +3999,268 @@ func(); // 0
 // Because arguments.length counts ONLY the number of arguments actually passed, NOT the number of parameters.
 // Default parameters do NOT increase arguments.length.
 ```
+
+- What will be the output of the code below?
+
+```js
+var trees = ["pine", "apple", "oak", "maple", "cherry"];
+delete trees[3];
+console.log(trees.length); // 5
+console.log(trees) // [ 'pine', 'apple', 'oak', <1 empty item>, 'cherry' ]
+```
+
+- What will the code below output to the console and why?
+
+```js
+(function () {
+    var a = b = 3;
+})();
+
+console.log("a defined? " + (typeof a !== 'undefined')); // a defined? false
+console.log("b defined? " + (typeof b !== 'undefined')); // b defined? true
+```
+
+- What will the code below output to the console and why?
+
+```js
+var myObject = {
+    foo: "bar",
+    func: function () {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function () {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+myObject.func();
+
+/*
+outer func:  this.foo = bar
+outer func:  self.foo = bar
+inner func:  this.foo = undefined
+inner func:  self.foo = bar
+*/
+```
+
+- Consider the two functions below. Will they both return the same thing? Why or why not?
+
+```js
+function foo1() {
+    return {
+        bar: "hello"
+    };
+}
+
+function foo2() {
+    return
+    {
+        bar: "hello"
+    };
+}
+
+
+console.log("foo1 returns:");
+console.log(foo1());
+console.log("foo2 returns:");
+console.log(foo2());
+
+/*
+foo1 returns:
+{ bar: 'hello' }
+foo2 returns:
+undefined
+*/
+```
+JavaScript has automatic semicolon insertion (ASI). In foo2, a semicolon is inserted after return, so the object is never returned.
+
+```js
+function foo2() {
+    return; // ASI inserts this
+    { bar: "hello" }
+}
+``` 
+
+- What will the code below output to the console and why?
+
+```js
+var arr1 = "john".split('');
+var arr2 = arr1.reverse();
+var arr3 = "jones".split('');
+arr2.push(arr3);
+console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+
+/*
+array 1: length=5 last=j,o,n,e,s
+array 2: length=5 last=j,o,n,e,s
+*/
+```
+
+- What will be printed on the console?
+
+```js
+(function () {
+
+    var a = b = 5;
+
+})();
+console.log(b); // 5
+```
+
+- Write a mul function which will work properly when invoked with following syntax.
+
+```js
+function mul (x) {
+  return function (y) { // anonymous function
+    return function (z) { // anonymous function
+      return x * y * z;
+    };
+  };
+}
+
+console.log(mul(2)(3)(4)); // output : 24
+console.log(mul(4)(3)(4)); // output : 48
+```
+
+- What will be the output of the following code?
+
+```js
+var x = 1;
+var output = (function () {
+    delete x;
+    return x;
+})();
+
+console.log(output); // 1
+```
+
+- What will be the output of the following code?
+
+```js
+var x = { foo: 1 };
+var output = (function () {
+    delete x.foo;
+    return x.foo;
+})();
+
+console.log(output); // undefined
+```
+
+-  What will be the output of the following code?
+  
+```js
+var Employee = {
+    company: 'xyz'
+}
+var emp1 = Object.create(Employee);
+delete emp1.company
+console.log(emp1.company); // xyz
+```
+
+- What will be the output of the following code?
+
+```js
+var trees = ["xyz", "xxxx", "test", "ryan", "apple"];
+delete trees[3];
+console.log(trees.length);
+```
+
+- What will be the output of the following code?
+
+```js
+var bar = true;
+console.log(bar + 0);
+console.log(bar + "xyz");
+console.log(bar + true);
+console.log(bar + false);
+
+/*
+1
+truexyz
+2
+1
+*/
+```
+
+- What will be the output of the following code?
+
+```js
+var z = 1, y = z = typeof y;
+console.log(y); // undefined
+```
+
+- What is the difference between declaring a function in the formats listed below?
+
+```js
+var foo = function() {
+  // Some code
+}
+```
+```js
+function bar () {
+  // Some code
+}
+```
+
+Function declaration (function bar):
+Fully hoisted — you can call it before it’s defined.
+
+Function expression (var foo = function):
+Only the variable is hoisted, not the function — calling it before assignment causes an error.
+
+```js
+bar(); // works
+foo(); // error
+
+var foo = function () {};
+function bar() {}
+```
+
+- What is the output of the following?
+
+```js
+bar();
+(function abc() { console.log('something') })();
+function bar() { console.log('bar got called') };
+
+/*
+bar got called
+something
+*/
+```
+
+- What will be the output of the following code?
+
+```js
+var salary = "1000$";
+
+(function () {
+    console.log("Original salary was " + salary);
+
+    var salary = "5000$";
+
+    console.log("My New Salary " + salary);
+})();
+
+/*
+Original salary was undefined
+My New Salary 5000$
+*/
+```
+
+- What would be the output of the following code?
+
+```js
+function User(name) {
+    this.name = name || "JsGeeks";
+}
+
+var person = new User("xyz")["location"] = "USA";
+console.log(person); // USA
+```
+
 
 ## problem solving:
