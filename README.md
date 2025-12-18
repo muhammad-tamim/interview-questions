@@ -85,7 +85,7 @@
   - [what is preprocessor and why sass call preprocessor](#what-is-preprocessor-and-why-sass-call-preprocessor)
   - [How does Calc work?](#how-does-calc-work)
 - [JavaScript](#javascript)
-  - [Theory Based Questions:](#theory-based-questions)
+  - [Theory Based:](#theory-based)
     - [What are closure in JavaScript? (important):](#what-are-closure-in-javascript-important)
     - [What is callback function? (important):](#what-is-callback-function-important)
     - [What is callback hell? (important):](#what-is-callback-hell-important)
@@ -137,6 +137,7 @@
     - [What is debouncing and throttling?](#what-is-debouncing-and-throttling)
     - [What is memory leak and how does JavaScript handle memory leak?](#what-is-memory-leak-and-how-does-javascript-handle-memory-leak)
     - [How to empty an array in JavaScript?](#how-to-empty-an-array-in-javascript)
+    - [How to check if an object is an array or not?](#how-to-check-if-an-object-is-an-array-or-not)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -1497,7 +1498,7 @@ The calc() function in CSS allows you to perform calculations by (+ , -, / *) to
 
 # JavaScript
 
-## Theory Based Questions:
+## Theory Based:
 
 ### What are closure in JavaScript? (important):
 A closure is a function technique where an inner function remembers the variables from its outer function, even after that outer function has finished executing. This means JavaScript keeps a reference to the outer variables in memory so the inner function can remember and access them.
@@ -3120,6 +3121,11 @@ arr = [];
 const newArray = arr.splice(0);
 ```
 
+### How to check if an object is an array or not?
+
+```js
+Array.isArray(value);
+```
 
 ## Coding Exercise:
 
