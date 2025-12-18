@@ -141,6 +141,7 @@
     - [How to check whether a key exist in a JavaScript object or not.](#how-to-check-whether-a-key-exist-in-a-javascript-object-or-not)
     - [What’s the difference between typeof and instanceof?](#whats-the-difference-between-typeof-and-instanceof)
     - [Difference between Function, Method and Constructor calls in JavaScript.](#difference-between-function-method-and-constructor-calls-in-javascript)
+    - [How to merge two JavaScript Object dynamically](#how-to-merge-two-javascript-object-dynamically)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3157,6 +3158,25 @@ typeof [];           // "object" (quirk)
 - Method call `obj.foo()`: called on an object
 - Constructor call `new Foo()`: creates a new object
 
+
+### How to merge two JavaScript Object dynamically
+
+```js
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+
+// Using spread operator
+const merged = { ...obj1, ...obj2 };
+
+console.log(merged); 
+// Output: { a: 1, b: 3, c: 4 }
+```
+
+```js
+const merged = Object.assign({}, obj1, obj2);
+console.log(merged); 
+// Output: { a: 1, b: 3, c: 4 }
+```
 
 ## Coding Exercise:
 
