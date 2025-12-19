@@ -2812,6 +2812,15 @@ demo(10, 20);
 
 Note: Arrow functions do NOT have arguments object
 
+```js
+function func(x){
+   console.log(typeof x, arguments.length);
+}
+func();                //==> "undefined", 0
+func(1);               //==> "number", 1
+func("1", "2", "3");   //==> "string", 3
+```
+
 ### Explain default parameters in ES6:
 
 In JavaScript, default parameters allow you to set default values for function parameters. If no arguments is passed when the function is called, the default parameter will be used.
@@ -4392,5 +4401,1124 @@ var person = new User("xyz")["location"] = "USA";
 console.log(person); // USA
 ```
 
+For a JS developer, it's crucially important to understand which values are passed by reference, and which ones are passed by value. Remember that objects, including arrays are passed by reference while strings, booleans and numbers are passed by value.
+
+- What would be the output of following code?
+
+```js
+var strA = "hi there";
+var strB = strA;
+strB = "bye there!";
+console.log(strA) // hi there
+```
+
+- What would be the output of following code?
+
+```js
+var objA = { prop1: 42 };
+var objB = objA;
+objB.prop1 = 90;
+console.log(objA) // { prop1: 90 }
+```
+
+- What would be the output of following code?
+
+```js
+var objA = { prop1: 42 };
+var objB = objA;
+objB = {};
+console.log(objA) // { prop1: 42 }
+```
+
+- What would be the output of following code?
+
+```js
+var arrA = [0, 1, 2, 3, 4, 5];
+var arrB = arrA;
+arrB[0] = 42;
+console.log(arrA) // [ 42, 1, 2, 3, 4, 5 ]
+```
+
+- What would be the output of following code?
+
+```js
+var arrA = [0, 1, 2, 3, 4, 5];
+var arrB = arrA.slice();
+arrB[0] = 42;
+console.log(arrA) // [ 0, 1, 2, 3, 4, 5 ]
+```
+
+- What would be the output of following code?
+
+```js
+var arrA = [{ prop1: "value of array A!!" }, { someProp: "also value of array A!" }, 3, 4, 5];
+var arrB = arrA;
+arrB[0].prop1 = 42;
+console.log(arrA); // [ { prop1: 42 }, { someProp: 'also value of array A!' }, 3, 4, 5 ]
+```
+
+- What would be the output of following code?
+
+```js
+var arrA = [{ prop1: "value of array A!!" }, { someProp: "also value of array A!" }, 3, 4, 5];
+var arrB = arrA.slice();
+arrB[0].prop1 = 42;
+arrB[3] = 20;
+console.log(arrA); // [ { prop1: 42 }, { someProp: 'also value of array A!' }, 3, 4, 5 ]
+```
+
+- What would be the output of following code?
+
+```js
+console.log(employeeId); // ReferenceError: employeeId is not defined
+```
+- What would be the output of following code?
+
+```js
+console.log(employeeId); // undefined
+var employeeId = '19000';
+```
+- What would be the output of following code?
+
+```js
+var employeeId = '1234abe';
+(function(){
+	console.log(employeeId);
+	var employeeId = '122345';
+})();
+// undefined
+```
+- What would be the output of following code?
+
+```js
+var employeeId = '1234abe';
+(function() {
+	console.log(employeeId);
+	var employeeId = '122345';
+	(function() {
+		var employeeId = 'abc1234';
+	}());
+}());
+
+// undefined
+```
+- What would be the output of following code?
+
+```js
+(function() {
+	console.log(typeof displayFunc);
+	var displayFunc = function(){
+		console.log("Hi I am inside displayFunc");
+	}
+}());
+
+// undefined
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'abc123';
+function foo() {
+    employeeId = '123bcd';
+    return;
+}
+foo();
+console.log(employeeId); // 123bcd
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'abc123';
+
+function foo() {
+	employeeId = '123bcd';
+	return;
+
+	function employeeId() {}
+}
+foo();
+console.log(employeeId); // abc123
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'abc123';
+
+function foo() {
+    employeeId();
+    return;
+
+    function employeeId() {
+        console.log(typeof employeeId);
+    }
+}
+foo();
+
+// function
+```
+- What would be the output of following code?
+
+```js
+function foo() {
+	employeeId();
+	var product = 'Car'; 
+	return;
+
+	function employeeId() {
+		console.log(product);
+	}
+}
+foo();
+// undefined
+```
+- What would be the output of following code?
+
+```js
+(function foo() {
+    bar();
+
+    function bar() {
+        abc();
+        console.log(typeof abc);
+    }
+
+    function abc() {
+        console.log(typeof bar);
+    }
+}());
+
+/*
+function
+function
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    'use strict';
+
+    var person = {
+        name: 'John'
+    };
+    person.salary = '10000$';
+    person['country'] = 'USA';
+
+    Object.defineProperty(person, 'phoneNo', {
+        value: '8888888888',
+        enumerable: true
+    })
+
+    console.log(Object.keys(person));
+})();
+
+// [ 'name', 'salary', 'country', 'phoneNo' ]
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    'use strict';
+
+    var person = {
+        name: 'John'
+    };
+    person.salary = '10000$';
+    person['country'] = 'USA';
+
+    Object.defineProperty(person, 'phoneNo', {
+        value: '8888888888',
+        enumerable: false
+    })
+
+    console.log(Object.keys(person));
+})();
+
+// [ 'name', 'salary', 'country' ]
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = {
+        foo: 'foo',
+        bar: 'bar'
+    };
+    var objB = {
+        foo: 'foo',
+        bar: 'bar'
+    };
+    console.log(objA == objB);
+    console.log(objA === objB);
+}());
+
+/*
+false
+false
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = new Object({ foo: "foo" });
+    var objB = new Object({ foo: "foo" });
+    console.log(objA == objB);
+    console.log(objA === objB);
+}());
+
+/*
+false
+false
+*/
+```
+
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = Object.create({
+        foo: 'foo'
+    });
+    console.log(objA == objB);
+    console.log(objA === objB);
+}());
+
+/*
+false
+false
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = Object.create(objA);
+    console.log(objA == objB);
+    console.log(objA === objB);
+}());
+
+/*
+false
+false
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = Object.create(objA);
+    console.log(objA.toString() == objB.toString());
+    console.log(objA.toString() === objB.toString());
+}());
+
+/*
+true
+true
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = objA;
+    console.log(objA == objB);
+    console.log(objA === objB);
+    console.log(objA.toString() == objB.toString());
+    console.log(objA.toString() === objB.toString());
+}());
+
+/*
+true
+true
+true
+true
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = objA;
+    objB.foo = 'bar';
+    console.log(objA.foo);
+    console.log(objB.foo);
+}());
+
+/*
+bar
+bar
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = Object.create({
+        foo: 'foo'
+    });
+    var objB = objA;
+    objB.foo = 'bar';
+
+    delete objA.foo;
+    console.log(objA.foo);
+    console.log(objB.foo);
+}());
+
+/*
+foo
+foo
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var objA = {
+        foo: 'foo'
+    };
+    var objB = objA;
+    objB.foo = 'bar';
+
+    delete objA.foo;
+    console.log(objA.foo);
+    console.log(objB.foo);
+}());
+
+/*
+undefined
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var array = new Array('100');
+    console.log(array);
+    console.log(array.length);
+}());
+
+/*
+[ '100' ]
+1
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var array1 = [];
+    var array2 = new Array(100);
+    var array3 = new Array(['1', 2, '3', 4, 5.6]);
+    console.log(array1);
+    console.log(array2);
+    console.log(array3);
+    console.log(array3.length);
+}());
+
+/*
+[]
+[ <100 empty items> ]
+[ [ '1', 2, '3', 4, 5.6 ] ]
+1
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var array = new Array('a', 'b', 'c', 'd', 'e');
+    array[10] = 'f';
+    delete array[10];
+    console.log(array.length);
+}());
+
+/*
+11
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var animal = ['cow', 'horse'];
+    animal.push('cat');
+    animal.push('dog', 'rat', 'goat');
+    console.log(animal.length);
+})();
+
+/*
+6
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var animal = ['cow', 'horse'];
+    animal.push('cat');
+    animal.unshift('dog', 'rat', 'goat');
+    console.log(animal);
+})();
+
+/*
+[ 'dog', 'rat', 'goat', 'cow', 'horse', 'cat' ]
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var array = [1, 2, 3, 4, 5];
+    console.log(array.indexOf(2));
+    console.log([{ name: 'John' }, { name: 'John' }].indexOf({ name: 'John' }));
+    console.log([[1], [2], [3], [4]].indexOf([3]));
+    console.log("abcdefgh".indexOf('e'));
+})();
+
+/*
+1
+-1
+-1
+4
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6];
+    console.log(array.indexOf(2));
+    console.log(array.indexOf(2, 3));
+    console.log(array.indexOf(2, 10));
+})();
+
+/*
+1
+6
+-1
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var numbers = [2, 3, 4, 8, 9, 11, 13, 12, 16];
+    var even = numbers.filter(function (element, index) {
+        return element % 2 === 0;
+    });
+    console.log(even);
+
+    var containsDivisibleby3 = numbers.some(function (element, index) {
+        return element % 3 === 0;
+    });
+
+    console.log(containsDivisibleby3);
+})();
+
+/*
+[ 2, 4, 8, 12, 16 ]
+true
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var containers = [2, 0, false, "", '12', true];
+    var containers = containers.filter(Boolean);
+    console.log(containers);
+    var containers = containers.filter(Number);
+    console.log(containers);
+    var containers = containers.filter(String);
+    console.log(containers);
+    var containers = containers.filter(Object);
+    console.log(containers);
+})();
+
+/*
+[ 2, '12', true ]
+[ 2, '12', true ]
+[ 2, '12', true ]
+[ 2, '12', true ]
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var list = ['foo', 'bar', 'john', 'ritz'];
+    console.log(list.slice(1));
+    console.log(list.slice(1, 3));
+    console.log(list.slice());
+    console.log(list.slice(2, 2));
+    console.log(list);
+})();
+
+/*
+[ 'bar', 'john', 'ritz' ]
+[ 'bar', 'john' ]
+[ 'foo', 'bar', 'john', 'ritz' ]
+[]
+[ 'foo', 'bar', 'john', 'ritz' ]
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var list = ['foo', 'bar', 'john'];
+    console.log(list.splice(1));
+    console.log(list.splice(1, 2));
+    console.log(list);
+})();
+
+/*
+[ 'bar', 'john' ]
+[]
+[ 'foo' ]
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var arrayNumb = [2, 8, 15, 16, 23, 42];
+    arrayNumb.sort();
+    console.log(arrayNumb);
+})();
+
+/*
+[ 15, 16, 2, 23, 42, 8 ]
+*/
+```
+- What would be the output of following code?
+
+```js
+function funcA() {
+    console.log("funcA ", this);
+    (function innerFuncA1() {
+        console.log("innerFunc1", this);
+        (function innerFunA11() {
+            console.log("innerFunA11", this);
+        })();
+    })();
+}
+
+console.log(funcA()); // global function
+```
+- What would be the output of following code?
+
+```js
+var obj = {
+    message: "Hello",
+    innerMessage: !(function () {
+        console.log(this.message);
+    })()
+};
+
+console.log(obj.innerMessage);
+
+/*
+undefined
+true
+*/
+```
+- What would be the output of following code?
+
+```js
+var obj = {
+    message: "Hello",
+    innerMessage: function () {
+        return this.message;
+    }
+};
+
+console.log(obj.innerMessage()); // Hello
+```
+- What would be the output of following code?
+
+```js
+var obj = {
+    message: 'Hello',
+    innerMessage: function () {
+        (function () {
+            console.log(this.message);
+        }());
+    }
+};
+console.log(obj.innerMessage());
+
+/*
+undefined
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+var obj = {
+    message: 'Hello',
+    innerMessage: function () {
+        var self = this;
+        (function () {
+            console.log(self.message);
+        }());
+    }
+};
+console.log(obj.innerMessage());
+
+/*
+Hello
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function myFunc() {
+    console.log(this.message);
+}
+myFunc.message = "Hi John";
+
+console.log(myFunc());
+
+/*
+undefined
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function myFunc() {
+    console.log(myFunc.message);
+}
+myFunc.message = "Hi John";
+
+console.log(myFunc());
+
+/*
+Hi John
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function myFunc() {
+    myFunc.message = 'Hi John';
+    console.log(myFunc.message);
+}
+console.log(myFunc());
+
+/*
+Hi John
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function myFunc(param1, param2) {
+    console.log(myFunc.length);
+}
+console.log(myFunc());
+console.log(myFunc("a", "b"));
+console.log(myFunc("a", "b", "c", "d"));
+
+/*
+2
+undefined
+2
+undefined
+2
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function myFunc() {
+    console.log(arguments.length);
+}
+console.log(myFunc());
+console.log(myFunc("a", "b"));
+console.log(myFunc("a", "b", "c", "d"));
+
+/*
+0
+undefined
+2
+undefined
+4
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+function Person(name, age) {
+    this.name = name || "John";
+    this.age = age || 24;
+    this.displayName = function () {
+        console.log(this.name);
+    }
+}
+
+Person.name = "John";
+Person.displayName = function () {
+    console.log(this.name);
+}
+
+var person1 = new Person('John');
+person1.displayName();
+Person.displayName();
+
+/*
+John
+Person
+*/
+```
+- What would be the output of following code?
+
+```js
+function passWordMngr() {
+    var password = '12345678';
+    this.userName = 'John';
+    return {
+        pwd: password
+    };
+}
+// Block End
+var userInfo = passWordMngr();
+console.log(userInfo.pwd);
+console.log(userInfo.userName);
+
+/*
+12345678
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'aq123';
+function Employee() {
+    this.employeeId = 'bq1uy';
+}
+console.log(Employee.employeeId); // undefined
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'aq123';
+
+function Employee() {
+    this.employeeId = 'bq1uy';
+}
+console.log(new Employee().employeeId);
+Employee.prototype.employeeId = 'kj182';
+Employee.prototype.JobId = '1BJKSJ';
+console.log(new Employee().JobId);
+console.log(new Employee().employeeId);
+
+/*
+bq1uy
+1BJKSJ
+bq1uy
+*/
+```
+- What would be the output of following code?
+
+```js
+var employeeId = 'aq123';
+(function Employee() {
+    try {
+        throw 'foo123';
+    } catch (employeeId) {
+        console.log(employeeId);
+    }
+    console.log(employeeId);
+}());
+
+/*
+foo123
+aq123
+*/
+```
+- What would be the output of following code?
+
+```js
+function getDataFromServer(apiUrl) {
+    var name = "John";
+    return {
+        then: function (fn) {
+            fn(name);
+        }
+    }
+}
+
+getDataFromServer('www.google.com').then(function (name) {
+    console.log(name);
+});
+
+
+// John
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    var arrayNumb = [2, 8, 15, 16, 23, 42];
+    Array.prototype.sort = function (a, b) {
+        return a - b;
+    };
+    arrayNumb.sort();
+    console.log(arrayNumb);
+})();
+
+(function () {
+    var numberArray = [2, 8, 15, 16, 23, 42];
+    numberArray.sort(function (a, b) {
+        if (a == b) {
+            return 0;
+        } else {
+            return a < b ? -1 : 1;
+        }
+    });
+    console.log(numberArray);
+})();
+
+(function () {
+    var numberArray = [2, 8, 15, 16, 23, 42];
+    numberArray.sort(function (a, b) {
+        return a - b;
+    });
+    console.log(numberArray);
+})();
+
+/*
+[ 2, 8, 15, 16, 23, 42 ]
+[ 2, 8, 15, 16, 23, 42 ]
+[ 2, 8, 15, 16, 23, 42 ]
+*/
+```
+- What would be the output of following code?
+
+```js
+(function () {
+    function sayHello() {
+        var name = "Hi John";
+        return
+        {
+            fullName: name
+        }
+    }
+    console.log(sayHello().fullName);
+})();
+
+// TypeError: Cannot read properties of undefined (reading 'fullName')
+```
+- What would be the output of following code?
+
+```js
+function getNumber() {
+    return (2, 4, 5);
+}
+
+var numb = getNumber();
+console.log(numb); // 5
+```
+- What would be the output of following code?
+
+```js
+function getNumber() {
+    return;
+}
+
+var numb = getNumber();
+console.log(numb); // undefined
+```
+- What would be the output of following code?
+
+```js
+function mul(x) {
+    return function (y) {
+        return [x * y, function (z) {
+            return x * y + z;
+        }];
+    }
+}
+
+console.log(mul(2)(3)[0]); // 6
+console.log(mul(2)(3)[1](4)); // 10
+```
+- What would be the output of following code?
+
+```js
+function mul(x) {
+    return function (y) {
+        return {
+            result: x * y,
+            sum: function (z) {
+                return x * y + z;
+            }
+        };
+    };
+}
+console.log(mul(2)(3).result); // 6
+console.log(mul(2)(3).sum(4)); // 10
+```
+- What would be the output of following code?
+
+```js
+
+```
+- What would be the output of following code?
+
+```js
+function mul(x) {
+    return function (y) {
+        return function (z) {
+            return function (w) {
+                return function (p) {
+                    return x * y * z * w * p;
+                };
+            };
+        };
+    };
+}
+console.log(mul(2)(3)(4)(5)(6)); // 720
+```
+- What would be the output of following code?
+
+```js
+function getName1() {
+    console.log(this.name);
+}
+
+Object.prototype.getName2 = () => {
+    console.log(this.name)
+}
+
+let personObj = {
+    name: "Tony",
+    print: getName1
+}
+
+personObj.print();
+personObj.getName2();
+
+/*
+Tony
+undefined
+*/
+```
+- What would be the output of following code?
+
+```js
+let a = true;
+let c = 0;
+
+setTimeout(() => {
+	a = false;
+},2000)
+
+while(a){
+	console.log('Hello')
+}
+
+// infinite loop
+```
+- What would be the output of following code?
+
+```js
+
+let c = 0;
+
+let id = setInterval(() => {
+    console.log(c++)
+}, 200)
+
+setTimeout(() => {
+    clearInterval(id)
+}, 2000)
+
+/*
+0
+1
+2
+3
+4
+5
+6
+7
+8
+*/
+```
+- What would be the output of following code?
+
+```js
+console.log('1');
+
+setTimeout(() => {
+    console.log('2');
+    Promise.resolve().then(() => {
+        console.log('3');
+    });
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log('4');
+    setTimeout(() => {
+        console.log('5');
+    }, 0);
+});
+
+console.log('6');
+
+/*
+1
+6
+4
+2
+3
+5
+*/
+```
+- What would be the output of following code?
+
+```js
+for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, i * 1000);
+}
+
+/*
+0
+1
+2
+3
+4
+*/
+```
 
 ## problem solving:
