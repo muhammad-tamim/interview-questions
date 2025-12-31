@@ -1,7 +1,9 @@
 <h1 align="center">Interview Questions</h1>
 
+<details>
+<summary>Click for table of contents</summary>
+
 ### Table of contents
-- [Interpersonal](#interpersonal)
 - [HTML](#html)
   - [What is HTML?](#what-is-html)
   - [Difference between element, attribute and tag?](#difference-between-element-attribute-and-tag)
@@ -147,7 +149,10 @@
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
-# Interpersonal
+</details>
+
+---
+---
 
 # HTML
 
@@ -214,17 +219,17 @@ This is a paragraph of text.
 
 ## Difference between element, attribute and tag?
 
-![diffrenceBetweenElementTagAttribute.png](assets/images/html/diffrenceBetweenElementTagAttribute.png)
+![diffrenceBetweenElementTagAttribute.png](./images/html/diffrenceBetweenElementTagAttribute.png)
 
 ## What is a marquee in HTML?
 
 The `<marquee>` tag in HTML creates a scrolling text or image effect within a webpage. It allows content to move horizontally or vertically across the screen.
 
-![HTML-marquee-Tag-1.gif](./assets/images/html/HTML-marquee-Tag-1.gif)  
+![HTML-marquee-Tag-1.gif](./images/html/HTML-marquee-Tag-1.gif)  
 
-![HTML-marquee-Tag-2.gif](./assets/images/html/HTML-marquee-Tag-2.gif)  
+![HTML-marquee-Tag-2.gif](./images/html/HTML-marquee-Tag-2.gif)  
 
-![HTML-marquee-Tag-3.gif](./assets/images/html/HTML-marquee-Tag-3.gif)
+![HTML-marquee-Tag-3.gif](./images/html/HTML-marquee-Tag-3.gif)
 
 ## How do you separate a section of text in HTML?
 
@@ -244,7 +249,7 @@ The `<marquee>` tag in HTML creates a scrolling text or image effect within a we
   <dd>- white cold drink</dd>
 </dl>
 ```
-![description-list-image](./assets/images/html/description-list-image.png)
+![description-list-image](./images/html/description-list-image.png)
 
 ## What is the difference between HTML and CSS?
 
@@ -325,7 +330,7 @@ Unlike normal images (.jpg, .png), SVG does not lose quality when zoomed or resi
   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
 </svg>
 ```
-![svg-circle](./assets/images/html/svg-circle.png)
+![svg-circle](./images/html/svg-circle.png)
 
 ## What is the purpose of the `<canvas>` element in HTML5?
 The `<canvas>` element provides a drawable region in the document that can be used to render graphics, such as charts, games, or other visual images, on the fly via scripting (usually JavaScript).
@@ -351,7 +356,7 @@ ctx.stroke();
 </body>
 </html>
 ```
-![canvas](./assets/images/html/canvas.png)
+![canvas](./images/html/canvas.png)
 
 
 ## What is the difference between SVG and Canvas HTML5 elements?
@@ -543,7 +548,7 @@ To create a link that opens the user's default email client with a new message, 
 <input type="checkbox" id="vehicle3" value="Boat">
 <label for="vehicle3"> I have a boat</label><br>
 ```
-![checkbox](./assets/images/html/checkbox.png)
+![checkbox](./images/html/checkbox.png)
 
 ## How do you create a dropdown list in HTML?
 
@@ -555,7 +560,7 @@ To create a link that opens the user's default email client with a new message, 
   <option value="cherry">Cherry</option>
 </select>
 ```
-![dropdown](./assets/images/html/dropdown.png)
+![dropdown](./images/html/dropdown.png)
 
 ## How do you create a multi-line text input in an HTML form?
 ```<textarea name="message" rows="4" cols="50"></textarea>```
@@ -620,7 +625,7 @@ The rel attribute specifies the relationship between the current document and th
 ## Is the `<datalist>` tag and `<select>` tag same?
 No. The `<datalist>` tag and `<select>` tag are different. In the case of `<select>` tag a user will have to choose from a list of options, whereas `<datalist>` when used along with the `<input>` tag provides a suggestion that the user selects one of the options given or can enter some entirely different value.
 
-![data-list](./assets/images/html/datalist.png)
+![data-list](./images/html/datalist.png)
 
 ## What is the difference between `<meter` tag and `<progress>` tag?
 
