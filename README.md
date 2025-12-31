@@ -146,6 +146,7 @@
     - [How to merge two JavaScript Object dynamically](#how-to-merge-two-javascript-object-dynamically)
     - [What is non-enumerable property in JavaScript and how you can create one?](#what-is-non-enumerable-property-in-javascript-and-how-you-can-create-one)
     - [What is Function binding ?](#what-is-function-binding-)
+    - [Differences between CommonJS modules and ES modules in JavaScript](#differences-between-commonjs-modules-and-es-modules-in-javascript)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -709,7 +710,7 @@ A CSS selector selects the HMTL elements you want to style. We can divide CSS se
 
 In CSS, the term box model is used when taking about design and layout. The CSS box model is essentially a box that warps around every HTML element. It consists of: content, padding, borders, and margins. The image below illustrates the box model:
 
-![](./assets/images/html/box-model.png)
+![](./images/html/box-model.png)
 
 Example 1:
 
@@ -733,7 +734,7 @@ By default, when we set width and height for an element, only the content inside
             padding: 25px;
         }
 ```
-![](./assets/images/html/box-model-example-1.png.png)
+![](./images/html/box-model-example-1.png.png)
 
 When we apply box-sizing: border-box;, the total width and height include content, padding, and border.
 
@@ -756,7 +757,7 @@ When we apply box-sizing: border-box;, the total width and height include conten
         }
 ```
 
-![](./assets/images/html/box-model-example-2.png)
+![](./images/html/box-model-example-2.png)
 
 ## What is the difference between margin and padding?
 
@@ -812,12 +813,12 @@ Media queries are used to make websites responsive by applying CSS rules based o
 - static(default):
 All elements are static by default. They follow the normal document flow. Thats means top, left, right, bottom have no effect.
 
-![](./assets/images/html/static.png)
+![](./images/html/static.png)
 
 -  Relative:	
 When we apply position: relative to an element, it stays in its original position within the document flow but allows us to move it around using properties like top, right, bottom, and left. The element's original space is still reserved, meaning other elements won't shift to take its place.
 
-![](./assets/images/html/relative.png)
+![](./images/html/relative.png)
 
 ```html
     <div class="swim_container">
@@ -839,7 +840,7 @@ CSS:
 - absolute:	
 When we apply position: absolute to an element, it is completely removed from its original position in the document flow and is positioned relative to the nearest ancestor that has a non-static position (usually relative, absolute, or fixed).This allows us to move it around freely using properties like top, right, bottom, and left to base on her parent frame. However, since the element is no longer part of the normal flow, its original space is not reserved, causing other elements to shift and fill the gap.
 
-![](./assets/images/html/absolute.png)
+![](./images/html/absolute.png)
 
 ```css
 .box{
@@ -856,7 +857,7 @@ When we apply position: absolute to an element, it is completely removed from it
 -  Sticky:	
 The position: sticky property allows an element to “stick” to a specified position within its parent container when scrolling.
 
-![](./assets/images/html/sticky.gif)
+![](./images/html/sticky.gif)
 
 
 ```css
@@ -885,7 +886,7 @@ The position: sticky property allows an element to “stick” to a specified po
 The position: fixed property allows an element to “fixed” to the viewport, not its parent container when scrolling
 
 
-![](./assets/images/html/fixed2.gif)
+![](./images/html/fixed2.gif)
 
 
 ```css
@@ -960,7 +961,7 @@ z-index controls the stacking order of elements based on their value:
     </div>
 ```
 
-![](./assets/images/html/z-index.png)
+![](./images/html/z-index.png)
 
 ## How is CSS different from CSS3?
 
@@ -1009,7 +1010,7 @@ Note: If you use Tailwind CSS with DaisyUI, you get the ready-made component pow
 
 ## what is the syntax for css?
 
-![](./assets/images/html/css-syntax.png)
+![](./images/html/css-syntax.png)
 
 
 ##  what is cascading order and specificity?
@@ -1111,19 +1112,19 @@ The overflow property has the following values:
 
 - visible(default)
 
-![](./assets/images/html/visible.png)  
+![](./images/html/visible.png)  
 
 - hidden
   
-![](./assets/images/html/hidden.png)    
+![](./images/html/hidden.png)    
 
 - scroll 
   
-![](./assets/images/html/scroll.png)  
+![](./images/html/scroll.png)  
 
 - auto (Similar to scroll, but it adds scroll bars only when necessary)
 
-![](./assets/images/html/auto.png)
+![](./images/html/auto.png)
 
 - overflow-x and overflow-y
 
@@ -1138,7 +1139,7 @@ The overflow property has the following values:
         }
 ```
 
-![](./assets/images/html/overflow-xy.png)
+![](./images/html/overflow-xy.png)
 
 ## What does the CSS float property do?
 The float property in CSS is used to position an element to the left or right of its container
@@ -1212,7 +1213,7 @@ The float property in CSS is used to position an element to the left or right of
 </html>
 ```
 
-![](./assets/images/html/display-property.png)
+![](./images/html/display-property.png)
 
 ## How can we center an element in CSS?
 **with justify-content and align-items**
@@ -1241,7 +1242,7 @@ The float property in CSS is used to position an element to the left or right of
     </div>
 ```
 
-![](./assets/images/html/perfect-centaring-1.png)
+![](./images/html/perfect-centaring-1.png)
 
 **with margin: auto;**
 
@@ -1270,21 +1271,21 @@ The float property in CSS is used to position an element to the left or right of
     </div>
 ```
 
-![](./assets/images/html/perfect-centaring-2.png)
+![](./images/html/perfect-centaring-2.png)
 
 ## How can we add gradients in CSS?
 - Linear Gradient --> background: linear-gradient(direction, color1, color2.... );
 
-![](./assets/images/html/linear-gradient.jpeg)  
+![](./images/html/linear-gradient.jpeg)  
 
 - Radial Gradient --> background: radial-gradient(cirle, color1, color2.... ); 
 
-![](./assets/images/html/redial-gradient.jpg)  
+![](./images/html/redial-gradient.jpg)  
 
 
 - Conic Gradient --> background: conic-gradient(color1, color1, color2.... ); 
 
-![](./assets/images/html/conic-gradient.png)  
+![](./images/html/conic-gradient.png)  
 
 ##  How can we make our website responsive using CSS?
 
@@ -3254,6 +3255,37 @@ greet.call(person, "Hello", "!");
 greet.apply(person, ["Hi", "!!"]); 
 // Output: Hi, Tamim!!
 ```
+
+### Differences between CommonJS modules and ES modules in JavaScript
+- Syntax: 
+
+CommonJS:
+
+```js
+// export
+module.exports = add;
+
+// import
+const add = require('./add');
+```
+
+ES Module:
+
+```js
+// export
+export default add;
+export const sum = () => {};
+
+// import
+import add, { sum } from './add.js';
+```
+
+- Loading behavior:
+
+| Feature | CommonJS        | ES Modules       |
+| ------- | --------------- | ---------------- |
+| Loading | **Synchronous** | **Asynchronous** |
+
 
 ## Coding Exercise:
 
