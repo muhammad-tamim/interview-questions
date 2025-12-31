@@ -147,6 +147,8 @@
     - [What is non-enumerable property in JavaScript and how you can create one?](#what-is-non-enumerable-property-in-javascript-and-how-you-can-create-one)
     - [What is Function binding ?](#what-is-function-binding-)
     - [Differences between CommonJS modules and ES modules in JavaScript](#differences-between-commonjs-modules-and-es-modules-in-javascript)
+    - [Difference between mutable and immutable objects in JavaScript:](#difference-between-mutable-and-immutable-objects-in-javascript)
+    - [How does JavaScript garbage collection work:](#how-does-javascript-garbage-collection-work)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
 
@@ -3286,6 +3288,28 @@ import add, { sum } from './add.js';
 | ------- | --------------- | ---------------- |
 | Loading | **Synchronous** | **Asynchronous** |
 
+### Difference between mutable and immutable objects in JavaScript:
+
+- mutable:
+Explain the difference between mutable and immutable objects in JavaScript
+Object types: object, array, function
+
+- Immutable:
+Immutable means the value cannot be changed once created.
+Primitive types: string, number, boolean, null, undefined, symbol, bigint
+
+### How does JavaScript garbage collection work:
+JavaScript garbage collection (GC) is the process where JavaScript engine automatically frees memory that is no longer needed by your program. We don’t manually allocate or free memory—JavaScript does it for you.
+
+For example: 
+When you create values like, 
+
+```sql
+let user = { name: "Tamim" };
+```
+
+Memory is allocated for that object.
+If JavaScript never released unused memory, your app would slow down or crash. GC prevents memory leaks by removing unreachable objects.
 
 ## Coding Exercise:
 
