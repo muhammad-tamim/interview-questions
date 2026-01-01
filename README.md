@@ -154,6 +154,7 @@
     - [Write a program to reverse a string / find palindrome](#write-a-program-to-reverse-a-string--find-palindrome)
     - [Write a program to reverse a string by words.](#write-a-program-to-reverse-a-string-by-words)
     - [Write a program to reverse a given integer number](#write-a-program-to-reverse-a-given-integer-number)
+    - [Write a function which can convert the time input given in 12 hours format to 24 hours format](#write-a-function-which-can-convert-the-time-input-given-in-12-hours-format-to-24-hours-format)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5640,6 +5641,37 @@ let reversedNum = Number(numStr.split("").reverse().join(""))
 
 console.log(reversedNum) // 9483
 ```
+
+### Write a function which can convert the time input given in 12 hours format to 24 hours format
+
+```js
+function convertTo24Hour(time12) {
+    const modifier = time12.slice(-2);      // AM or PM
+    let [hours, minutes] = time12
+        .slice(0, -2)
+        .split(':');
+
+    hours = Number(hours);
+
+    if (modifier === 'AM') {
+        if (hours === 12) hours = 0;
+    }
+    else { // PM
+        if (hours !== 12) hours += 12;
+    }
+
+    return `${hours.toString().padStart(2, '0')}:${minutes}`;
+}
+
+
+console.log(convertTo24Hour("12:10AM")); // 00:10
+console.log(convertTo24Hour("5:00AM")); // 05:00
+console.log(convertTo24Hour("12:33PM")); // 12:33
+console.log(convertTo24Hour("01:59PM")); // 13:59
+console.log(convertTo24Hour("11:8PM")); // 23:08
+console.log(convertTo24Hour("10:02PM")); // 22:02
+```
+
 
 ### Swap two integers variables without using a temporary variable:
 
