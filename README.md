@@ -151,7 +151,7 @@
     - [How does JavaScript garbage collection work:](#how-does-javascript-garbage-collection-work)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
-    - [](#)
+    - [Write a program to reverse a string / find palindrome](#write-a-program-to-reverse-a-string--find-palindrome)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5586,7 +5586,27 @@ for (let i = 0; i < 5; i++) {
 
 ## problem solving:
 
-###
+### Write a program to reverse a string / find palindrome
+
+```js
+const str = "JavaScript is awesome";
+
+let reversedString = "";
+
+for (let i = 0; i < str.length; i++) {
+    reversedString = str[i] + reversedString;
+}
+
+console.log(reversedString); // "emosewa si tpircSavaJ"
+```
+
+A string is a palindrome if its reversed string same as the original
+
+```js 
+const str = "level";
+console.log(str.split("").reverse().join("")); // level
+```
+
 
 ### Swap two integers variables without using a temporary variable:
 
