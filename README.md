@@ -152,6 +152,7 @@
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
     - [Write a program to reverse a string / find palindrome](#write-a-program-to-reverse-a-string--find-palindrome)
+    - [Write a program to reverse a string by words.](#write-a-program-to-reverse-a-string-by-words)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5607,6 +5608,12 @@ const str = "level";
 console.log(str.split("").reverse().join("")); // level
 ```
 
+### Write a program to reverse a string by words.
+
+```js 
+const str = "JavaScript is awesome";
+console.log(str.split(" ").reverse().join(" ")); // "awesome is JavaScript"
+```
 
 ### Swap two integers variables without using a temporary variable:
 
