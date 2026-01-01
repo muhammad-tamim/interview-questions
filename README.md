@@ -151,6 +151,7 @@
     - [How does JavaScript garbage collection work:](#how-does-javascript-garbage-collection-work)
   - [Coding Exercise:](#coding-exercise)
   - [problem solving:](#problem-solving)
+    - [](#)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5584,6 +5585,9 @@ for (let i = 0; i < 5; i++) {
 ```
 
 ## problem solving:
+
+###
+
 ### Swap two integers variables without using a temporary variable:
 
 ```js 
