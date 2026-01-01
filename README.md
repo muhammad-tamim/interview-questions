@@ -153,6 +153,7 @@
   - [problem solving:](#problem-solving)
     - [Write a program to reverse a string / find palindrome](#write-a-program-to-reverse-a-string--find-palindrome)
     - [Write a program to reverse a string by words.](#write-a-program-to-reverse-a-string-by-words)
+    - [Write a program to reverse a given integer number](#write-a-program-to-reverse-a-given-integer-number)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5613,6 +5614,31 @@ console.log(str.split("").reverse().join("")); // level
 ```js 
 const str = "JavaScript is awesome";
 console.log(str.split(" ").reverse().join(" ")); // "awesome is JavaScript"
+```
+
+### Write a program to reverse a given integer number
+
+```js
+let num = 3849;
+
+let reversedNum = 0;
+
+while (num !== 0) {
+    reversedNum = reversedNum * 10 + (num % 10);
+    num = Math.floor(num / 10);
+}
+
+console.log(reversedNum); // 9483
+```
+
+```js 
+let num = 3849;
+
+let numStr = String(num);
+
+let reversedNum = Number(numStr.split("").reverse().join(""))
+
+console.log(reversedNum) // 9483
 ```
 
 ### Swap two integers variables without using a temporary variable:
