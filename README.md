@@ -155,6 +155,7 @@
     - [Write a program to reverse a string by words.](#write-a-program-to-reverse-a-string-by-words)
     - [Write a program to reverse a given integer number](#write-a-program-to-reverse-a-given-integer-number)
     - [Write a function which can convert the time input given in 12 hours format to 24 hours format](#write-a-function-which-can-convert-the-time-input-given-in-12-hours-format-to-24-hours-format)
+    - [Write a function which accepts a string argument and returns the count of characters between the first and last character 'X'](#write-a-function-which-accepts-a-string-argument-and-returns-the-count-of-characters-between-the-first-and-last-character-x)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5672,6 +5673,25 @@ console.log(convertTo24Hour("11:8PM")); // 23:08
 console.log(convertTo24Hour("10:02PM")); // 22:02
 ```
 
+
+### Write a function which accepts a string argument and returns the count of characters between the first and last character 'X'
+
+```js
+function getTheGapX(str) {
+  if (!str.includes("X")) {
+    return -1;
+  }
+
+  const firstIndex = str.indexOf("X");
+  const lastIndex = str.lastIndexOf("X");
+  return firstIndex === lastIndex ? -1 : lastIndex - firstIndex;
+}
+
+console.log(getTheGapX("XeroX")); // 4
+console.log(getTheGapX("Xamarin")); // -1       (If there is only single character 'X')
+console.log(getTheGapX("JavaScript")); // -1       (If there is no character 'X')
+console.log(getTheGapX("F(X) !== G(X) !== F(X)")); // 18
+```
 
 ### Swap two integers variables without using a temporary variable:
 
