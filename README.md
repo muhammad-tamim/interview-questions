@@ -160,6 +160,7 @@
     - [Create a regular expression to validate if the given input is valid mobile number or not](#create-a-regular-expression-to-validate-if-the-given-input-is-valid-mobile-number-or-not)
     - [Write a function which returns a list of elements which contains at least one character as digit](#write-a-function-which-returns-a-list-of-elements-which-contains-at-least-one-character-as-digit)
     - [Write a function which checks if a given search text is present either in the beginning of the first name or the second name](#write-a-function-which-checks-if-a-given-search-text-is-present-either-in-the-beginning-of-the-first-name-or-the-second-name)
+    - [Write a function to chop a string into chunks of a given length and return it as array](#write-a-function-to-chop-a-string-into-chunks-of-a-given-length-and-return-it-as-array)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5794,6 +5795,42 @@ validateName("John Doe Peter", "pet"); // false
 searchText → Must match start of the word being checked
 \w*? → Captures rest of the word lazily
 i → Case-insensitive
+```
+
+### Write a function to chop a string into chunks of a given length and return it as array
+
+```js 
+function stringChop(str, size = str.length) {
+  const arr = [];
+  let i = 0;
+  while (i < str.length) {
+    arr.push(str.slice(i, i + size));
+    i = i + size;
+  }
+  return arr;
+}
+
+stringChop("JavaScript"); // ["JavaScript"]
+stringChop("JavaScript", 2); // ["Ja", "va", "Sc", "ri", "pt"]
+stringChop("JavaScript", 3); // ["Jav", "aSc", "rip", "t"]
+```
+
+```js 
+function stringChop(str, size = str.length) {
+  const regex = new RegExp(`.{1,${size}}`, "g");
+  return str.match(regex);
+}
+
+stringChop("JavaScript"); // ["JavaScript"]
+stringChop("JavaScript", 2); // ["Ja", "va", "Sc", "ri", "pt"]
+stringChop("JavaScript", 3); // ["Jav", "aSc", "rip", "t"]
+```
+
+```
+. → matches any single character
+{1,size} → matches at least 1 and at most size characters
+This ensures the last chunk is included even if shorter than size
+g → global flag → match all occurrences in the string
 ```
 
 ### Swap two integers variables without using a temporary variable:
