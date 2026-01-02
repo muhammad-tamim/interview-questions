@@ -158,6 +158,7 @@
     - [Write a function which accepts a string argument and returns the count of characters between the first and last character 'X'](#write-a-function-which-accepts-a-string-argument-and-returns-the-count-of-characters-between-the-first-and-last-character-x)
     - [Write a function to truncate a string to a certain number of letters / number of words](#write-a-function-to-truncate-a-string-to-a-certain-number-of-letters--number-of-words)
     - [Create a regular expression to validate if the given input is valid mobile number or not](#create-a-regular-expression-to-validate-if-the-given-input-is-valid-mobile-number-or-not)
+    - [Write a function which returns a list of elements which contains at least one character as digit](#write-a-function-which-returns-a-list-of-elements-which-contains-at-least-one-character-as-digit)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5749,6 +5750,27 @@ validateBDMobile("+919876543210");  // false (India)
 [3-9]             // operator code (3 to 9)
 \d{8}             // remaining 8 digits
 $                 // end of string
+```
+
+### Write a function which returns a list of elements which contains at least one character as digit
+
+```js 
+function numInStr(mixArray) {
+  return mixArray.filter((value) => {
+    return /[0-9]/.test(value);
+  });
+}
+
+numInStr(['1a', 'a', '2b', 'b']));              // ['1a', '2b']
+numInStr(['abc', 'abc10']));                    // ['abc10']
+numInStr(['abc', 'ab10c', 'a10bc', 'bcd']));    // ['ab10c', 'a10bc']
+numInStr(['this is a test', 'test1']));         // ['test1']
+```
+
+```
+[0-9] means: Match any single digit from 0 to 9
+
+or you can use: \d
 ```
 
 ### Swap two integers variables without using a temporary variable:
