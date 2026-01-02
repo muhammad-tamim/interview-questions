@@ -5604,6 +5604,17 @@ console.log(Array.isArray({})); // false
 console.log(Array.isArray("string")); // false
 console.log(Array.isArray(new Array())); // true
 ```
+-  Show the usage of instanceof operator on different types of objects
+The instanceof operator checks if an object is an instance of a specific class or constructor function.
+
+```js
+console.log([] instanceof Array); // true
+console.log({} instanceof Object); // true
+console.log(function() {} instanceof Function); // true
+console.log(new Date() instanceof Date); // true
+console.log("text" instanceof String); // false (primitive string, not an object)
+console.log(new String("text") instanceof String); // true (String object)
+```
 
 ## problem solving:
 
