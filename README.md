@@ -156,6 +156,8 @@
     - [Write a program to reverse a given integer number](#write-a-program-to-reverse-a-given-integer-number)
     - [Write a function which can convert the time input given in 12 hours format to 24 hours format](#write-a-function-which-can-convert-the-time-input-given-in-12-hours-format-to-24-hours-format)
     - [Write a function which accepts a string argument and returns the count of characters between the first and last character 'X'](#write-a-function-which-accepts-a-string-argument-and-returns-the-count-of-characters-between-the-first-and-last-character-x)
+    - [Write a function to truncate a string to a certain number of letters / number of words](#write-a-function-to-truncate-a-string-to-a-certain-number-of-letters--number-of-words)
+    - [Create a regular expression to validate if the given input is valid mobile number or not](#create-a-regular-expression-to-validate-if-the-given-input-is-valid-mobile-number-or-not)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5691,6 +5693,62 @@ console.log(getTheGapX("XeroX")); // 4
 console.log(getTheGapX("Xamarin")); // -1       (If there is only single character 'X')
 console.log(getTheGapX("JavaScript")); // -1       (If there is no character 'X')
 console.log(getTheGapX("F(X) !== G(X) !== F(X)")); // 18
+```
+
+### Write a function to truncate a string to a certain number of letters / number of words
+
+```js
+function truncateString(str, limit) {
+    if (str.length <= limit) return str;
+    return str.slice(0, limit) + "...";
+}
+
+console.log(truncateString("JavaScript is awesome", 10)); // JavaScript...
+```
+
+```js
+function truncateWords(words, wordLimit) {
+
+    if (words.length <= wordLimit) return words;
+
+    return words.split(' ').slice(0, wordLimit).join(' ') + '...';
+}
+
+console.log(truncateWords("Learning frontend development with React and Tailwind", 5));
+// Learning frontend development with React... 
+```
+
+
+
+
+
+
+### Create a regular expression to validate if the given input is valid mobile number or not
+
+```js
+function validateBDMobile(str) {
+  const regex = /^(\+880|0)1[3-9]\d{8}$/;
+  return regex.test(str);
+}
+
+validateBDMobile("+8801712345678"); // true
+validateBDMobile("01712345678");    // true
+validateBDMobile("+8801812345678"); // true
+validateBDMobile("01912345678");    // true
+
+validateBDMobile("01112345678");    // false
+validateBDMobile("+8801212345678"); // false
+validateBDMobile("1712345678");     // false
+validateBDMobile("+919876543210");  // false (India)
+```
+
+```
+^                 // start of string
+(\+880|0)         // must start with +880 OR 0
+1                 // next digit must be 1
+[3-9]             // operator code (3 to 9)
+\d{8}             // remaining 8 digits
+$                 // end of string
 ```
 
 ### Swap two integers variables without using a temporary variable:
