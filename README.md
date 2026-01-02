@@ -5615,6 +5615,37 @@ console.log(new Date() instanceof Date); // true
 console.log("text" instanceof String); // false (primitive string, not an object)
 console.log(new String("text") instanceof String); // true (String object)
 ```
+- Demonstrate the usage of String Escape Sequences
+
+```js 
+// 1. Newline and Tab
+const newlineTabExample = "Line 1\nLine 2\tTabbed";
+console.log(newlineTabExample);
+// Output:
+// Line 1
+// Line 2    Tabbed
+
+// 2. Escaping Double Quotes
+const escapeDoubleQuoteExample = "He said, \"Hello, World!\"";
+console.log(escapeDoubleQuoteExample);
+// Output: He said, "Hello, World!"
+
+// 3. Escaping Single Quotes
+const escapeSingleQuoteExample = 'It\'s a wonderful day!';
+console.log(escapeSingleQuoteExample);
+// Output: It's a wonderful day!
+
+// 4. Unicode Smiley Face
+const unicodeSmileyExample = "Smile: \u263A";
+console.log(unicodeSmileyExample);
+// Output: Smile: ☺
+
+// 5. File Path with Double Backslashes
+const filePathExample = "Path: C:\\\\Program Files\\\\MyApp";
+console.log(filePathExample);
+// Output: Path: C:\\Program Files\\MyApp
+```
+
 
 ## problem solving:
 
