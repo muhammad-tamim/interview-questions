@@ -162,6 +162,7 @@
     - [Write a function which checks if a given search text is present either in the beginning of the first name or the second name](#write-a-function-which-checks-if-a-given-search-text-is-present-either-in-the-beginning-of-the-first-name-or-the-second-name)
     - [Write a function to chop a string into chunks of a given length and return it as array](#write-a-function-to-chop-a-string-into-chunks-of-a-given-length-and-return-it-as-array)
     - [Write a code to remove all the vowels from a given string](#write-a-code-to-remove-all-the-vowels-from-a-given-string)
+    - [Create a function which returns random hex color code](#create-a-function-which-returns-random-hex-color-code)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5839,6 +5840,39 @@ g → global flag → match all occurrences in the string
 ```js
 const str = "I love JavaScript";
 str.replace(/[aeiou]/gi, ""); // _lv_JvScrpt
+```
+
+### Create a function which returns random hex color code
+
+```js
+function getRandomHexColor() {
+  // Generate a random number between 0 and 0xFFFFFF (16777215)
+  const randomNumber = Math.floor(Math.random() * 0xFFFFFF);
+  
+  // Convert number to hexadecimal and pad with 0s if necessary
+  const hexString = randomNumber.toString(16).padStart(6, "0");
+  
+  // Return with # prefix
+  return `#${hexString}`;
+}
+
+console.log(getRandomHexColor()); // e.g., "#3fa2c1"
+console.log(getRandomHexColor()); // e.g., "#ff00ab"
+console.log(getRandomHexColor()); // e.g., "#0d4e7f"
+```
+
+```
+Math.random() * 0xFFFFFF
+
+Math.random() → returns a float between 0 and 1
+
+Multiplying by 0xFFFFFF → gives a number between 0 and 16777215 (0xFFFFFF in decimal)
+
+Math.floor() → removes the decimal, leaving an integer
+
+.toString(16) → converts the number to hexadecimal
+
+.padStart(6, "0") → ensures the string has 6 characters, adding leading zeros if needed
 ```
 
 ### Swap two integers variables without using a temporary variable:
