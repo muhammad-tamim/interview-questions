@@ -5595,6 +5595,15 @@ for (let i = 0; i < 5; i++) {
 4
 */
 ```
+- Demonstrate the usage of Array.isArray() to check for arrays
+The Array.isArray() method determines whether the provided value is an array.
+
+```js
+console.log(Array.isArray([])); // true
+console.log(Array.isArray({})); // false
+console.log(Array.isArray("string")); // false
+console.log(Array.isArray(new Array())); // true
+```
 
 ## problem solving:
 
