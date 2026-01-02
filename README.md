@@ -163,6 +163,7 @@
     - [Write a function to chop a string into chunks of a given length and return it as array](#write-a-function-to-chop-a-string-into-chunks-of-a-given-length-and-return-it-as-array)
     - [Write a code to remove all the vowels from a given string](#write-a-code-to-remove-all-the-vowels-from-a-given-string)
     - [Create a function which returns random hex color code](#create-a-function-which-returns-random-hex-color-code)
+    - [Write a function which accepts two valid dates and returns the difference between them as number of days](#write-a-function-which-accepts-two-valid-dates-and-returns-the-difference-between-them-as-number-of-days)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5873,6 +5874,39 @@ Math.floor() → removes the decimal, leaving an integer
 .toString(16) → converts the number to hexadecimal
 
 .padStart(6, "0") → ensures the string has 6 characters, adding leading zeros if needed
+```
+
+### Write a function which accepts two valid dates and returns the difference between them as number of days
+
+```js
+function daysBetweenDates(date1, date2) {
+  // Convert both dates to timestamps (milliseconds since 1970-01-01)
+  const d1 = new Date(date1).getTime();
+  const d2 = new Date(date2).getTime();
+
+  // Calculate difference in milliseconds
+  const diff = Math.abs(d2 - d1);
+
+  // Convert milliseconds to days
+  const days = diff / (1000 * 60 * 60 * 24);
+
+  return days;
+}
+
+// Example usage
+console.log(daysBetweenDates("2026-01-01", "2026-01-02")); // 1
+console.log(daysBetweenDates("2026-01-10", "2026-01-01")); // 9
+console.log(daysBetweenDates("2025-12-31", "2026-01-02")); // 2
+```
+
+```
+new Date(date) → converts a string (or Date object) to a Date object
+
+.getTime() → gives the timestamp in milliseconds
+
+Math.abs(d2 - d1) → ensures the difference is always positive
+
+Divide by 1000 * 60 * 60 * 24 → converts milliseconds → seconds → minutes → hours → days
 ```
 
 ### Swap two integers variables without using a temporary variable:
