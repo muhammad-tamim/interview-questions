@@ -161,6 +161,7 @@
     - [Write a function which returns a list of elements which contains at least one character as digit](#write-a-function-which-returns-a-list-of-elements-which-contains-at-least-one-character-as-digit)
     - [Write a function which checks if a given search text is present either in the beginning of the first name or the second name](#write-a-function-which-checks-if-a-given-search-text-is-present-either-in-the-beginning-of-the-first-name-or-the-second-name)
     - [Write a function to chop a string into chunks of a given length and return it as array](#write-a-function-to-chop-a-string-into-chunks-of-a-given-length-and-return-it-as-array)
+    - [Write a code to remove all the vowels from a given string](#write-a-code-to-remove-all-the-vowels-from-a-given-string)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5831,6 +5832,13 @@ stringChop("JavaScript", 3); // ["Jav", "aSc", "rip", "t"]
 {1,size} → matches at least 1 and at most size characters
 This ensures the last chunk is included even if shorter than size
 g → global flag → match all occurrences in the string
+```
+
+### Write a code to remove all the vowels from a given string
+
+```js
+const str = "I love JavaScript";
+str.replace(/[aeiou]/gi, ""); // _lv_JvScrpt
 ```
 
 ### Swap two integers variables without using a temporary variable:
