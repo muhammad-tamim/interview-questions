@@ -159,6 +159,7 @@
     - [Write a function to truncate a string to a certain number of letters / number of words](#write-a-function-to-truncate-a-string-to-a-certain-number-of-letters--number-of-words)
     - [Create a regular expression to validate if the given input is valid mobile number or not](#create-a-regular-expression-to-validate-if-the-given-input-is-valid-mobile-number-or-not)
     - [Write a function which returns a list of elements which contains at least one character as digit](#write-a-function-which-returns-a-list-of-elements-which-contains-at-least-one-character-as-digit)
+    - [Write a function which checks if a given search text is present either in the beginning of the first name or the second name](#write-a-function-which-checks-if-a-given-search-text-is-present-either-in-the-beginning-of-the-first-name-or-the-second-name)
     - [Swap two integers variables without using a temporary variable:](#swap-two-integers-variables-without-using-a-temporary-variable)
 
 </details>
@@ -5771,6 +5772,28 @@ numInStr(['this is a test', 'test1']));         // ['test1']
 [0-9] means: Match any single digit from 0 to 9
 
 or you can use: \d
+```
+
+### Write a function which checks if a given search text is present either in the beginning of the first name or the second name
+
+```js 
+function validateName(str, searchText) {
+  const regex = new RegExp("^(\\w*\\s)?" + searchText + "\\w*?", "i");
+  return regex.test(str);
+}
+
+validateName("Nedson PETER", "pet"); // true
+validateName("Peter Parker", "pet"); // true
+validateName("Speter parker", "pet"); // false
+validateName("John Doe Peter", "pet"); // false
+```
+
+```
+^ → Only checks start of string
+(\w*\s)? → Allows skipping the first word
+searchText → Must match start of the word being checked
+\w*? → Captures rest of the word lazily
+i → Case-insensitive
 ```
 
 ### Swap two integers variables without using a temporary variable:
