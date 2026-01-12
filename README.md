@@ -150,6 +150,7 @@
     - [Difference between mutable and immutable objects in JavaScript:](#difference-between-mutable-and-immutable-objects-in-javascript)
     - [How does JavaScript garbage collection work:](#how-does-javascript-garbage-collection-work)
   - [Coding Exercise:](#coding-exercise)
+  - [Basic Problem Solving:](#basic-problem-solving)
 
 </details>
 
@@ -5630,4 +5631,10 @@ const filePathExample = "Path: C:\\\\Program Files\\\\MyApp";
 console.log(filePathExample);
 // Output: Path: C:\\Program Files\\MyApp
 ```
+
+## Basic Problem Solving: 
+
+For basic problem solving solve these question and for language specific and advance problem solving follow js and dsa notes  
+
+https://www.geeksforgeeks.org/dsa/logic-building-problems/
 
